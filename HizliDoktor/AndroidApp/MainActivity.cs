@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Autofac;
 
 namespace AndroidApp
 {
@@ -14,6 +15,11 @@ namespace AndroidApp
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            Business.Abstract.IBolumService bolumService = Business.IOCUtil.Container.Resolve<Business.Abstract.IBolumService>();
+
+            bolumService.Add(new Entities.Concrete.Bolum { Adi = "Deneme", HastaneId = 5 });
+
         }
     }
 }
