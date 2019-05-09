@@ -2504,6 +2504,9 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
+			// aapt resource value: 0x7f0800b9
+			public const int editText1 = 2131230905;
+			
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
 			
@@ -2594,8 +2597,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int masked = 2131230899;
+			// aapt resource value: 0x7f0800bb
+			public const int masked = 2131230907;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
@@ -2653,6 +2656,15 @@ namespace AndroidApp
 			
 			// aapt resource value: 0x7f080075
 			public const int radio = 2131230837;
+			
+			// aapt resource value: 0x7f0800b4
+			public const int rbCinsiyet = 2131230900;
+			
+			// aapt resource value: 0x7f0800b6
+			public const int rbErkek = 2131230902;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int rbKadin = 2131230903;
 			
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
@@ -2786,6 +2798,12 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
+			// aapt resource value: 0x7f0800b5
+			public const int textLblCinsiyet = 2131230901;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int textLblDogumTarih = 2131230904;
+			
 			// aapt resource value: 0x7f08006a
 			public const int textSpacerNoButtons = 2131230826;
 			
@@ -2837,8 +2855,14 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080013
 			public const int transition_transform = 2131230739;
 			
+			// aapt resource value: 0x7f0800b2
+			public const int txtAd = 2131230898;
+			
 			// aapt resource value: 0x7f08008d
 			public const int txtPass = 2131230861;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int txtSoyad = 2131230899;
 			
 			// aapt resource value: 0x7f08008c
 			public const int txtTC = 2131230860;
@@ -2855,8 +2879,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int visible = 2131230898;
+			// aapt resource value: 0x7f0800ba
+			public const int visible = 2131230906;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

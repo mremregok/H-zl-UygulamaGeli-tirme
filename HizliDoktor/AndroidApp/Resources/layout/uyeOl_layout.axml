@@ -1,7 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/lblGirisYap"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Üyelik Sayfası   "
+		android:textAlignment="center"
+	/>
+	<EditText
+		android:id="@+id/txtTC"
+		android:inputType="number"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/lblGirisYap"
+		android:hint="TC Kimlik Numarası"
+		android:ems="10"
+		android:maxLength="11"
+	/>
+	<EditText
+		android:id="@+id/txtAd"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Ad"
+		android:layout_below="@id/txtTC"
+	/>
+	<EditText
+		android:id="@+id/txtSoyad"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Soyad"
+		android:layout_below="@id/txtAd"
+	/>
+	<RadioGroup
+		android:id="@+id/rbCinsiyet"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:paddingLeft="10dp"
+		android:paddingTop="10dp"
+		android:layout_below="@id/txtSoyad">
+		<TextView
+			android:id="@+id/textLblCinsiyet"
+			android:text="Cinsiyet :"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingRight="10dp"
+			android:layout_toRightOf="@id/rbCinsiyet"
+			android:textAppearance="?android:attr/textAppearance"
+		/>
+		<RadioButton
+			android:id="@+id/rbErkek"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="Erkek"
+			android:paddingRight="10dp"
+		/>
+		<RadioButton
+			android:id="@+id/rbKadin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Kadın"
+		/>
+	</RadioGroup>
+		
+	<TextView
+		android:id="@+id/textLblDogumTarih"
+		android:text="Doğum Tarihi"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="10dp"
+		android:paddingTop="10dp"
+		android:textAppearance="?android:attr/textAppearance"
+		android:layout_below="@id/rbCinsiyet"
+	/>
 
-</LinearLayout>
+	<EditText
+		android:inputType="date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/textLblDogumTarih"
+		android:layout_below="@id/rbCinsiyet"
+		android:id="@+id/editText1"
+	/>
+
+	<EditText
+		android:id="@+id/txtPass"
+		android:inputType="textPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Parola"
+		android:layout_below="@id/editText1"
+	/>
+
+</RelativeLayout>
