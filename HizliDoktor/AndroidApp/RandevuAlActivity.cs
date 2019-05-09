@@ -58,8 +58,7 @@ namespace AndroidApp
             spinnerIlceler.ItemSelected += SpinnerIlceler_ItemSelected;
             spinnerHastaneler.ItemSelected += SpinnerHastaneler_ItemSelected;
             spinnerBolumler.ItemSelected += SpinnerBolumler_ItemSelected;
-            spinnerDoktorlar.ItemSelected += SpinnerDoktorlar_ItemSelected;
-            
+            spinnerDoktorlar.ItemSelected += SpinnerDoktorlar_ItemSelected;            
         }
 
         private void SpinnerIller_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -82,24 +81,27 @@ namespace AndroidApp
 
         private void SpinnerHastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Hastane hastane = (Hastane)sender;
+            Spinner spinner = (Spinner)sender;
+            var item = spinner.GetItemAtPosition(e.Position);
 
             List<Bolum> bolumler = bolumService.Bolumler(hastane.Id);
 
             ArrayAdapter adapter = new ArrayAdapter<Bolum>(this, Android.Resource.Layout.SimpleSpinnerItem, bolumler);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinnerHastaneler.Adapter = adapter;
+            spinnerBolumler.Adapter = adapter;
         }
 
         private void SpinnerBolumler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Bolum bolum = (Bolum)sender;
+            Spinner spinner = (Spinner)sender;
+
+            Bolum bolum = (Bolum)(object)spinner.GetItemAtPosition(e.Position);
 
             List<Doktor> doktorlar = doktorService.Doktorlar(bolum.Id);
 
             ArrayAdapter adapter = new ArrayAdapter<Doktor>(this, Android.Resource.Layout.SimpleSpinnerItem, doktorlar);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinnerHastaneler.Adapter = adapter;
+            spinnerDoktorlar.Adapter = adapter;
         }
 
         private void SpinnerDoktorlar_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

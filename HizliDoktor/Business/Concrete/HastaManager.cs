@@ -21,9 +21,9 @@ namespace Business.Concrete
             hastaDal.Add(hasta);
         }
 
-        public Hasta Getir(int hastaId)
+        public Hasta Getir(string TC)
         {
-            Hasta hasta = hastaDal.Get(x => x.Id == hastaId);
+            Hasta hasta = hastaDal.Get(x => x.TC == TC);
             return hasta;
         }
 

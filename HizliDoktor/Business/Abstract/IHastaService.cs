@@ -10,6 +10,6 @@ namespace Business.Abstract
         void Ekle(Hasta hasta);
         Hasta Sil(int hastaId);
         void Guncelle(Hasta hasta);
-        Hasta Getir(int hastaId);
+        Hasta Getir(string TC);
     }
 }
