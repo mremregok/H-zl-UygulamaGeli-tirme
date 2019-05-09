@@ -21,6 +21,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/lblGirisYap"
+		android:layout_marginTop="10dp"
 		android:hint="TC Kimlik Numarası"
 		android:ems="10"
 		android:maxLength="11"
@@ -33,13 +34,36 @@
 		android:hint="Parola"
 		android:layout_below="@id/txtTC"
 	/>
+	<RadioGroup
+		android:id="@+id/rbGirisTipi"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/txtPass"
+		android:orientation="horizontal"
+		android:layout_centerHorizontal="true">
+
+		<RadioButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="Vatandaş"
+			android:id="@+id/rbVatandas" />
+		<RadioButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Yönetici"
+			android:id="@+id/rbYonetici" />
+	</RadioGroup>
 	<Button
 		android:id="@+id/btnLogin"
 		android:layout_width="match_parent"
 		android:layout_marginLeft="10dp"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
-		android:layout_below="@id/txtPass"
+		android:layout_below="@id/rbGirisTipi"
+		android:layout_marginTop="10dp"
 		android:text="Giriş Yap"
 		android:background="#6200ee"
 		android:textColor="@android:color/white"
@@ -56,5 +80,6 @@
 		android:background="#3700b3"
 		android:textColor="@android:color/white"
 	/>
+
 
 </RelativeLayout>

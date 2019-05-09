@@ -7,7 +7,7 @@ namespace Business.Abstract
 {
     public interface ILoginService
     {
-        bool GirisYap(string TC, string password);
+        bool GirisYap(string TC, string sifre, bool yoneticiGirisi);
         bool UyeOl(Hasta hasta);
     }
 }

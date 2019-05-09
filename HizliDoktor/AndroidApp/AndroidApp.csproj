@@ -56,6 +56,8 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAnaSayfaActivity.cs" />
+    <Compile Include="DoktorAnaSayfaActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="RandevuActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -117,6 +119,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\uyeOl_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\adminAnaSayfa_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\doktorAnaSayfa_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

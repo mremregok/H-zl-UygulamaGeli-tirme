@@ -14,6 +14,7 @@ namespace AndroidApp
     {
         private Button btnLogin, btnUyeOl;
         private EditText txtTC, txtPass;
+        private RadioButton rbVatandas, rbYonetici;
         ILoginService loginService; //login servisim
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,6 +29,8 @@ namespace AndroidApp
             btnUyeOl = FindViewById<Button>(Resource.Id.btnUyeOl);
             txtTC = FindViewById<EditText>(Resource.Id.txtTC);
             txtPass = FindViewById<EditText>(Resource.Id.txtPass);
+            rbVatandas = FindViewById<RadioButton>(Resource.Id.rbVatandas);
+            rbYonetici = FindViewById<RadioButton>(Resource.Id.rbYonetici);
 
             btnLogin.Click += BtnLogin_Click;
             btnUyeOl.Click += BtnUyeOl_Click;
@@ -42,14 +45,30 @@ namespace AndroidApp
 
         private void BtnLogin_Click(object sender, System.EventArgs e)
         {
-            bool isLoggedIn = loginService.GirisYap(txtTC.Text, txtPass.Text);
+            bool isLoggedIn = loginService.GirisYap(txtTC.Text, txtPass.Text, rbYonetici.Checked);
 
             if (isLoggedIn)
             {
-                //randevu alma activity çağır
-                var intent = new Intent(this, typeof(RandevuActivity));
-                intent.PutExtra("tc", txtTC.Text);
-                StartActivity(intent);
+                if (txtTC.Text == "1")
+                {
+                    //admin activity çağır
+                    var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+                    StartActivity(intent);
+                }
+                else if (rbYonetici.Checked)
+                {
+                    //doktor activity çağır
+                    var intent = new Intent(this, typeof(DoktorAnaSayfaActivity));
+                    intent.PutExtra("tc", txtTC.Text);
+                    StartActivity(intent);
+                }
+                else
+                {
+                    //randevu alma activity çağır
+                    var intent = new Intent(this, typeof(RandevuActivity));
+                    intent.PutExtra("tc", txtTC.Text);
+                    StartActivity(intent);
+                }
             }
             else
             {
