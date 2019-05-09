@@ -15,7 +15,6 @@
         android:id="@+id/spinnerIller"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/planet_prompt"
     />
 
 	<TextView
@@ -29,7 +28,6 @@
         android:id="@+id/spinnerIlceler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/planet_prompt"
     />
 
 	<TextView
@@ -43,7 +41,6 @@
         android:id="@+id/spinnerHastaneler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/planet_prompt"
     />
 
 	<TextView
@@ -57,7 +54,6 @@
         android:id="@+id/spinnerBolumler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/planet_prompt"
     />
 
 	<TextView
@@ -71,7 +67,6 @@
         android:id="@+id/spinnerDoktorlar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/planet_prompt"
     />
 
 	<TextView

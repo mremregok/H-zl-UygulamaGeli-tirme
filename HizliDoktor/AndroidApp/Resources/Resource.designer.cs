@@ -105,6 +105,28 @@ namespace AndroidApp
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0e0001
+			public const int Bolumler = 2131623937;
+			
+			// aapt resource value: 0x7f0e0002
+			public const int Doktorlar = 2131623938;
+			
+			// aapt resource value: 0x7f0e0000
+			public const int Hastaneler = 2131623936;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -2546,6 +2568,9 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
 			
+			// aapt resource value: 0x7f0800b9
+			public const int gridView1 = 2131230905;
+			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
 			
@@ -2594,50 +2619,50 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int masked = 2131230902;
+			// aapt resource value: 0x7f0800bc
+			public const int masked = 2131230908;
 			
 			// aapt resource value: 0x7f0800a7
 			public const int media_actions = 2131230887;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int menuBtnAnasayfa = 2131230903;
-			
-			// aapt resource value: 0x7f0800b9
-			public const int menuBtnBolumEkle = 2131230905;
-			
-			// aapt resource value: 0x7f0800bc
-			public const int menuBtnBolumListele = 2131230908;
-			
-			// aapt resource value: 0x7f0800ba
-			public const int menuBtnDoktorEkle = 2131230906;
-			
 			// aapt resource value: 0x7f0800bd
-			public const int menuBtnDoktorListele = 2131230909;
-			
-			// aapt resource value: 0x7f0800c0
-			public const int menuBtnFavorilerim = 2131230912;
-			
-			// aapt resource value: 0x7f0800b8
-			public const int menuBtnHastaneEkle = 2131230904;
-			
-			// aapt resource value: 0x7f0800bb
-			public const int menuBtnHastaneListele = 2131230907;
-			
-			// aapt resource value: 0x7f0800be
-			public const int menuBtnProfilim = 2131230910;
-			
-			// aapt resource value: 0x7f0800c1
-			public const int menuBtnRandevuAl = 2131230913;
-			
-			// aapt resource value: 0x7f0800c2
-			public const int menuBtnRandevuListele = 2131230914;
+			public const int menuBtnAnasayfa = 2131230909;
 			
 			// aapt resource value: 0x7f0800bf
-			public const int menuBtnRandevularim = 2131230911;
+			public const int menuBtnBolumEkle = 2131230911;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int message = 2131230900;
+			// aapt resource value: 0x7f0800c2
+			public const int menuBtnBolumListele = 2131230914;
+			
+			// aapt resource value: 0x7f0800c0
+			public const int menuBtnDoktorEkle = 2131230912;
+			
+			// aapt resource value: 0x7f0800c3
+			public const int menuBtnDoktorListele = 2131230915;
+			
+			// aapt resource value: 0x7f0800c6
+			public const int menuBtnFavorilerim = 2131230918;
+			
+			// aapt resource value: 0x7f0800be
+			public const int menuBtnHastaneEkle = 2131230910;
+			
+			// aapt resource value: 0x7f0800c1
+			public const int menuBtnHastaneListele = 2131230913;
+			
+			// aapt resource value: 0x7f0800c4
+			public const int menuBtnProfilim = 2131230916;
+			
+			// aapt resource value: 0x7f0800c7
+			public const int menuBtnRandevuAl = 2131230919;
+			
+			// aapt resource value: 0x7f0800c8
+			public const int menuBtnRandevuListele = 2131230920;
+			
+			// aapt resource value: 0x7f0800c5
+			public const int menuBtnRandevularim = 2131230917;
+			
+			// aapt resource value: 0x7f0800ba
+			public const int message = 2131230906;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2795,6 +2820,21 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080064
 			public const int spacer = 2131230820;
 			
+			// aapt resource value: 0x7f0800b7
+			public const int spinnerBolumler = 2131230903;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int spinnerDoktorlar = 2131230904;
+			
+			// aapt resource value: 0x7f0800b6
+			public const int spinnerHastaneler = 2131230902;
+			
+			// aapt resource value: 0x7f0800b5
+			public const int spinnerIlceler = 2131230901;
+			
+			// aapt resource value: 0x7f0800b4
+			public const int spinnerIller = 2131230900;
+			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
 			
@@ -2900,8 +2940,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int visible = 2131230901;
+			// aapt resource value: 0x7f0800bb
+			public const int visible = 2131230907;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3173,14 +3213,14 @@ namespace AndroidApp
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f0e0000
-			public const int adminMenu = 2131623936;
+			// aapt resource value: 0x7f0f0000
+			public const int adminMenu = 2131689472;
 			
-			// aapt resource value: 0x7f0e0001
-			public const int doktorMenu = 2131623937;
+			// aapt resource value: 0x7f0f0001
+			public const int doktorMenu = 2131689473;
 			
-			// aapt resource value: 0x7f0e0002
-			public const int hastaMenu = 2131623938;
+			// aapt resource value: 0x7f0f0002
+			public const int hastaMenu = 2131689474;
 			
 			static Menu()
 			{
