@@ -77,11 +77,16 @@
     />
 
 	<GridView
-		android:minWidth="25px"
-		android:minHeight="25px"
+		android:id="@+id/gridView1"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/gridView1" />
+		android:columnWidth="30dp"
+		android:numColumns="auto_fit"
+		android:verticalSpacing="4dp"
+		android:horizontalSpacing="40dp"
+		android:stretchMode="columnWidth"
+		android:gravity="center"
+	/>
 
 
 </LinearLayout>
