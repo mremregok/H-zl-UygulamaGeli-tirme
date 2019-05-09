@@ -19,6 +19,11 @@ namespace Business.Concrete
             doktorDal = _doktorDal;
         }
 
+        public string DogrulamaMailiGonder(string mail)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool GirisYap(string TC, string sifre, bool yoneticiGirisi)
         {
             if (yoneticiGirisi && TC == "1" && sifre == "admin") return true;
@@ -35,6 +40,11 @@ namespace Business.Concrete
 
                 return (hasta != null && hasta.Sifre == sifre);
             }
+        }
+
+        public bool MailDogrula(string mail, string kod, string girilenKod)
+        {
+            throw new NotImplementedException();
         }
 
         public bool UyeOl(Hasta hasta)

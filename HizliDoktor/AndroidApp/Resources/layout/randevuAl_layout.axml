@@ -86,6 +86,37 @@
         android:text="Bir tarih seçin"
     />
 
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/btnOncekiGun"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/onceki"
+			android:layout_gravity="left"
+			android:enabled="false"
+		/>
+		<TextView
+			android:id="@+id/lblSeciliTarih"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="secili tarih"
+			android:layout_gravity="center"
+		/>
+		<Button
+			android:id="@+id/btnSonrakiGun"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/sonraki"
+			android:layout_gravity="right"
+		/>
+
+	</FrameLayout>
+
 	<GridView
 		android:id="@+id/gridTarihler"
 		android:layout_width="match_parent"

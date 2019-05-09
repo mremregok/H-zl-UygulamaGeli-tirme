@@ -44,7 +44,7 @@ namespace Business.Concrete
             List<string> ilceler = new List<string>();
             foreach (Hastane hastane in hastaneler)
             {
-                ilceler.Add(hastane.Ilce);
+                if (!ilceler.Exists(x => x == hastane.Ilce)) ilceler.Add(hastane.Ilce);
             }
 
             return ilceler;
@@ -57,7 +57,7 @@ namespace Business.Concrete
             List<string> iller = new List<string>();
             foreach (Hastane hastane in hastaneler)
             {
-                iller.Add(hastane.Il);
+                if(!iller.Exists(x => x == hastane.Il)) iller.Add(hastane.Il);
             }
 
             return iller;

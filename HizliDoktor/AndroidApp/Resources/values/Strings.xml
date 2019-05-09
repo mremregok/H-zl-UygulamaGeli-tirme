@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Hızlı Doktor</string>
+
+  <string name="app_name">Hızlı Doktor</string>
+  <string name="onceki"> &lt;-- </string>
+  <string name="sonraki"> --&gt; </string>
+
 </resources>
