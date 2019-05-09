@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
     <Compile Include="DoktorAnaSayfaActivity.cs" />
+    <Compile Include="MailOnayActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="RandevuActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -134,6 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Menu\menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\mailOnay_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
