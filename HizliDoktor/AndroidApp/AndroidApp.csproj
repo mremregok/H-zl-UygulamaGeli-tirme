@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
-	<Compile Include="MailOnayActivity.cs" />
+	  <Compile Include="MailOnayActivity.cs" />
     <Compile Include="DoktorProfilimActivity.cs" />
     <Compile Include="GirisYapActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
