@@ -7,7 +7,8 @@
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="10dp"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir il seçin"
     />
 
@@ -15,12 +16,14 @@
         android:id="@+id/spinnerIller"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir ilçe seçin"
     />
 
@@ -28,12 +31,14 @@
         android:id="@+id/spinnerIlceler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir hastane seçin"
     />
 
@@ -41,12 +46,14 @@
         android:id="@+id/spinnerHastaneler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir bölüm seçin"
     />
 
@@ -54,12 +61,14 @@
         android:id="@+id/spinnerBolumler"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir doktor seçin"
     />
 
@@ -67,17 +76,19 @@
         android:id="@+id/spinnerDoktorlar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir tarih seçin"
     />
 
 	<GridView
-		android:id="@+id/gridView1"
+		android:id="@+id/gridTarihler"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:columnWidth="30dp"
@@ -86,7 +97,6 @@
 		android:horizontalSpacing="40dp"
 		android:stretchMode="columnWidth"
 		android:gravity="center"
+		android:layout_marginHorizontal="10dp"
 	/>
-
-
 </LinearLayout>

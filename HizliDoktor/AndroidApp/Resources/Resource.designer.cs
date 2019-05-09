@@ -105,28 +105,6 @@ namespace AndroidApp
 			}
 		}
 		
-		public partial class Array
-		{
-			
-			// aapt resource value: 0x7f0e0001
-			public const int Bolumler = 2131623937;
-			
-			// aapt resource value: 0x7f0e0002
-			public const int Doktorlar = 2131623938;
-			
-			// aapt resource value: 0x7f0e0000
-			public const int Hastaneler = 2131623936;
-			
-			static Array()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Array()
-			{
-			}
-		}
-		
 		public partial class Attribute
 		{
 			
@@ -2575,7 +2553,7 @@ namespace AndroidApp
 			public const int gridGecmisRandevular = 2131230907;
 			
 			// aapt resource value: 0x7f0800c2
-			public const int gridView1 = 2131230914;
+			public const int gridTarihler = 2131230914;
 			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
@@ -3243,14 +3221,14 @@ namespace AndroidApp
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f0f0000
-			public const int adminMenu = 2131689472;
+			// aapt resource value: 0x7f0e0000
+			public const int adminMenu = 2131623936;
 			
-			// aapt resource value: 0x7f0f0001
-			public const int doktorMenu = 2131689473;
+			// aapt resource value: 0x7f0e0001
+			public const int doktorMenu = 2131623937;
 			
-			// aapt resource value: 0x7f0f0002
-			public const int hastaMenu = 2131689474;
+			// aapt resource value: 0x7f0e0002
+			public const int hastaMenu = 2131623938;
 			
 			static Menu()
 			{
@@ -3373,9 +3351,6 @@ namespace AndroidApp
 			
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
-			
-			// aapt resource value: 0x7f090028
-			public const int action_settings = 2131296296;
 			
 			// aapt resource value: 0x7f090027
 			public const int app_name = 2131296295;

@@ -1,13 +1,3 @@
 <resources>
     <string name="app_name">Hızlı Doktor</string>
-    <string name="action_settings">Ayarlar</string>
-    <string-array name="Hastaneler">
-      <item>Lütfen seçiniz.</item>
-    </string-array>
-    <string-array name="Bolumler">
-      <item>Lütfen seçiniz.</item>
-    </string-array>
-    <string-array name="Doktorlar">
-      <item>Lütfen seçiniz.</item>
-    </string-array>
 </resources>

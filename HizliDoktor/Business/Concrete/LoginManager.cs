@@ -13,10 +13,10 @@ namespace Business.Concrete
         IHastaDal hastaDal;
         IDoktorDal doktorDal;
 
-        public LoginManager()
+        public LoginManager(IHastaDal _hastaDal, IDoktorDal _doktorDal)
         {
-            hastaDal = IOCUtil.Container.Resolve<IHastaDal>();
-            doktorDal = IOCUtil.Container.Resolve<IDoktorDal>();
+            hastaDal = _hastaDal;
+            doktorDal = _doktorDal;
         }
 
         public bool GirisYap(string TC, string sifre, bool yoneticiGirisi)
