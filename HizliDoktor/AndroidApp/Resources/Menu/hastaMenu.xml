@@ -1,0 +1,27 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+  <item
+    android:id="@+id/menuBtnProfilim"
+    android:orderInCategory="1"
+    android:title="Profilim"
+    app:showAsAction="never" />
+  
+  <item
+    android:id="@+id/menuBtnFavorilerim"
+    android:orderInCategory="0"
+    android:title="Favori Doktorlarım"
+    app:showAsAction="never" />
+
+  <item
+    android:id="@+id/menuBtnRandevuAl"
+    android:orderInCategory="0"
+    android:title="Randevu Al"
+    app:showAsAction="never" />
+  
+  <item
+    android:id="@+id/menuBtnRandevuListele"
+    android:orderInCategory="1"
+    android:title="Randevularımı Listele"
+    app:showAsAction="never" />
+
+</menu>

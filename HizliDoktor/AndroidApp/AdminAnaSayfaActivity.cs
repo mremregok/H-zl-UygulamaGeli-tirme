@@ -7,13 +7,14 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "AdminAnaSayfaActivity")]
-    public class AdminAnaSayfaActivity : Activity
+    [Activity(Label = "Anasayfa", Theme = "@style/AppTheme")]
+    public class AdminAnaSayfaActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,8 +26,8 @@ namespace AndroidApp
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
-            return base.OnCreateOptionsMenu(menu);
+            MenuInflater.Inflate(Resource.Menu.adminMenu, menu);
+            return true;
         }
     }
 }

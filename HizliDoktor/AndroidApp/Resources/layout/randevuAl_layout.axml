@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir il seçin"
+    />
+
+    <Spinner
+        android:id="@+id/spinnerIller"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir ilçe seçin"
+    />
+
+    <Spinner
+        android:id="@+id/spinnerIlceler"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir hastane seçin"
+    />
+
+    <Spinner
+        android:id="@+id/spinnerHastaneler"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir bölüm seçin"
+    />
+
+    <Spinner
+        android:id="@+id/spinnerBolumler"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir doktor seçin"
+    />
+
+    <Spinner
+        android:id="@+id/spinnerDoktorlar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+
+	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Bir tarih seçin"
+    />
+
+	<GridView
+		android:id="@+id/gridView1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:columnWidth="30dp"
+		android:numColumns="auto_fit"
+		android:verticalSpacing="4dp"
+		android:horizontalSpacing="40dp"
+		android:stretchMode="columnWidth"
+		android:gravity="center"
+	/>
+
+
+</LinearLayout>
