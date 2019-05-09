@@ -40,7 +40,7 @@ namespace AndroidApp
         private void BtnUyeOl_Click(object sender, System.EventArgs e)
         {
             //üye ol activity çağır
-            var intent = new Intent(this, typeof(RandevuActivity));
+            var intent = new Intent(this, typeof(UyeOlActivity));
             StartActivity(intent);
         }
 
@@ -81,8 +81,13 @@ namespace AndroidApp
 
         private void KlavyeGizle()
         {
-            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
-            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
+            try
+            {
+                InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+                inputManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
+            }
+            catch (System.Exception) { }
+
         }
     }
 }

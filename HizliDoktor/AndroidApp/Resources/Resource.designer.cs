@@ -2393,6 +2393,9 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
+			// aapt resource value: 0x7f0800b7
+			public const int action_search = 2131230903;
+			
 			// aapt resource value: 0x7f0800a3
 			public const int action_text = 2131230883;
 			
@@ -3130,6 +3133,22 @@ namespace AndroidApp
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0e0000
+			public const int menu = 2131623936;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

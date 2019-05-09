@@ -39,7 +39,9 @@ namespace Business.Concrete
 
         public bool UyeOl(Hasta hasta)
         {
-            throw new NotImplementedException();
+            //sorgulamaları yap
+            hastaDal.Add(hasta);
+            return true;
         }
     }
 }

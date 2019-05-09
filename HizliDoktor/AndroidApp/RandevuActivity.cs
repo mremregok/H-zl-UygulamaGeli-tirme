@@ -22,5 +22,11 @@ namespace AndroidApp
 
             // Create your application here
         }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
     }
 }
