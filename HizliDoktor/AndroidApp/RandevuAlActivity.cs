@@ -20,18 +20,27 @@ namespace AndroidApp
     public class RandevuAlActivity : AppCompatActivity
     {
         IRandevuService randevuService;
+        IHastaneService hastaneService;
+        IBolumService bolumService;
+        IDoktorService doktorService;
+
         private GridView gridTarihler;
         private Spinner spinnerIller, spinnerIlceler, spinnerHastaneler, spinnerBolumler, spinnerDoktorlar;
 
         public RandevuAlActivity()
         {
             randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
+            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
+            bolumService   = Business.IOCUtil.Container.Resolve<IBolumService>();
+            doktorService  = Business.IOCUtil.Container.Resolve<IDoktorService>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.randevuAl_layout);
+
+            List<string> hastaneOlanIller = hastaneService.HastaneOlanIller();
 
             gridTarihler = FindViewById<GridView>(Resource.Id.gridTarihler);
 
@@ -41,7 +50,9 @@ namespace AndroidApp
             spinnerBolumler = FindViewById<Spinner>(Resource.Id.spinnerBolumler);
             spinnerDoktorlar = FindViewById<Spinner>(Resource.Id.spinnerDoktorlar);
 
-            spinnerIller.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, )
+            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIller);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerIller.Adapter = adapter;
 
             spinnerIller.ItemSelected += SpinnerIller_ItemSelected;
             spinnerIlceler.ItemSelected += SpinnerIlceler_ItemSelected;
@@ -51,20 +62,44 @@ namespace AndroidApp
             
         }
 
-        private void SpinnerBolumler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void SpinnerIller_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-        }
+            List<string> hastaneOlanIlceler = hastaneService.HastaneOlanIlceler((string)spinnerIller.SelectedItem);
 
-        private void SpinnerHastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
+            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIlceler);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerIlceler.Adapter = adapter;
         }
 
         private void SpinnerIlceler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            List<Hastane> hastaneler = hastaneService.Hastaneler((string)spinnerIller.SelectedItem, (string)spinnerIlceler.SelectedItem);
+
+            ArrayAdapter adapter = new ArrayAdapter<Hastane>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneler);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerHastaneler.Adapter = adapter;
         }
 
-        private void SpinnerIller_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void SpinnerHastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            Hastane hastane = (Hastane)sender;
+
+            List<Bolum> bolumler = bolumService.Bolumler(hastane.Id);
+
+            ArrayAdapter adapter = new ArrayAdapter<Bolum>(this, Android.Resource.Layout.SimpleSpinnerItem, bolumler);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerHastaneler.Adapter = adapter;
+        }
+
+        private void SpinnerBolumler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Bolum bolum = (Bolum)sender;
+
+            List<Doktor> doktorlar = doktorService.Doktorlar(bolum.Id);
+
+            ArrayAdapter adapter = new ArrayAdapter<Doktor>(this, Android.Resource.Layout.SimpleSpinnerItem, doktorlar);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerHastaneler.Adapter = adapter;
         }
 
         private void SpinnerDoktorlar_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

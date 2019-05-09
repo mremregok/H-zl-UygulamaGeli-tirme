@@ -27,6 +27,7 @@ namespace Business
             builder.RegisterType<LoginManager>().As<ILoginService>();
             builder.RegisterType<RandevuManager>().As<IRandevuService>();
             builder.RegisterType<HastaneManager>().As<IHastaneService>();
+            builder.RegisterType<DoktorManager>().As<IDoktorService>();
 
 
             Container = builder.Build();

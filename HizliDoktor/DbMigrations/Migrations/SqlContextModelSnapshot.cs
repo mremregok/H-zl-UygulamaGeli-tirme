@@ -107,6 +107,8 @@ namespace DataAccess.Migrations
 
                     b.Property<DateTime?>("DogumTarihi");
 
+                    b.Property<bool>("IsMailVerified");
+
                     b.Property<string>("Mail");
 
                     b.Property<string>("Sifre");
