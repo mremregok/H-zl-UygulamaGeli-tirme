@@ -13,9 +13,8 @@ namespace DbMigrations
         public DbSet<Doktor> Doktorlar { get; set; }
         public DbSet<Hasta> Hastalar { get; set; }
         public DbSet<Hastane> Hastaneler { get; set; }
-        public DbSet<Odeme> Odemeler { get; set; }
         public DbSet<Randevu> Randevular { get; set; }
-        public DbSet<Rapor> Raporlar { get; set; }
+        public DbSet<Favori> Favoriler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

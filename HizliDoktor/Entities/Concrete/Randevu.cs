@@ -11,7 +11,7 @@ namespace Entities.Concrete
         public int DoktorId { get; set; }
         public int BolumId { get; set; }
         public int HastaId { get; set; }
-        public DateTime? BaslangicTarihi{ get; set; }
-        public DateTime? BitisiTarihi { get; set; }
+        public int HastaneId { get; set; }
+        public DateTime? Tarih { get; set; }
     }
 }
