@@ -13,10 +13,15 @@ namespace Business.Concrete
         IHastaDal hastaDal;
         IDoktorDal doktorDal;
 
-        public LoginManager()
+        public LoginManager(IHastaDal _hastaDal, IDoktorDal _doktorDal)
         {
-            hastaDal = IOCUtil.Container.Resolve<IHastaDal>();
-            doktorDal = IOCUtil.Container.Resolve<IDoktorDal>();
+            hastaDal = _hastaDal;
+            doktorDal = _doktorDal;
+        }
+
+        public string DogrulamaMailiGonder(string mail)
+        {
+            throw new NotImplementedException();
         }
 
         public bool GirisYap(string TC, string sifre, bool yoneticiGirisi)
@@ -35,6 +40,11 @@ namespace Business.Concrete
 
                 return (hasta != null && hasta.Sifre == sifre);
             }
+        }
+
+        public bool MailDogrula(string mail, string kod, string girilenKod)
+        {
+            throw new NotImplementedException();
         }
 
         public bool UyeOl(Hasta hasta)

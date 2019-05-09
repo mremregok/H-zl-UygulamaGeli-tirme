@@ -7,77 +7,118 @@
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="10dp"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir il seçin"
     />
-
-    <Spinner
-        android:id="@+id/spinnerIller"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+	<Spinner
+		android:id="@+id/spinnerIller"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir ilçe seçin"
     />
 
     <Spinner
         android:id="@+id/spinnerIlceler"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir hastane seçin"
     />
 
     <Spinner
         android:id="@+id/spinnerHastaneler"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir bölüm seçin"
     />
 
     <Spinner
         android:id="@+id/spinnerBolumler"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir doktor seçin"
     />
 
     <Spinner
         android:id="@+id/spinnerDoktorlar"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
     />
 
 	<TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
         android:text="Bir tarih seçin"
     />
 
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/btnOncekiGun"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/onceki"
+			android:layout_gravity="left"
+			android:enabled="false"
+		/>
+		<TextView
+			android:id="@+id/lblSeciliTarih"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="secili tarih"
+			android:layout_gravity="center"
+		/>
+		<Button
+			android:id="@+id/btnSonrakiGun"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/sonraki"
+			android:layout_gravity="right"
+		/>
+
+	</FrameLayout>
+
 	<GridView
-		android:id="@+id/gridView1"
+		android:id="@+id/gridTarihler"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:columnWidth="30dp"
@@ -86,7 +127,6 @@
 		android:horizontalSpacing="40dp"
 		android:stretchMode="columnWidth"
 		android:gravity="center"
+		android:layout_marginHorizontal="10dp"
 	/>
-
-
 </LinearLayout>

@@ -7,6 +7,10 @@ namespace Business.Abstract
 {
     public interface IBolumService
     {
-        void Add(Bolum bolum);
+        void Ekle(Bolum bolum);
+        Bolum Sil(int bolumId);
+        void Guncelle(Bolum bolum);
+        Bolum Getir(int bolumId);
+        List<Bolum> Bolumler(int hastaneId);
     }
 }

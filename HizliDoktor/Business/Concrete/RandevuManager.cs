@@ -13,9 +13,9 @@ namespace Business.Concrete
     {
         IRandevuDal randevuDal;
 
-        public RandevuManager()
+        public RandevuManager(IRandevuDal _randevuDal)
         {
-           randevuDal = IOCUtil.Container.Resolve<IRandevuDal>();
+            randevuDal = _randevuDal;
         }
 
         public bool Ekle(Randevu randevu)

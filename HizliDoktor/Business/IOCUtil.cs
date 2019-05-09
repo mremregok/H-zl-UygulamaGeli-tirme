@@ -26,6 +26,10 @@ namespace Business
             builder.RegisterType<BolumManager>().As<IBolumService>();
             builder.RegisterType<LoginManager>().As<ILoginService>();
             builder.RegisterType<RandevuManager>().As<IRandevuService>();
+            builder.RegisterType<HastaneManager>().As<IHastaneService>();
+            builder.RegisterType<DoktorManager>().As<IDoktorService>();
+            builder.RegisterType<HastaManager>().As<IHastaService>();
+
 
             Container = builder.Build();
         }
