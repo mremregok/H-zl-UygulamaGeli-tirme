@@ -3,8 +3,8 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
-using Autofac;
-using Business.Abstract;
+using Autofac;//servisi kullanabilmek için
+using Business.Abstract;//servisi kullanabilmek için
 using Android.Content;
 
 namespace AndroidApp
@@ -14,15 +14,14 @@ namespace AndroidApp
     {
         private Button btnLogin, btnUyeOl;
         private EditText txtTC, txtPass;
-        ILoginService loginService;
-
+        ILoginService loginService; //login servisim
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            //bu satırı servisi kullanabilmek için yazıyoruz.
             loginService = Business.IOCUtil.Container.Resolve<ILoginService>();
 
             btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
