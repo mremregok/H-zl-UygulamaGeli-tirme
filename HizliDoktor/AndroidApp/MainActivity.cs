@@ -42,7 +42,7 @@ namespace AndroidApp
 
         private void BtnLogin_Click(object sender, System.EventArgs e)
         {
-            bool isLoggedIn = loginService.Login("tc", "pass");
+            bool isLoggedIn = loginService.GirisYap(txtTC.Text, txtPass.Text);
 
             if (isLoggedIn)
             {

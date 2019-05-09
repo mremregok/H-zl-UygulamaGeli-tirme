@@ -8,14 +8,13 @@ namespace DataAccess.Concrete
 {
     public class SqlContext : DbContext
     {
-        public DbSet<Admin> Adminler { get; set; }
-        public DbSet<Bolum> Bolumler { get; set; }
-        public DbSet<Doktor> Doktorlar { get; set; }
-        public DbSet<Hasta> Hastalar { get; set; }
+        public DbSet<Admin>   Adminler { get; set; }
+        public DbSet<Bolum>   Bolumler { get; set; }
+        public DbSet<Doktor>  Doktorlar { get; set; }
+        public DbSet<Hasta>   Hastalar { get; set; }
         public DbSet<Hastane> Hastaneler { get; set; }
-        public DbSet<Odeme> Odemeler { get; set; }
         public DbSet<Randevu> Randevular { get; set; }
-        public DbSet<Rapor> Raporlar { get; set; }
+        public DbSet<Favori>  Favoriler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
