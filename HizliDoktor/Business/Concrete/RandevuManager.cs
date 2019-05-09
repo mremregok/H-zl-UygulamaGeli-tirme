@@ -20,8 +20,6 @@ namespace Business.Concrete
 
         public bool Ekle(Randevu randevu)
         {
-            //sorgulamaları yap
-
             List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == randevu.DoktorId);
 
             bool zatenVar = randevular.Exists(x => x.Tarih == randevu.Tarih);
@@ -62,25 +60,29 @@ namespace Business.Concrete
             return randevular;
         }
 
-        public List<DateTime> MusaitTarihleriGetir(int doktorId)
+        public List<DateTime> MusaitTarihleriGetir(int doktorId, DateTime gun)
         {
             List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
 
             List<DateTime> musaitTarihler = new List<DateTime>();
 
-            //totalde 8 saat çalışılacak, her randevu 30 dakika
-            for (int i = 0; i < 16; i++)
+            //totalde 9 saat çalışılacak, her randevu 30 dakika
+            for (int i = 0; i < 18; i++)
             {
-
+                DateTime dateTime = gun;
+                dateTime.AddMinutes(30);
+                musaitTarihler.Add(dateTime);
             }
 
+            //musait tarihlerden randevu olan tarihleri çıkartalım.
             foreach (Randevu randevu in randevular)
             {
+                DateTime varOlanRandevu = musaitTarihler.SingleOrDefault(x => x == randevu.Tarih);
 
+                if (varOlanRandevu != null) musaitTarihler.Remove(varOlanRandevu);
             }
 
             return musaitTarihler;
-
         }
     }
 }
