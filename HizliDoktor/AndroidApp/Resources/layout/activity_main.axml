@@ -53,7 +53,7 @@
 		android:layout_below="@id/btnLogin"
 		android:layout_marginTop="20dp"
 		android:text="ÜYE OL"
-		android:background="#03dac6"
+		android:background="#3700b3"
 		android:textColor="@android:color/white"
 	/>
 
