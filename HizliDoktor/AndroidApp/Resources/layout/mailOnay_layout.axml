@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/lblMailDogrulama"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Mail Doğrulama"
+		android:textAlignment="center"
+	/>
 
-</LinearLayout>
+	<EditText
+		android:id="@+id/txtKod"
+		android:inputType="number"
+		android:layout_width="150dp"
+		android:layout_height="50dp"
+		android:background="#9e9e9e"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+	/>
+	<Button
+		android:id="@+id/btnDogrula"
+		android:text="Doğrula"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+		android:layout_below="@id/txtKod"
+	/>
+	
+	<ImageButton
+		android:src="@drawable/refresh"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/txtKod"
+		android:id="@+id/btnImg"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+		android:nestedScrollingEnabled="false" 
+	/>
+
+</RelativeLayout>
