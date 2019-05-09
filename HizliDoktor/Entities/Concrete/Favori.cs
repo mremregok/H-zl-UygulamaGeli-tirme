@@ -5,11 +5,12 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Odeme : IEntity
+    public class Favori: IEntity
     {
         public int Id { get; set; }
         public int DoktorId { get; set; }
-        public decimal Tutar { get; set; }
-        public DateTime? Tarih { get; set; }
+        public int DoktorAdı { get; set; }
+        public int HastaId { get; set; }
+        public DateTime? OlusturulmaTarihi { get; set; }
     }
 }

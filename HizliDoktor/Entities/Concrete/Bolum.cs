@@ -8,7 +8,7 @@ namespace Entities.Concrete
     public class Bolum : IEntity
     {
         public int Id { get; set; }
-        public string Adi { get; set; }
+        public string Ad { get; set; }
         public int HastaneId { get; set; }
     }
 }
