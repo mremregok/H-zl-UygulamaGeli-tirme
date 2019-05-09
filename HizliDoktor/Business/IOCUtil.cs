@@ -18,7 +18,14 @@ namespace Business
             var builder = new ContainerBuilder();
 
             builder.RegisterType<BolumDal>().As<IBolumDal>();
+            builder.RegisterType<DoktorDal>().As<IDoktorDal>();
+            builder.RegisterType<HastaDal>().As<IHastaDal>();
+            builder.RegisterType<HastaneDal>().As<IHastaneDal>();
+            builder.RegisterType<RandevuDal>().As<IRandevuDal>();
+
             builder.RegisterType<BolumManager>().As<IBolumService>();
+            builder.RegisterType<LoginManager>().As<ILoginService>();
+            builder.RegisterType<RandevuManager>().As<IRandevuService>();
 
             Container = builder.Build();
         }

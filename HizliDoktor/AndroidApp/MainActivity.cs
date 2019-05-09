@@ -6,6 +6,7 @@ using Android.Widget;
 using Autofac;//servisi kullanabilmek için
 using Business.Abstract;//servisi kullanabilmek için
 using Android.Content;
+using Android.Views.InputMethods;
 
 namespace AndroidApp
 {
@@ -45,6 +46,8 @@ namespace AndroidApp
 
         private void BtnLogin_Click(object sender, System.EventArgs e)
         {
+            KlavyeGizle();
+
             bool isLoggedIn = loginService.GirisYap(txtTC.Text, txtPass.Text, rbYonetici.Checked);
 
             if (isLoggedIn)
@@ -72,8 +75,14 @@ namespace AndroidApp
             }
             else
             {
-                Toast.MakeText(Application.Context, "Giriş yapılamadı. Lütfen bilgilerinizi kontrol edin.", ToastLength.Long);
+                Toast.MakeText(Application.Context, "Giriş yapılamadı. Lütfen bilgilerinizi kontrol edin.", ToastLength.Long).Show();
             }
+        }
+
+        private void KlavyeGizle()
+        {
+            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
         }
     }
 }
