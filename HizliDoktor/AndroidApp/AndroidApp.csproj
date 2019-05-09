@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
-    <Compile Include="DoktorAnaSayfaActivity.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="RandevuActivity.cs" />
+    <Compile Include="DoktorProfilimActivity.cs" />
+    <Compile Include="GirisYapActivity.cs" />
+    <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UyeOlActivity.cs" />
@@ -113,7 +113,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\randevu_layout.axml">
+    <AndroidResource Include="Resources\layout\randevuAl_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -133,7 +133,13 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Menu\menu.xml" />
+    <AndroidResource Include="Resources\Menu\hastaMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\adminMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\doktorMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

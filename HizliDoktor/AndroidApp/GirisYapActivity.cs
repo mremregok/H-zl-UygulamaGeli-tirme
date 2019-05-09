@@ -11,7 +11,7 @@ using Android.Views.InputMethods;
 namespace AndroidApp
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class GirisYapActivity : AppCompatActivity
     {
         private Button btnLogin, btnUyeOl;
         private EditText txtTC, txtPass;
@@ -61,14 +61,14 @@ namespace AndroidApp
                 else if (rbYonetici.Checked)
                 {
                     //doktor activity çağır
-                    var intent = new Intent(this, typeof(DoktorAnaSayfaActivity));
+                    var intent = new Intent(this, typeof(DoktorProfilimActivity));
                     intent.PutExtra("tc", txtTC.Text);
                     StartActivity(intent);
                 }
                 else
                 {
                     //randevu alma activity çağır
-                    var intent = new Intent(this, typeof(RandevuActivity));
+                    var intent = new Intent(this, typeof(RandevuAlActivity));
                     intent.PutExtra("tc", txtTC.Text);
                     StartActivity(intent);
                 }
