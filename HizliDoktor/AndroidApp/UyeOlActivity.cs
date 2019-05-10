@@ -61,6 +61,7 @@ namespace AndroidApp
             hasta.Ad = txtAd.Text;
             hasta.Soyad = txtSoyad.Text;
             hasta.TC = txtTC.Text;
+            hasta.Sifre = txtPass.Text;
             hasta.DogumTarihi = Convert.ToDateTime(txtDate.Text);
             hasta.Mail = txtMail.Text;
 
@@ -70,7 +71,7 @@ namespace AndroidApp
             }
             else hasta.Cinsiyet = 0;
 
-            //hasta.isMailVerified = false;
+            //hasta.IsMailVerified = false;
             bool isRegistered = loginService.UyeOl(hasta);
 
             if (isRegistered)
