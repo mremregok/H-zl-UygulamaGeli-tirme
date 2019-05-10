@@ -20,7 +20,9 @@ namespace AndroidApp
     {
         IHastaService hastaService;
 
-        private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet, hastaAciklama, hastaDogumTarihi;
+        Hasta hasta = new Hasta();
+
+        private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
 
         private GridView hastaGecmisRandevular;
 
@@ -45,16 +47,23 @@ namespace AndroidApp
 
             hastaCinsiyet = FindViewById<TextView>(Resource.Id.lblHastaCinsiyet);
 
-            hastaAciklama = FindViewById<TextView>(Resource.Id.lblHastaAciklama);
-
             hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
 
             hastaGecmisRandevular = FindViewById<GridView>(Resource.Id.gridGecmisRandevular);
 
             hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
 
+            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
 
+            hastaTCKN.Text += hasta.TC;
 
+            hastaAd.Text += hasta.Ad;
+
+            hastaSoyad.Text += hasta.Soyad;
+
+            hastaCinsiyet.Text += hasta.Cinsiyet;
+
+            hastaDogumTarihi.Text += hasta.DogumTarihi;
         }
     }
 }
