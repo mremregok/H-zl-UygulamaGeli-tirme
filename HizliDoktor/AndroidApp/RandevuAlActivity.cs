@@ -32,7 +32,7 @@ namespace AndroidApp
         private List<Hastane> hastaneler;
         private List<Bolum> bolumler;
         private List<Doktor> doktorlar;
-        private DateTime seciliTarih = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
+        private DateTime seciliTarih = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 8, 0, 0);
 
         public RandevuAlActivity()
         {
@@ -86,7 +86,7 @@ namespace AndroidApp
 
         private void BtnOncekiGun_Click(object sender, EventArgs e)
         {
-            if (seciliTarih.Day - 1 <= DateTime.Now.Day) btnOncekiGun.Enabled = false;
+            if (seciliTarih.Day - 1 <= DateTime.Now.Day + 1) btnOncekiGun.Enabled = false;
 
             seciliTarih = seciliTarih.AddDays(-1);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
