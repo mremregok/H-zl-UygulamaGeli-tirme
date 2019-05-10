@@ -57,6 +57,29 @@ namespace AndroidApp
 
         private void BtnUyeOl_Click(object sender, EventArgs e)
         {
+            
+            if (txtAd.Text == null || txtSoyad.Text == null || txtTC.Text == null || txtPass.Text ==null || txtDate.Text == null || txtMail == null)
+            {
+                Toast.MakeText(Application.Context, "Üyelik oluşturulamadı. Lütfen bilgilerin tamamını doldurduğunuzdan emin olun.", ToastLength.Long).Show();
+                return;
+            }
+
+            if (txtTC.Text.Length < 11)
+            {
+                Toast.MakeText(Application.Context, "TC kimlik no 11 hane az olamaz.", ToastLength.Long).Show();
+                return;
+            }
+
+            if (txtPass.Text.Length < 6)
+            {
+                Toast.MakeText(Application.Context, "Oluşturulan şifre 6 karakterden az olamaz.", ToastLength.Long).Show();
+                return;
+            }
+            if (!txtMail.Text.Contains('@'))
+            {
+                Toast.MakeText(Application.Context, "Hatalı mail adresi girdiniz.", ToastLength.Long).Show();
+                return;
+            }
             Hasta hasta = new Hasta();
             hasta.Ad = txtAd.Text;
             hasta.Soyad = txtSoyad.Text;
@@ -76,11 +99,11 @@ namespace AndroidApp
 
             if (isRegistered)
             {
-                //loginService.SendVerificationMail(txtMail.Text);
                 var intent = new Intent(this, typeof(MailOnayActivity));
                 intent.PutExtra("mail", txtMail.Text);
                 StartActivity(intent);
             }
+           
         }
 
         public class DatePickerFragment : DialogFragment, DatePickerDialog.IOnDateSetListener
@@ -98,7 +121,10 @@ namespace AndroidApp
             public override Dialog OnCreateDialog(Bundle savedInstanceState)
             {
                 DateTime currently = DateTime.Now;
-                DatePickerDialog dialog = new DatePickerDialog(Activity, this, currently.Year, currently.Month, currently.Day);
+                DatePickerDialog dialog = new DatePickerDialog(Activity, this, currently.Year, currently.Month - 1, currently.Day);
+
+                dialog.DatePicker.MaxDate = (long)(DateTime.Now.Date - new DateTime(1970, 1, 2)).TotalMilliseconds + 1000 * 60 * 60 * 24;
+                dialog.DatePicker.MinDate = 1970;
                 return dialog;
             }
             public void OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
