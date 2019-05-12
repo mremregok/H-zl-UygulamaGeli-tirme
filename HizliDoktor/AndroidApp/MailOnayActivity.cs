@@ -22,6 +22,8 @@ namespace AndroidApp
         private EditText txtKod;
         private ImageButton btnImg;
         ILoginService loginService;
+        private string dogrulamaKodu;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -36,17 +38,27 @@ namespace AndroidApp
             btnDogrula.Click += BtnDogrula_Click;
             btnImg.Click += BtnImg_Click;
 
-
+            dogrulamaKodu = loginService.DogrulamaMailiGonder("mail");
         }
 
         private void BtnImg_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            dogrulamaKodu = loginService.DogrulamaMailiGonder("mail");
         }
 
         private void BtnDogrula_Click(object sender, EventArgs e)
         {
+            bool mailDogrulandi = loginService.MailDogrula("mail", dogrulamaKodu, txtKod.Text);
+            if(mailDogrulandi)
+            {
+                var intent = new Intent(this, typeof(GirisYapActivity));
+                StartActivity(intent);
+            }
 
+            else
+            {
+                Toast.MakeText(Application.Context, "Girilen kod yanlış. Lütfen kodunuzu kontrol edin.", ToastLength.Long).Show();
+            }
         }
     }
 }
