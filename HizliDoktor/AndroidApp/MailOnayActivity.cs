@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using Autofac;
 using Business.Abstract;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
@@ -22,6 +23,7 @@ namespace AndroidApp
         private EditText txtKod;
         private ImageButton btnImg;
         ILoginService loginService;
+        IHastaService hastaService;
         private string dogrulamaKodu;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -30,6 +32,7 @@ namespace AndroidApp
             SetContentView(Resource.Layout.mailOnay_layout);
 
             loginService = Business.IOCUtil.Container.Resolve<ILoginService>();
+            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
 
             btnDogrula = FindViewById<Button>(Resource.Id.btnDogrula);
             txtKod = FindViewById<EditText>(Resource.Id.txtKod);
@@ -38,23 +41,26 @@ namespace AndroidApp
             btnDogrula.Click += BtnDogrula_Click;
             btnImg.Click += BtnImg_Click;
 
-            dogrulamaKodu = loginService.DogrulamaMailiGonder("mail");
+            dogrulamaKodu = loginService.DogrulamaMailiGonder(Intent.GetStringExtra("mail"));
         }
 
         private void BtnImg_Click(object sender, EventArgs e)
         {
-            dogrulamaKodu = loginService.DogrulamaMailiGonder("mail");
+            txtKod.Text = "";
+            Toast.MakeText(Application.Context, "Yeni kod mail adresinize gönderildi.", ToastLength.Long).Show();
+            dogrulamaKodu = loginService.DogrulamaMailiGonder(Intent.GetStringExtra("mail"));  
         }
 
         private void BtnDogrula_Click(object sender, EventArgs e)
         {
-            bool mailDogrulandi = loginService.MailDogrula("mail", dogrulamaKodu, txtKod.Text);
-            if(mailDogrulandi)
+            string dogrulananTc = loginService.MailDogrula(Intent.GetStringExtra("mail"), dogrulamaKodu, txtKod.Text);
+
+            if(!string.IsNullOrEmpty(dogrulananTc))
             {
-                var intent = new Intent(this, typeof(GirisYapActivity));
+                var intent = new Intent(this, typeof(ProfileActivity));
+                intent.PutExtra("tc", dogrulananTc);
                 StartActivity(intent);
             }
-
             else
             {
                 Toast.MakeText(Application.Context, "Girilen kod yanlış. Lütfen kodunuzu kontrol edin.", ToastLength.Long).Show();

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 
 using Android.App;
@@ -87,14 +89,11 @@ namespace AndroidApp
             hasta.Sifre = txtPass.Text;
             hasta.DogumTarihi = Convert.ToDateTime(txtDate.Text);
             hasta.Mail = txtMail.Text;
+            hasta.IsMailVerified = false;
 
-            if (rbErkek.Checked)
-            {
-                hasta.Cinsiyet = 1;
-            }
+            if (rbErkek.Checked) hasta.Cinsiyet = 1;
             else hasta.Cinsiyet = 0;
 
-            //hasta.IsMailVerified = false;
             bool isRegistered = loginService.UyeOl(hasta);
 
             if (isRegistered)
@@ -103,7 +102,12 @@ namespace AndroidApp
                 intent.PutExtra("mail", txtMail.Text);
                 StartActivity(intent);
             }
-           
+
+            else
+            {
+                Toast.MakeText(Application.Context, "Girilen bilgilere ait üyelik vardır. Lütfen yeni bilgiler giriniz.", ToastLength.Long).Show();
+                return;
+            }
         }
 
         public class DatePickerFragment : DialogFragment, DatePickerDialog.IOnDateSetListener

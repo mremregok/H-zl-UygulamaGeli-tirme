@@ -7,6 +7,7 @@ using Autofac;//servisi kullanabilmek için
 using Business.Abstract;//servisi kullanabilmek için
 using Android.Content;
 using Android.Views.InputMethods;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
@@ -17,6 +18,7 @@ namespace AndroidApp
         private EditText txtTC, txtPass;
         private RadioButton rbVatandas, rbYonetici;
         ILoginService loginService; //login servisim
+        IHastaService hastaService;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,6 +27,7 @@ namespace AndroidApp
 
             //bu satırı servisi kullanabilmek için yazıyoruz.
             loginService = Business.IOCUtil.Container.Resolve<ILoginService>();
+            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
 
             btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
             btnUyeOl = FindViewById<Button>(Resource.Id.btnUyeOl);
@@ -67,10 +70,22 @@ namespace AndroidApp
                 }
                 else
                 {
-                    //randevu alma activity çağır
-                    var intent = new Intent(this, typeof(RandevuAlActivity));
-                    intent.PutExtra("tc", txtTC.Text);
-                    StartActivity(intent);
+                    Hasta hasta = hastaService.Getir(txtTC.Text);
+
+                    if (hasta.IsMailVerified)
+                    {
+                        //randevu alma activity çağır
+                        var intent = new Intent(this, typeof(RandevuAlActivity));
+                        intent.PutExtra("tc", txtTC.Text);
+                        StartActivity(intent);
+                    }
+                    else
+                    {
+                        //mail dogrulama activity çağır
+                        var intent = new Intent(this, typeof(MailOnayActivity));
+                        intent.PutExtra("mail", hasta.Mail);
+                        StartActivity(intent);
+                    }
                 }
             }
             else

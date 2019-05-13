@@ -10,6 +10,6 @@ namespace Business.Abstract
         bool GirisYap(string TC, string sifre, bool yoneticiGirisi);
         bool UyeOl(Hasta hasta);
         string DogrulamaMailiGonder(string mail);
-        bool MailDogrula(string mail, string kod, string girilenKod);
+        string MailDogrula(string mail, string kod, string girilenKod);
     }
 }
