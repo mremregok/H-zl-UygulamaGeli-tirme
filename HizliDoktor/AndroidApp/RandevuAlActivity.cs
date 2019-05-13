@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
 using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
@@ -82,6 +83,7 @@ namespace AndroidApp
             seciliTarih = seciliTarih.AddDays(1);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
             btnOncekiGun.Enabled = true;
+            musaitTarihleriYenile(spinnerDoktorlar.SelectedItemPosition);
         }
 
         private void BtnOncekiGun_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace AndroidApp
 
             seciliTarih = seciliTarih.AddDays(-1);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
+            musaitTarihleriYenile(spinnerDoktorlar.SelectedItemPosition);
         }
 
         private void SpinnerIller_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -155,7 +158,7 @@ namespace AndroidApp
 
         private void SpinnerDoktorlar_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-
+            musaitTarihleriYenile(e.Position);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -164,5 +167,13 @@ namespace AndroidApp
             return true;
         }
 
+        private void musaitTarihleriYenile(int doktorPosition)
+        {
+            Doktor doktor = doktorlar[doktorPosition];
+
+            List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
+            GridViewAdapter gridViewAdapter = new GridViewAdapter(dateTimes, this);
+            gridTarihler.Adapter = gridViewAdapter;
+        }
     }
 }

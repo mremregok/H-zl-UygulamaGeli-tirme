@@ -66,11 +66,12 @@ namespace Business.Concrete
 
             List<DateTime> musaitTarihler = new List<DateTime>();
 
+            DateTime dateTime = gun;
+
             //totalde 9 saat çalışılacak, her randevu 30 dakika
             for (int i = 0; i < 18; i++)
             {
-                DateTime dateTime = gun;
-                dateTime.AddMinutes(30);
+                dateTime = dateTime.AddMinutes(30);
                 musaitTarihler.Add(dateTime);
             }
 
