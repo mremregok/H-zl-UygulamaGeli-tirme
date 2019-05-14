@@ -32,6 +32,12 @@ namespace Business.Concrete
             return doktor;
         }
 
+        public Doktor Getir(string TC)
+        {
+            Doktor doktor = doktorDal.Get(x => x.TC == TC);
+            return doktor;
+        }
+
         public void Guncelle(Doktor doktor)
         {
             doktorDal.Update(doktor);
