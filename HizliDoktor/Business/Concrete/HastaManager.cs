@@ -27,6 +27,12 @@ namespace Business.Concrete
             return hasta;
         }
 
+        public Hasta Getir(int hastaId)
+        {
+            Hasta hasta = hastaDal.Get(x => x.Id == hastaId);
+            return hasta;
+        }
+
         public void Guncelle(Hasta hasta)
         {
             hastaDal.Update(hasta);
