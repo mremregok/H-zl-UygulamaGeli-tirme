@@ -9,6 +9,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
 using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
@@ -18,6 +19,8 @@ namespace AndroidApp
     [Activity(Label = "Doktor Randevularım", Theme = "@style/AppTheme")]
     public class DoktorRandevularimActivity : AppCompatActivity
     {
+        ListView _listView;
+        List<Randevu> _doktorRandevulari;
         IRandevuService randevuService;
         IDoktorService doktorService;
         private TextView txtAdSatir, txtRndSaatSatir, txtRndTarihSatir;
@@ -33,12 +36,17 @@ namespace AndroidApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.doktorRandevularim_layout);
 
-            txtAdSatir = FindViewById<TextView>(Resource.Id.txtAdSatir);
-            txtRndSaatSatir = FindViewById<TextView>(Resource.Id.txtRndSaatSatir);
-            txtRndTarihSatir = FindViewById<TextView>(Resource.Id.txtRndTarihSatir);
-
             Doktor doktor = new Doktor();
-            //List<Randevu> doktorRandevuları = randevuService.DoktorRandevulari()
+            string tc = Intent.GetStringExtra("tc");
+            doktor = doktorService.Getir(tc);
+
+            _listView = FindViewById<ListView> (Resource.Id.customListView);
+            _doktorRandevulari = randevuService.DoktorRandevulari(doktor.Id);
+
+            RandevularimListViewAdapter adapter = new RandevularimListViewAdapter(this, _doktorRandevulari);
+            _listView.Adapter = adapter;
+
+
         }
     }
 }

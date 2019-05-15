@@ -41,18 +41,23 @@
 			android:layout_gravity="right"/>
 	</FrameLayout>
 
-	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/customListView" />
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 		<TextView
-			android:text="Hasta Adı"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtAdSatir"
 			android:layout_gravity="left"/>
 		<TextView
-			android:text="Hasta Adı"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtRndSaatSatir"
@@ -62,5 +67,5 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/txtRndTarihSatir"
   		    android:layout_gravity="right"/>
-	</FrameLayout>
+	</LinearLayout>
 </LinearLayout>
