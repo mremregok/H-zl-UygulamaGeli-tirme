@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/lblGirisYap"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="20dp"
+		android:text="Randevularım"
+		android:textAlignment="center"
+	/>
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:touchscreenBlocksFocus="true"
+		android:background="@drawable/textLines">
+
+		<TextView
+			android:text="Hasta Adı"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtAdSutun"
+			android:layout_gravity="left"/>
+		<TextView
+			android:text="Randevu Saati"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtRndSaatSutun"
+			android:layout_gravity="center"/>
+		<TextView
+			android:text="Randevu Tarihi"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtRndTarihSutun"
+			android:layout_gravity="right"/>
+	</FrameLayout>
+
+	<ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/customListView" />
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtAdSatir"
+			android:layout_gravity="left"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtRndSaatSatir"
+		    android:layout_gravity="center"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtRndTarihSatir"
+  		    android:layout_gravity="right"/>
+	</LinearLayout>
+</LinearLayout>

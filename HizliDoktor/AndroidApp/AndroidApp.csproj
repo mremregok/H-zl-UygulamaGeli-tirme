@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
+    <Compile Include="DoktorRandevularimActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
     <Compile Include="MailOnayActivity.cs" />
     <Compile Include="DoktorProfilimActivity.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="RandevuOnaylaActivity.cs" />
     <Compile Include="Resources\Adapter\GridViewAdapter.cs" />
+    <Compile Include="Resources\Adapter\RandevularimListViewAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UyeOlActivity.cs" />
@@ -157,22 +159,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\refresh.png" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\green_border.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\red_border.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\randevuOnayla_layout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\hastaRandevularim_layout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
