@@ -29,5 +29,26 @@ namespace AndroidApp
             MenuInflater.Inflate(Resource.Menu.doktorMenu, menu);
             return true;
         }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuBtnDoktorProfilim:
+                    {
+                        //aynı sayfa
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorRandevularim:
+                    {
+                        var intent = new Intent(this, typeof(DoktorRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
     }
 }

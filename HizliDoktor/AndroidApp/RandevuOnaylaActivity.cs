@@ -83,6 +83,7 @@ namespace AndroidApp
         private void BtnRandevuOnay_Click(object sender, EventArgs e)
         {
             Randevu randevu = new Randevu();
+
             randevu.BolumId = bolum.Id;
             randevu.HastaneId = hastane.Id;
             randevu.DoktorId = doktor.Id;

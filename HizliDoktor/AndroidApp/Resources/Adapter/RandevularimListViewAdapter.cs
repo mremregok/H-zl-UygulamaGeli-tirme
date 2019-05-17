@@ -17,9 +17,9 @@ namespace AndroidApp.Resources.Adapter
 {
     public class RandevularimListViewAdapter : BaseAdapter<Randevu>
     {
-        Context _context;
-        List<Randevu> _doktorRandevulari;
-        IHastaService hastaService;
+        readonly Context _context;
+        private List<Randevu> _doktorRandevulari;
+        private IHastaService hastaService;
 
         public RandevularimListViewAdapter(Context context, List<Randevu> doktorlar)
         {

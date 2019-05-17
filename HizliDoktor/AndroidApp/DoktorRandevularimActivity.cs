@@ -23,7 +23,7 @@ namespace AndroidApp
         List<Randevu> _doktorRandevulari;
         IRandevuService randevuService;
         IDoktorService doktorService;
-        private TextView txtAdSatir, txtRndSaatSatir, txtRndTarihSatir;
+        //private TextView txtAdSatir, txtRndSaatSatir, txtRndTarihSatir;
 
         public DoktorRandevularimActivity()
         {
