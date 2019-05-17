@@ -28,12 +28,14 @@ namespace AndroidApp
 
         private GridView gridTarihler;
         private Spinner spinnerIller, spinnerIlceler, spinnerHastaneler, spinnerBolumler, spinnerDoktorlar;
-        private Button btnOncekiGun, btnSonrakiGun;
+        private Button btnOncekiGun, btnSonrakiGun, btnRandevuKaydet;
         private TextView lblSeciliTarih;
         private List<Hastane> hastaneler;
         private List<Bolum> bolumler;
         private List<Doktor> doktorlar;
         private DateTime seciliTarih = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 8, 0, 0);
+        private GridViewAdapter timeAdapter;
+        private Hasta hasta;
 
         public RandevuAlActivity()
         {
@@ -59,9 +61,11 @@ namespace AndroidApp
             spinnerBolumler   = FindViewById<Spinner>(Resource.Id.spinnerBolumler);
             spinnerDoktorlar  = FindViewById<Spinner>(Resource.Id.spinnerDoktorlar);
 
-            btnOncekiGun   = FindViewById<Button>(Resource.Id.btnOncekiGun);
-            btnSonrakiGun  = FindViewById<Button>(Resource.Id.btnSonrakiGun);
-            lblSeciliTarih = FindViewById<TextView>(Resource.Id.lblSeciliTarih);
+            btnOncekiGun     = FindViewById<Button>(Resource.Id.btnOncekiGun);
+            btnSonrakiGun    = FindViewById<Button>(Resource.Id.btnSonrakiGun);
+            btnRandevuKaydet = FindViewById<Button>(Resource.Id.btnRandevuKaydet);
+
+            lblSeciliTarih   = FindViewById<TextView>(Resource.Id.lblSeciliTarih);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
 
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIller);
@@ -76,6 +80,28 @@ namespace AndroidApp
 
             btnOncekiGun.Click += BtnOncekiGun_Click;
             btnSonrakiGun.Click += BtnSonrakiGun_Click;
+            btnRandevuKaydet.Click += BtnRandevuKaydet_Click;
+
+            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
+        }
+
+        private void BtnRandevuKaydet_Click(object sender, EventArgs e)
+        {
+            if (spinnerDoktorlar.SelectedItem != null)
+            {
+                DateTime time = timeAdapter.GetSelectedTime();
+                if (time.Day == 0) return;
+
+                DateTime randevuTarihi = new DateTime(seciliTarih.Year, seciliTarih.Month, seciliTarih.Day, time.Hour, time.Minute, time.Second);
+
+                var intent = new Intent(this, typeof(RandevuOnaylaActivity));
+                intent.PutExtra("randevuTarihi", randevuTarihi.ToString());
+                intent.PutExtra("hastaneId", hastaneler[spinnerHastaneler.SelectedItemPosition].Id);
+                intent.PutExtra("bolumId", bolumler[spinnerBolumler.SelectedItemPosition].Id);
+                intent.PutExtra("doktorId", doktorlar[spinnerDoktorlar.SelectedItemPosition].Id);
+                intent.PutExtra("hastaTc", hasta.TC);
+                StartActivity(intent);
+            }
         }
 
         private void BtnSonrakiGun_Click(object sender, EventArgs e)
@@ -102,6 +128,9 @@ namespace AndroidApp
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIlceler);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerIlceler.Adapter = adapter;
+            spinnerHastaneler.Adapter = null;
+            spinnerBolumler.Adapter = null;
+            spinnerDoktorlar.Adapter = null;
         }
 
         private void SpinnerIlceler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -118,6 +147,8 @@ namespace AndroidApp
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneAdlari);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerHastaneler.Adapter = adapter;
+            spinnerBolumler.Adapter = null;
+            spinnerDoktorlar.Adapter = null;
         }
 
         private void SpinnerHastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -136,6 +167,7 @@ namespace AndroidApp
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, bolumAdlari);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerBolumler.Adapter = adapter;
+            spinnerDoktorlar.Adapter = null;
         }
 
         private void SpinnerBolumler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -172,8 +204,8 @@ namespace AndroidApp
             Doktor doktor = doktorlar[doktorPosition];
 
             List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
-            GridViewAdapter gridViewAdapter = new GridViewAdapter(dateTimes, this);
-            gridTarihler.Adapter = gridViewAdapter;
+            timeAdapter = new GridViewAdapter(dateTimes, this);
+            gridTarihler.Adapter = timeAdapter;
         }
     }
 }

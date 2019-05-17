@@ -18,6 +18,8 @@ namespace AndroidApp.Resources.Adapter
     {
         public override int Count => listDates.Count;
 
+        private Button tempBtn;
+        public string selectedTime;
         List<DateTime> listDates;
         Context context;
 
@@ -44,10 +46,11 @@ namespace AndroidApp.Resources.Adapter
             if (convertView == null)
             {
                 button = new Button(context);
-                button.LayoutParameters = new ViewGroup.LayoutParams(140, 60);
+                button.LayoutParameters = new ViewGroup.LayoutParams(140, 100);
                 button.SetPadding(8, 8, 8, 8);
-                button.SetBackgroundColor(Color.Gray);
-                button.SetTextColor(Color.Green);
+                button.TextSize = 14;
+                button.SetBackgroundColor(Color.ParseColor("#80e27e"));
+                button.SetTextColor(Color.ParseColor("#ffffff"));
                 button.Text = listDates[position].ToShortTimeString();
                 button.Click += Button_Click;
             }
@@ -60,7 +63,30 @@ namespace AndroidApp.Resources.Adapter
         {
             Button button = (Button)sender;
 
-            Toast.MakeText(context, button.Text, ToastLength.Long).Show();
+            if (tempBtn != null)
+            {
+                tempBtn.SetBackgroundColor(Color.ParseColor("#80e27e"));
+                selectedTime = string.Empty;
+            }
+
+            if (tempBtn == button)
+            {
+                tempBtn.SetBackgroundColor(Color.ParseColor("#80e27e"));
+                tempBtn = null;
+                selectedTime = string.Empty;
+            }
+            else
+            {
+                button.SetBackgroundColor(Color.ParseColor("#b2dfdb"));
+                tempBtn = button;
+                selectedTime = button.Text;
+            }
+        }
+
+        public DateTime GetSelectedTime()
+        {
+            if (string.IsNullOrEmpty(selectedTime)) return new DateTime();
+            return listDates.SingleOrDefault(x => x.ToShortTimeString() == selectedTime);
         }
     }
 }

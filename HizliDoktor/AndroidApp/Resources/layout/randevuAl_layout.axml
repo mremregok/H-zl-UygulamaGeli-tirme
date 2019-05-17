@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
 
 	<FrameLayout
 		android:orientation="horizontal"
@@ -26,7 +27,6 @@
 			android:text="Bir ilçe seçin"
 			android:layout_gravity="right"
 		/>
-
 	</FrameLayout>
 
 	<FrameLayout
@@ -54,57 +54,57 @@
 
 
 	<TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
 		android:layout_marginHorizontal="10dp"
-        android:text="Bir hastane seçin"
-    />
+		android:text="Bir hastane seçin"
+	/>
 
-    <Spinner
-        android:id="@+id/spinnerHastaneler"
-        android:layout_width="fill_parent"
+	<Spinner
+		android:id="@+id/spinnerHastaneler"
+		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
-    />
+	/>
 
 	<TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
 		android:layout_marginHorizontal="10dp"
-        android:text="Bir bölüm seçin"
-    />
+		android:text="Bir bölüm seçin"
+	/>
 
-    <Spinner
-        android:id="@+id/spinnerBolumler"
-        android:layout_width="fill_parent"
+	<Spinner
+		android:id="@+id/spinnerBolumler"
+		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
-    />
+	/>
 
 	<TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
 		android:layout_marginHorizontal="10dp"
-        android:text="Bir doktor seçin"
-    />
+		android:text="Bir doktor seçin"
+	/>
 
-    <Spinner
-        android:id="@+id/spinnerDoktorlar"
-        android:layout_width="fill_parent"
+	<Spinner
+		android:id="@+id/spinnerDoktorlar"
+		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
-    />
+	/>
 
 	<TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
 		android:layout_marginHorizontal="10dp"
-        android:text="Bir tarih seçin"
-    />
+		android:text="Bir tarih seçin"
+	/>
 
 	<FrameLayout
 		android:orientation="horizontal"
@@ -134,7 +134,6 @@
 			android:text="@string/sonraki"
 			android:layout_gravity="right"
 		/>
-
 	</FrameLayout>
 
 	<GridView
@@ -142,11 +141,17 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:columnWidth="30dp"
-		android:numColumns="auto_fit"
-		android:verticalSpacing="4dp"
-		android:horizontalSpacing="40dp"
+		android:numColumns="5"
+		android:verticalSpacing="10dp"
+		android:horizontalSpacing="30dp"
 		android:stretchMode="columnWidth"
-		android:gravity="center"
-		android:layout_marginHorizontal="10dp"
+	/>
+
+	<Button
+		android:id="@+id/btnRandevuKaydet"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:text="RANDEVUYU KAYDET"
+		android:layout_marginTop="10dp"
 	/>
 </LinearLayout>

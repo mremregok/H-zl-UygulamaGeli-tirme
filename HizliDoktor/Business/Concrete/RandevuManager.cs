@@ -68,8 +68,8 @@ namespace Business.Concrete
 
             DateTime dateTime = gun;
 
-            //totalde 10 saat çalışılacak, her randevu 20 dakika
-            for (int i = 0; i < 30; i++)
+            //totalde 9 saat çalışılacak, her randevu 30 dakika
+            for (int i = 0; i < 18; i++)
             {
                 dateTime = dateTime.AddMinutes(20);
                 musaitTarihler.Add(dateTime);

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<TextView
+		android:text="İl:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayIl"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="İlçe:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayIlce"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Hastane:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayHastane"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Bölüm:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayBolum"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Doktor:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayDoktor"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Randevu Tarihi:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtRandOnayTarih"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<Button
+		android:id="@+id/btnRandevuOnay"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:text="RANDEVUYU ONAYLA"
+		android:layout_marginTop="10dp"
+		android:background="#6200ee"
+		android:textColor="@android:color/white"
+		android:layout_marginHorizontal="10dp"
+	/>
+
+	<Button
+		android:id="@+id/btnRandevuIptal"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:text="IPTAL"
+		android:layout_marginTop="10dp"
+		android:background="#8e0000"
+		android:textColor="@android:color/white"
+		android:layout_marginHorizontal="10dp"
+	/>
+
+</LinearLayout>
