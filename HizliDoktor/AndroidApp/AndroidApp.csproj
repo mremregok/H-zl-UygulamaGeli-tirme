@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
     <Compile Include="DoktorRandevularimActivity.cs" />
+    <Compile Include="DoktorSifreDegistirActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
     <Compile Include="MailOnayActivity.cs" />
     <Compile Include="DoktorProfilimActivity.cs" />
@@ -176,6 +177,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\textLines.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\DoktorSifreDegistir_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

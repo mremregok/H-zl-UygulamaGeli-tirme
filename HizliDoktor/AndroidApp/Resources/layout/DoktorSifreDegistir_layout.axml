@@ -4,54 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
 	<TextView
-		android:id="@+id/lblDoktorAnasayfa"
+		android:id="@+id/lblSifreDegistir"
 		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="10dp"
-		android:text="DOKTOR ANASAYFA "
+		android:text="ŞİFRE DEĞİŞTİR   "
 		android:textAlignment="center"
 	/>
 
-	<TextView
-		android:id="@+id/lblHoşgeldiniz"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+	<EditText
+		android:id="@+id/txtDoktorEskiSifre"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
-		android:text=""
-		android:textAlignment="center"
+		android:layout_marginTop="10dp"
+		android:hint="Eski Şifreniz"
+		android:ems="10"
+		android:maxLength="20"
+	/>
+
+	<EditText
+		android:id="@+id/txtDoktorYeniSifre"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Yeni Şifreniz"
+		android:ems="10"
+		android:maxLength="20"
+	/>
+
+	<EditText
+		android:id="@+id/txtDoktorSifreOnay"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Yeni Şifreyi Tekrar giriniz"
+		android:ems="10"
+		android:maxLength="20"
 	/>
 
 	<Button
-		android:id="@+id/btnSifreDegistir"
+		android:id="@+id/btnDoktorSifreGuncelle"
 		android:layout_width="match_parent"
-		android:layout_marginLeft="10dp"
-		android:layout_height="wrap_content"
-		android:layout_centerHorizontal="true"
-		android:layout_marginTop="40dp"
-		android:text="Şifre Değiştir"
-		android:background="#3700b3"
-		android:textColor="@android:color/white"
-	/>
-
-	<Button
-		android:id="@+id/btnUyeOl"
-		android:layout_width="match_parent"
-		android:layout_marginLeft="10dp"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="20dp"
-		android:text="RANDEVULARIMI GÖRÜNTÜLE"
+		android:text="Şifreyi Güncelle"
 		android:background="#3700b3"
 		android:textColor="@android:color/white"
 	/>
-
-
-
-
-
 
 
 

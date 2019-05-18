@@ -46,6 +46,13 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
+                case Resource.Id.menuBtnDoktorSifreDegistir:
+                    {
+                        var intent = new Intent(this, typeof(DoktorSifreDegistirActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
             }
 
             return base.OnOptionsItemSelected(item);
