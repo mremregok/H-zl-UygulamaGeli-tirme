@@ -15,7 +15,7 @@
   <item
     android:id="@+id/menuBtnHastaRandevuListele"
     android:orderInCategory="3"
-    android:title="Geçmiş Randevularım"
+    android:title="Randevularım"
     app:showAsAction="never" />
 
   <item

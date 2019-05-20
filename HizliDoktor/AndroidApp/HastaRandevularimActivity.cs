@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Geçmiş Randevularım", Theme = "@style/AppTheme")]
+    [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
     public class HastaRandevularimActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
