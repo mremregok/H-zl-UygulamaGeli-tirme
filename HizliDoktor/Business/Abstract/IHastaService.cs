@@ -12,5 +12,6 @@ namespace Business.Abstract
         void Guncelle(Hasta hasta);
         Hasta Getir(string TC);
         Hasta Getir(int hastaId);
+        bool RandevuVarMi(int hastaId, int doktorId, DateTime tarih);
     }
 }

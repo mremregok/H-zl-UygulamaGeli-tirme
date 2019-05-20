@@ -14,7 +14,7 @@ using Java.Lang;
 
 namespace AndroidApp.Resources.Adapter
 {
-    public class GridViewAdapter : BaseAdapter
+    public class RandevuAlGridViewAdapter : BaseAdapter
     {
         public override int Count => listDates.Count;
 
@@ -23,7 +23,7 @@ namespace AndroidApp.Resources.Adapter
         List<DateTime> listDates;
         Context context;
 
-        public GridViewAdapter(List<DateTime> _list, Context _context)
+        public RandevuAlGridViewAdapter(List<DateTime> _list, Context _context)
         {
             listDates = _list;
             context = _context;
@@ -45,14 +45,28 @@ namespace AndroidApp.Resources.Adapter
 
             if (convertView == null)
             {
-                button = new Button(context);
-                button.LayoutParameters = new ViewGroup.LayoutParams(140, 100);
-                button.SetPadding(8, 8, 8, 8);
-                button.TextSize = 14;
-                button.SetBackgroundColor(Color.ParseColor("#80e27e"));
-                button.SetTextColor(Color.ParseColor("#ffffff"));
-                button.Text = listDates[position].ToShortTimeString();
-                button.Click += Button_Click;
+                if (listDates[position].Second == 13)
+                {
+                    button = new Button(context);
+                    button.LayoutParameters = new ViewGroup.LayoutParams(140, 100);
+                    button.SetPadding(8, 8, 8, 8);
+                    button.TextSize = 14;
+                    button.SetBackgroundColor(Color.ParseColor("#8e0000"));
+                    button.SetTextColor(Color.ParseColor("#ffffff"));
+                    button.Text = listDates[position].ToShortTimeString();
+                    button.Enabled = false;
+                }
+                else if(listDates[position].Second == 0)
+                {
+                    button = new Button(context);
+                    button.LayoutParameters = new ViewGroup.LayoutParams(140, 100);
+                    button.SetPadding(8, 8, 8, 8);
+                    button.TextSize = 14;
+                    button.SetBackgroundColor(Color.ParseColor("#80e27e"));
+                    button.SetTextColor(Color.ParseColor("#ffffff"));
+                    button.Text = listDates[position].ToShortTimeString();
+                    button.Click += Button_Click;
+                }
             }
             else button = (Button)convertView;
 

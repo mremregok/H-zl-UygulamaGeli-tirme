@@ -57,16 +57,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
+    <Compile Include="BolumEkleActivity.cs" />
+    <Compile Include="DoktorEkleActivity.cs" />
     <Compile Include="DoktorRandevularimActivity.cs" />
     <Compile Include="DoktorSifreDegistirActivity.cs" />
+    <Compile Include="HastaFavoriDoktorlarimActivity.cs" />
+    <Compile Include="HastaneEkleActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
     <Compile Include="MailOnayActivity.cs" />
     <Compile Include="DoktorProfilimActivity.cs" />
     <Compile Include="GirisYapActivity.cs" />
-    <Compile Include="ProfileActivity.cs" />
+    <Compile Include="HastaProfilimActivity.cs" />
     <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="RandevuOnaylaActivity.cs" />
-    <Compile Include="Resources\Adapter\GridViewAdapter.cs" />
+    <Compile Include="Resources\Adapter\RandevuAlGridViewAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevularimListViewAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,7 +154,7 @@
     <AndroidResource Include="Resources\Menu\doktorMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\profile_layout.axml" />
+    <AndroidResource Include="Resources\layout\hastaProfilim_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\mailOnay_layout.axml">
@@ -182,6 +186,20 @@
     <AndroidResource Include="Resources\layout\DoktorSifreDegistir_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaFavoriDoktorlarim_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\bolumEkle_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\doktorEkle_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaneEkle_layout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

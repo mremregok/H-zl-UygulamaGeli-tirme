@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,18 +9,62 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Geçmiş Randevularım", Theme = "@style/AppTheme")]
-    public class HastaRandevularimActivity : AppCompatActivity
+    [Activity(Label = "Profilim", Theme = "@style/AppTheme")]
+    public class HastaProfilimActivity : AppCompatActivity
     {
+        IHastaService hastaService;
+
+        Hasta hasta = new Hasta();
+
+        private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
+
+        private GridView hastaGecmisRandevular;
+
+        private Button hastaProfiliGuncelle;
+
+        public HastaProfilimActivity()
+        {
+            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaRandevularim_layout);
+            SetContentView(Resource.Layout.hastaProfilim_layout);
 
             // Create your application here
+
+            hastaAd = FindViewById<TextView>(Resource.Id.lblHastaAdi);
+
+            hastaSoyad = FindViewById<TextView>(Resource.Id.lblHastaSoyadi);
+
+            hastaTCKN = FindViewById<TextView>(Resource.Id.lblHastaTCKN);
+
+            hastaCinsiyet = FindViewById<TextView>(Resource.Id.lblHastaCinsiyet);
+
+            hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
+
+            hastaGecmisRandevular = FindViewById<GridView>(Resource.Id.gridGecmisRandevular);
+
+            hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
+
+            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
+
+            hastaTCKN.Text += hasta.TC;
+
+            hastaAd.Text += hasta.Ad;
+
+            hastaSoyad.Text += hasta.Soyad;
+
+            hastaCinsiyet.Text += hasta.Cinsiyet;
+
+            hastaDogumTarihi.Text += hasta.DogumTarihi;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -36,9 +79,7 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnHastaProfilim:
                     {
-                        var intent = new Intent(this, typeof(HastaProfilimActivity));
-                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
-                        StartActivity(intent); return true;
+                        return true;
                     }
                 case Resource.Id.menuBtnHastaRandevuAl:
                     {
@@ -49,6 +90,9 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnHastaRandevuListele:
                     {
+                        var intent = new Intent(this, typeof(HastaRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaFavorilerim:
@@ -68,6 +112,5 @@ namespace AndroidApp
 
             return base.OnOptionsItemSelected(item);
         }
-
     }
 }

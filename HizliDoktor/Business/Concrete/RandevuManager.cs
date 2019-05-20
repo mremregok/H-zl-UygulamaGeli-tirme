@@ -5,6 +5,8 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 
 namespace Business.Concrete
@@ -68,22 +70,33 @@ namespace Business.Concrete
 
             DateTime dateTime = gun;
 
-            //totalde 9 saat çalışılacak, her randevu 30 dakika
             for (int i = 0; i < 18; i++)
             {
                 dateTime = dateTime.AddMinutes(20);
-                musaitTarihler.Add(dateTime);
-            }
+                DateTime tempDate = dateTime;
 
-            //musait tarihlerden randevu olan tarihleri çıkartalım.
-            foreach (Randevu randevu in randevular)
-            {
-                DateTime varOlanRandevu = musaitTarihler.SingleOrDefault(x => x == randevu.Tarih);
+                if (randevular.SingleOrDefault(x => x.Tarih.Value == dateTime) != null)//eğer randevu zaten varsa
+                    tempDate = dateTime.AddSeconds(13);
 
-                if (varOlanRandevu != null) musaitTarihler.Remove(varOlanRandevu);
+                musaitTarihler.Add(tempDate);
             }
 
             return musaitTarihler;
+        }
+
+        public void RandevuMailiGonder(string hastaMail, string mesaj)
+        {
+            SmtpClient client = new SmtpClient("smtp.live.com", 587);
+            client.UseDefaultCredentials = false;
+            client.EnableSsl = true;
+            client.Credentials = new NetworkCredential("hizlidoktor00@outlook.com", "1236987450Hd.");
+
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("hizlidoktor00@outlook.com");
+            mailMessage.To.Add(hastaMail);
+            mailMessage.Body = mesaj;
+            mailMessage.Subject = "Hızlı Doktor - Randevu bilgileriniz";
+            client.Send(mailMessage);
         }
     }
 }

@@ -145,12 +145,13 @@
 		android:verticalSpacing="10dp"
 		android:horizontalSpacing="30dp"
 		android:stretchMode="columnWidth"
+		android:layout_marginTop="10dp"
 	/>
 
 	<Button
 		android:id="@+id/btnRandevuKaydet"
 		android:layout_width="match_parent"
-		android:layout_height="40dp"
+		android:layout_height="wrap_content"
 		android:text="RANDEVUYU KAYDET"
 		android:layout_marginTop="10dp"
 	/>

@@ -34,7 +34,8 @@ namespace AndroidApp
         private List<Bolum> bolumler;
         private List<Doktor> doktorlar;
         private DateTime seciliTarih = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 8, 0, 0);
-        private GridViewAdapter timeAdapter;
+        private RandevuAlGridViewAdapter timeAdapter;
+        private GridView timeGrid;
         private Hasta hasta;
 
         public RandevuAlActivity()
@@ -51,8 +52,6 @@ namespace AndroidApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.randevuAl_layout);
 
-            List<string> hastaneOlanIller = hastaneService.HastaneOlanIller();
-
             gridTarihler = FindViewById<GridView>(Resource.Id.gridTarihler);
 
             spinnerIller      = FindViewById<Spinner>(Resource.Id.spinnerIller);
@@ -65,12 +64,10 @@ namespace AndroidApp
             btnSonrakiGun    = FindViewById<Button>(Resource.Id.btnSonrakiGun);
             btnRandevuKaydet = FindViewById<Button>(Resource.Id.btnRandevuKaydet);
 
+            timeGrid = FindViewById<GridView>(Resource.Id.gridTarihler);
+
             lblSeciliTarih   = FindViewById<TextView>(Resource.Id.lblSeciliTarih);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
-
-            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIller);
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinnerIller.Adapter = adapter;
 
             spinnerIller.ItemSelected += SpinnerIller_ItemSelected;
             spinnerIlceler.ItemSelected += SpinnerIlceler_ItemSelected;
@@ -85,12 +82,23 @@ namespace AndroidApp
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            List<string> hastaneOlanIller = hastaneService.HastaneOlanIller();
+
+            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneOlanIller);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinnerIller.Adapter = adapter;
+        }
+
         private void BtnRandevuKaydet_Click(object sender, EventArgs e)
         {
             if (spinnerDoktorlar.SelectedItem != null)
             {
                 DateTime time = timeAdapter.GetSelectedTime();
-                if (time.Day == 0) return;
+                if (time.Hour == 0) return;
 
                 DateTime randevuTarihi = new DateTime(seciliTarih.Year, seciliTarih.Month, seciliTarih.Day, time.Hour, time.Minute, time.Second);
 
@@ -107,7 +115,6 @@ namespace AndroidApp
         private void BtnSonrakiGun_Click(object sender, EventArgs e)
         {
             seciliTarih = seciliTarih.AddDays(1);
-            lblSeciliTarih.Text = seciliTarih.ToShortDateString();
             btnOncekiGun.Enabled = true;
             musaitTarihleriYenile(spinnerDoktorlar.SelectedItemPosition);
         }
@@ -117,7 +124,6 @@ namespace AndroidApp
             if (seciliTarih.Day - 1 <= DateTime.Now.Day + 1) btnOncekiGun.Enabled = false;
 
             seciliTarih = seciliTarih.AddDays(-1);
-            lblSeciliTarih.Text = seciliTarih.ToShortDateString();
             musaitTarihleriYenile(spinnerDoktorlar.SelectedItemPosition);
         }
 
@@ -131,6 +137,7 @@ namespace AndroidApp
             spinnerHastaneler.Adapter = null;
             spinnerBolumler.Adapter = null;
             spinnerDoktorlar.Adapter = null;
+            timeGrid.Adapter = null;
         }
 
         private void SpinnerIlceler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -149,6 +156,7 @@ namespace AndroidApp
             spinnerHastaneler.Adapter = adapter;
             spinnerBolumler.Adapter = null;
             spinnerDoktorlar.Adapter = null;
+            timeGrid.Adapter = null;
         }
 
         private void SpinnerHastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -168,6 +176,7 @@ namespace AndroidApp
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerBolumler.Adapter = adapter;
             spinnerDoktorlar.Adapter = null;
+            timeGrid.Adapter = null;
         }
 
         private void SpinnerBolumler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -180,16 +189,18 @@ namespace AndroidApp
 
             foreach (var item in doktorlar)
             {
-                doktorAdlari.Add(item.Ad);
+                doktorAdlari.Add(item.Unvan + " " + item.Ad + " " + item.Soyad);
             }
 
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, doktorAdlari);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerDoktorlar.Adapter = adapter;
+            timeGrid.Adapter = null;
         }
 
         private void SpinnerDoktorlar_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            if (seciliTarih.Day - 1 >= DateTime.Now.Day + 1) btnOncekiGun.Enabled = true;
             musaitTarihleriYenile(e.Position);
         }
 
@@ -199,13 +210,63 @@ namespace AndroidApp
             return true;
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuBtnHastaProfilim:
+                    {
+                        var intent = new Intent(this, typeof(HastaProfilimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent); return true;
+                    }
+                case Resource.Id.menuBtnHastaRandevuAl:
+                    {
+                        return true;
+                    }
+                case Resource.Id.menuBtnHastaRandevuListele:
+                    {
+                        var intent = new Intent(this, typeof(HastaRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnHastaFavorilerim:
+                    {
+                        var intent = new Intent(this, typeof(HastaFavoriDoktorlarimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnHastaCikisYap:
+                    {
+                        var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void musaitTarihleriYenile(int doktorPosition)
         {
             Doktor doktor = doktorlar[doktorPosition];
 
-            List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
-            timeAdapter = new GridViewAdapter(dateTimes, this);
-            gridTarihler.Adapter = timeAdapter;
+            bool randevuVar = hastaService.RandevuVarMi(hasta.Id, doktor.Id, seciliTarih);
+
+            if (randevuVar)
+            {
+                gridTarihler.Adapter = null;
+            }
+            else
+            {
+                List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
+                timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this);
+                gridTarihler.Adapter = timeAdapter;
+            }
+
+            lblSeciliTarih.Text = seciliTarih.ToShortDateString();
         }
     }
 }
