@@ -41,12 +41,14 @@ namespace Business.Concrete
         public List<Randevu> BolumRandevulari(int bolumId)
         {
             List<Randevu> randevular = randevuDal.GetList(x => x.BolumId == bolumId);
+            randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 
         public List<Randevu> DoktorRandevulari(int doktorId)
         {
             List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
+            randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 
@@ -59,6 +61,7 @@ namespace Business.Concrete
         public List<Randevu> TumRandevular(int hastaneId)
         {
             List<Randevu> randevular = randevuDal.GetList(x => x.HastaneId == hastaneId);
+            randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 

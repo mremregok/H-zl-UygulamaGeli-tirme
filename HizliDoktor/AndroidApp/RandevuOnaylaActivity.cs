@@ -103,7 +103,7 @@ namespace AndroidApp
 
             randevuService.RandevuMailiGonder(hasta.Mail, mesaj);
 
-            var intent = new Intent(this, typeof(HastaRandevularimActivity));
+            var intent = new Intent(this, typeof(randevuOnaylandiActivity));
             intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
             StartActivity(intent);
         }

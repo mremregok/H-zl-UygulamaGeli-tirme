@@ -148,6 +148,16 @@
 		android:layout_marginTop="10dp"
 	/>
 
+	<TextView
+		android:id="@+id/lblRandevuVar"
+		android:textAppearance="?android:attr/textAppearance"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Seçili tarih için daha önce bu doktordan randevu aldınız."
+		android:layout_gravity="center"
+		android:visibility="invisible"
+	/>
+
 	<Button
 		android:id="@+id/btnRandevuKaydet"
 		android:layout_width="match_parent"

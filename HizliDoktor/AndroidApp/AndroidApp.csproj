@@ -70,6 +70,7 @@
     <Compile Include="HastaProfilimActivity.cs" />
     <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="RandevuOnaylaActivity.cs" />
+    <Compile Include="randevuOnaylandiActivity.cs" />
     <Compile Include="Resources\Adapter\RandevuAlGridViewAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevularimListViewAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -203,6 +204,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\doktorRandevularimItem_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\randevuOnaylandi_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -29,7 +29,7 @@ namespace AndroidApp
         private GridView gridTarihler;
         private Spinner spinnerIller, spinnerIlceler, spinnerHastaneler, spinnerBolumler, spinnerDoktorlar;
         private Button btnOncekiGun, btnSonrakiGun, btnRandevuKaydet;
-        private TextView lblSeciliTarih;
+        private TextView lblSeciliTarih, lblRandevuVar;
         private List<Hastane> hastaneler;
         private List<Bolum> bolumler;
         private List<Doktor> doktorlar;
@@ -66,6 +66,7 @@ namespace AndroidApp
 
             timeGrid = FindViewById<GridView>(Resource.Id.gridTarihler);
 
+            lblRandevuVar = FindViewById<TextView>(Resource.Id.lblRandevuVar);
             lblSeciliTarih   = FindViewById<TextView>(Resource.Id.lblSeciliTarih);
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
 
@@ -121,7 +122,7 @@ namespace AndroidApp
 
         private void BtnOncekiGun_Click(object sender, EventArgs e)
         {
-            if (seciliTarih.Day - 1 <= DateTime.Now.Day + 1) btnOncekiGun.Enabled = false;
+            if (seciliTarih.AddDays(-1) <= DateTime.Now.AddDays(1)) btnOncekiGun.Enabled = false;
 
             seciliTarih = seciliTarih.AddDays(-1);
             musaitTarihleriYenile(spinnerDoktorlar.SelectedItemPosition);
@@ -200,7 +201,7 @@ namespace AndroidApp
 
         private void SpinnerDoktorlar_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            if (seciliTarih.Day - 1 >= DateTime.Now.Day + 1) btnOncekiGun.Enabled = true;
+            if (seciliTarih.AddDays(-1) >= DateTime.Now.AddDays(1)) btnOncekiGun.Enabled = true;
             musaitTarihleriYenile(e.Position);
         }
 
@@ -258,12 +259,14 @@ namespace AndroidApp
             if (randevuVar)
             {
                 gridTarihler.Adapter = null;
+                lblRandevuVar.Visibility = ViewStates.Visible;
             }
             else
             {
                 List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
                 timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this);
                 gridTarihler.Adapter = timeAdapter;
+                lblRandevuVar.Visibility = ViewStates.Invisible;
             }
 
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();
