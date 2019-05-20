@@ -47,7 +47,7 @@ namespace Business.Concrete
 
         public List<Randevu> DoktorRandevulari(int doktorId)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.Tarih.Value < DateTime.Now.AddMonths(1));
             randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
