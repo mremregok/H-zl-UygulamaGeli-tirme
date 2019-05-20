@@ -47,11 +47,11 @@ namespace AndroidApp.Resources.Adapter
         {
             View satir = convertView;
             if (satir == null)
-                satir = LayoutInflater.From(_context).Inflate(Resource.Layout.doktorRandevularim_layout, null, false);
+                satir = LayoutInflater.From(_context).Inflate(Resource.Layout.doktorRandevularimItem_layout, null, false);
 
             TextView txtAdSatir = satir.FindViewById<TextView>(Resource.Id.txtAdSatir);
             Hasta hasta = hastaService.Getir(_doktorRandevulari[position].HastaId);
-            txtAdSatir.Text = hasta.Ad + hasta.Soyad;
+            txtAdSatir.Text = hasta.Ad + " " + hasta.Soyad;
 
             DateTime tarih = Convert.ToDateTime(_doktorRandevulari[position].Tarih);
             TextView txtRndSaatSatir = satir.FindViewById<TextView>(Resource.Id.txtRndSaatSatir);

@@ -4,16 +4,37 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<TextView
-		android:id="@+id/lblGirisYap"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+
+	<FrameLayout
+		android:orientation="horizontal"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-		android:layout_marginBottom="20dp"
-		android:text="Randevularım"
-		android:textAlignment="center"
-	/>
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/btnOncekiSayfaRandevularim"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/onceki"
+			android:layout_gravity="left"
+			android:enabled="false"
+		/>
+		<TextView
+			android:id="@+id/lblSeciliTarih"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Randevularım"
+			android:layout_gravity="center"
+		/>
+		<Button
+			android:id="@+id/btnSonrakiSayfaRandevularim"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/sonraki"
+			android:layout_gravity="right"
+		/>
+	</FrameLayout>
+
 	<FrameLayout
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
@@ -26,6 +47,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtAdSutun"
+			android:paddingLeft="15dp"
 			android:layout_gravity="left"/>
 		<TextView
 			android:text="Randevu Saati"
@@ -38,6 +60,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtRndTarihSutun"
+			android:paddingRight="15dp"
 			android:layout_gravity="right"/>
 	</FrameLayout>
 
@@ -48,24 +71,5 @@
         android:layout_height="match_parent"
         android:id="@+id/customListView" />
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/txtAdSatir"
-			android:layout_gravity="left"/>
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/txtRndSaatSatir"
-		    android:layout_gravity="center"/>
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/txtRndTarihSatir"
-  		    android:layout_gravity="right"/>
-	</LinearLayout>
+	
 </LinearLayout>

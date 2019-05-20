@@ -23,7 +23,9 @@ namespace AndroidApp
         List<Randevu> _doktorRandevulari;
         IRandevuService randevuService;
         IDoktorService doktorService;
-        //private TextView txtAdSatir, txtRndSaatSatir, txtRndTarihSatir;
+        private Button btnSonrakiSayfaRandevularim, btnOncekiSayfaRandevularim;
+        int startIndex = 0;
+        List<Randevu> tempList = new List<Randevu>();
 
         public DoktorRandevularimActivity()
         {
@@ -40,13 +42,77 @@ namespace AndroidApp
             string tc = Intent.GetStringExtra("tc");
             doktor = doktorService.Getir(tc);
 
-            _listView = FindViewById<ListView> (Resource.Id.customListView);
+            btnOncekiSayfaRandevularim = FindViewById<Button>(Resource.Id.btnOncekiSayfaRandevularim);
+            btnSonrakiSayfaRandevularim = FindViewById<Button>(Resource.Id.btnSonrakiSayfaRandevularim);
+            _listView = FindViewById<ListView>(Resource.Id.customListView);
             _doktorRandevulari = randevuService.DoktorRandevulari(doktor.Id);
+            _doktorRandevulari.Reverse();
 
-            RandevularimListViewAdapter adapter = new RandevularimListViewAdapter(this, _doktorRandevulari);
+            tempList = _doktorRandevulari.Skip(startIndex).Take(3).ToList();
+
+            RandevularimListViewAdapter adapter = new RandevularimListViewAdapter(this, tempList);
             _listView.Adapter = adapter;
 
+            btnOncekiSayfaRandevularim.Click += BtnOncekiSayfaRandevularim_Click;
+            btnSonrakiSayfaRandevularim.Click += BtnSonrakiSayfaRandevularim_Click;
+        }
 
+        private void BtnSonrakiSayfaRandevularim_Click(object sender, EventArgs e)
+        {
+            startIndex += 3;
+            tempList = _doktorRandevulari.Skip(startIndex).Take(3).ToList();
+            
+            RandevularimListViewAdapter adapter = new RandevularimListViewAdapter(this, tempList);
+            _listView.Adapter = adapter;
+
+            if (startIndex != 0) btnOncekiSayfaRandevularim.Enabled = true;
+            if (_doktorRandevulari.Count <= startIndex + 3) btnSonrakiSayfaRandevularim.Enabled = false;
+        }
+
+        private void BtnOncekiSayfaRandevularim_Click(object sender, EventArgs e)
+        {
+            startIndex -= 3;
+            tempList = _doktorRandevulari.Skip(startIndex).Take(3).ToList();
+            
+            RandevularimListViewAdapter adapter = new RandevularimListViewAdapter(this, tempList);
+            _listView.Adapter = adapter;
+
+            if (startIndex <= 0) btnOncekiSayfaRandevularim.Enabled = false;
+            if (_doktorRandevulari.Count > startIndex - 3) btnSonrakiSayfaRandevularim.Enabled = true;
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.doktorMenu, menu);
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuBtnDoktorProfilim:
+                    {
+                        var intent = new Intent(this, typeof(DoktorProfilimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorRandevularim:
+                    {
+                        
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorSifreDegistir:
+                    {
+                        var intent = new Intent(this, typeof(DoktorSifreDegistirActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
     }
 }
