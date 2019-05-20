@@ -8,34 +8,40 @@
   
   <item
     android:id="@+id/menuBtnHastaneEkle"
-    android:orderInCategory="1"
+    android:orderInCategory="2"
     android:title="Hastane Ekle"
     app:showAsAction="never" />
   <item
     android:id="@+id/menuBtnBolumEkle"
-    android:orderInCategory="1"
+    android:orderInCategory="3"
     android:title="Bölüm Ekle"
     app:showAsAction="never" />
   <item
     android:id="@+id/menuBtnDoktorEkle"
-    android:orderInCategory="1"
+    android:orderInCategory="4"
     android:title="Doktor Ekle"
     app:showAsAction="never" />
 
   <item
     android:id="@+id/menuBtnHastaneListele"
-    android:orderInCategory="2"
+    android:orderInCategory="5"
     android:title="Hastaneleri Listele"
     app:showAsAction="never" />
   <item
     android:id="@+id/menuBtnBolumListele"
-    android:orderInCategory="2"
+    android:orderInCategory="6"
     android:title="Bölümleri Listele"
     app:showAsAction="never" />
   <item
     android:id="@+id/menuBtnDoktorListele"
-    android:orderInCategory="2"
+    android:orderInCategory="7"
     android:title="Doktorları Listele"
+    app:showAsAction="never" />
+
+  <item
+    android:id="@+id/menuBtnAdminCikisYap"
+    android:orderInCategory="8"
+    android:title="Çıkış Yap"
     app:showAsAction="never" />
   
 </menu>

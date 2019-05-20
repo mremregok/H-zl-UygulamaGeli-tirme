@@ -13,13 +13,14 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Geçmiş Randevularım", Theme = "@style/AppTheme")]
-    public class HastaRandevularimActivity : AppCompatActivity
+    [Activity(Label = "Favori Doktorlarım", Theme = "@style/AppTheme")]
+    public class HastaFavoriDoktorlarimActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaRandevularim_layout);
+            SetContentView(Resource.Layout.hastaFavoriDoktorlarim_layout);
+
 
             // Create your application here
         }
@@ -49,13 +50,13 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnHastaRandevuListele:
                     {
+                        var intent = new Intent(this, typeof(HastaRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaFavorilerim:
                     {
-                        var intent = new Intent(this, typeof(HastaFavoriDoktorlarimActivity));
-                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
-                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaCikisYap:
@@ -68,6 +69,5 @@ namespace AndroidApp
 
             return base.OnOptionsItemSelected(item);
         }
-
     }
 }

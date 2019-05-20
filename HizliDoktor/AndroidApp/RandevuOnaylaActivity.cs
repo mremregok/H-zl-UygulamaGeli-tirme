@@ -65,17 +65,17 @@ namespace AndroidApp
             hasta   = hastaService.Getir(Intent.GetStringExtra("hastaTc"));
             randevuTarihi = Convert.ToDateTime(Intent.GetStringExtra("randevuTarihi"));
 
-            txtIl.Text = "İl: " + hastane.Il;
-            txtIlce.Text = "İlçe: " + hastane.Ilce;
+            txtIl.Text      = "İl: " + hastane.Il;
+            txtIlce.Text    = "İlçe: " + hastane.Ilce;
             txtHastane.Text = "Hastane: " + hastane.Ad;
-            txtBolum.Text = "Bölüm: " + bolum.Ad;
-            txtDoktor.Text = "Doktor: " + doktor.Ad + " " + doktor.Soyad;
-            txtTarih.Text = "Tarih: " + randevuTarihi.ToLongDateString() + " - " + randevuTarihi.ToShortTimeString();
+            txtBolum.Text   = "Bölüm: " + bolum.Ad;
+            txtDoktor.Text  = "Doktor: " + doktor.Ad + " " + doktor.Soyad;
+            txtTarih.Text   = "Tarih: " + randevuTarihi.ToLongDateString() + " - " + randevuTarihi.ToShortTimeString();
         }
 
         private void BtnRandevuIptal_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(ProfileActivity));
+            var intent = new Intent(this, typeof(HastaProfilimActivity));
             intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
             StartActivity(intent);
         }
@@ -92,16 +92,20 @@ namespace AndroidApp
 
             randevuService.Ekle(randevu);
 
-            var intent = new Intent(this, typeof(DoktorProfilimActivity));
+            string mesaj = "Sayın " + hasta.Ad + " " + hasta.Soyad + ", " + System.Environment.NewLine +
+                 "Randevu detaylarınız aşağıda yer almaktadır;" + System.Environment.NewLine + System.Environment.NewLine +
+                 "İl: " + hastane.Il + System.Environment.NewLine +
+                 "İlçe: " + hastane.Ilce + System.Environment.NewLine +
+                 "Hastane: " + hastane.Ad + System.Environment.NewLine +
+                 "Bölüm: " + bolum.Ad + System.Environment.NewLine +
+                 "Doktor: " + doktor.Ad + " " + doktor.Soyad + System.Environment.NewLine +
+                 "Tarih: " + randevuTarihi.ToLongDateString() + " - " + randevuTarihi.ToShortTimeString();
+
+            randevuService.RandevuMailiGonder(hasta.Mail, mesaj);
+
+            var intent = new Intent(this, typeof(HastaRandevularimActivity));
             intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
             StartActivity(intent);
         }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.hastaMenu, menu);
-            return true;
-        }
-
     }
 }
