@@ -1,27 +1,33 @@
 ﻿<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
   <item
-    android:id="@+id/menuBtnProfilim"
+    android:id="@+id/menuBtnHastaProfilim"
     android:orderInCategory="1"
     android:title="Profilim"
     app:showAsAction="never" />
-  
-  <item
-    android:id="@+id/menuBtnFavorilerim"
-    android:orderInCategory="0"
-    android:title="Favori Doktorlarım"
-    app:showAsAction="never" />
 
   <item
-    android:id="@+id/menuBtnRandevuAl"
-    android:orderInCategory="0"
+    android:id="@+id/menuBtnHastaRandevuAl"
+    android:orderInCategory="2"
     android:title="Randevu Al"
     app:showAsAction="never" />
   
   <item
-    android:id="@+id/menuBtnRandevuListele"
-    android:orderInCategory="1"
-    android:title="Randevularımı Listele"
+    android:id="@+id/menuBtnHastaRandevuListele"
+    android:orderInCategory="3"
+    android:title="Geçmiş Randevularım"
+    app:showAsAction="never" />
+
+  <item
+    android:id="@+id/menuBtnHastaFavorilerim"
+    android:orderInCategory="4"
+    android:title="Favori Doktorlarım"
+    app:showAsAction="never" />
+  
+  <item
+    android:id="@+id/menuBtnHastaCikisYap"
+    android:orderInCategory="5"
+    android:title="Çıkış Yap"
     app:showAsAction="never" />
 
 </menu>
