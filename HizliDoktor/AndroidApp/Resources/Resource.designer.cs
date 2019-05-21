@@ -2360,8 +2360,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800e2
-			public const int action0 = 2131230946;
+			// aapt resource value: 0x7f0800e9
+			public const int action0 = 2131230953;
 			
 			// aapt resource value: 0x7f08007c
 			public const int action_bar = 2131230844;
@@ -2384,17 +2384,17 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08005a
 			public const int action_bar_title = 2131230810;
 			
-			// aapt resource value: 0x7f0800df
-			public const int action_container = 2131230943;
+			// aapt resource value: 0x7f0800e6
+			public const int action_container = 2131230950;
 			
 			// aapt resource value: 0x7f08007d
 			public const int action_context_bar = 2131230845;
 			
-			// aapt resource value: 0x7f0800e6
-			public const int action_divider = 2131230950;
+			// aapt resource value: 0x7f0800ed
+			public const int action_divider = 2131230957;
 			
-			// aapt resource value: 0x7f0800e0
-			public const int action_image = 2131230944;
+			// aapt resource value: 0x7f0800e7
+			public const int action_image = 2131230951;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2411,11 +2411,11 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800e1
-			public const int action_text = 2131230945;
+			// aapt resource value: 0x7f0800e8
+			public const int action_text = 2131230952;
 			
-			// aapt resource value: 0x7f0800ef
-			public const int actions = 2131230959;
+			// aapt resource value: 0x7f0800f6
+			public const int actions = 2131230966;
 			
 			// aapt resource value: 0x7f08005d
 			public const int activity_chooser_view_content = 2131230813;
@@ -2450,8 +2450,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080096
 			public const int btnBolumKaydet = 2131230870;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int btnDogrula = 2131230941;
+			// aapt resource value: 0x7f0800e4
+			public const int btnDogrula = 2131230948;
 			
 			// aapt resource value: 0x7f0800b6
 			public const int btnDoktorEkle = 2131230902;
@@ -2465,38 +2465,41 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800ca
 			public const int btnHastaneKaydet = 2131230922;
 			
-			// aapt resource value: 0x7f0800de
-			public const int btnImg = 2131230942;
+			// aapt resource value: 0x7f0800e5
+			public const int btnImg = 2131230949;
 			
 			// aapt resource value: 0x7f080091
 			public const int btnLogin = 2131230865;
 			
-			// aapt resource value: 0x7f0800f3
-			public const int btnOncekiGun = 2131230963;
+			// aapt resource value: 0x7f0800fa
+			public const int btnOncekiGun = 2131230970;
 			
 			// aapt resource value: 0x7f0800b7
 			public const int btnOncekiSayfaRandevularim = 2131230903;
 			
-			// aapt resource value: 0x7f0800ff
-			public const int btnRandevuIptal = 2131230975;
+			// aapt resource value: 0x7f0800db
+			public const int btnRandevuDetayGoruntule = 2131230939;
 			
-			// aapt resource value: 0x7f0800d7
-			public const int btnRandevuIptalGoruntule = 2131230935;
+			// aapt resource value: 0x7f080106
+			public const int btnRandevuIptal = 2131230982;
 			
-			// aapt resource value: 0x7f0800f7
-			public const int btnRandevuKaydet = 2131230967;
+			// aapt resource value: 0x7f0800de
+			public const int btnRandevuIptalGoruntule = 2131230942;
 			
 			// aapt resource value: 0x7f0800fe
-			public const int btnRandevuOnay = 2131230974;
+			public const int btnRandevuKaydet = 2131230974;
 			
-			// aapt resource value: 0x7f080100
-			public const int btnRandevuOnayGoruntule = 2131230976;
+			// aapt resource value: 0x7f080105
+			public const int btnRandevuOnay = 2131230981;
+			
+			// aapt resource value: 0x7f080107
+			public const int btnRandevuOnayGoruntule = 2131230983;
 			
 			// aapt resource value: 0x7f0800a7
 			public const int btnSifreDegistir = 2131230887;
 			
-			// aapt resource value: 0x7f0800f4
-			public const int btnSonrakiGun = 2131230964;
+			// aapt resource value: 0x7f0800fb
+			public const int btnSonrakiGun = 2131230971;
 			
 			// aapt resource value: 0x7f0800b9
 			public const int btnSonrakiSayfaRandevularim = 2131230905;
@@ -2510,8 +2513,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
-			// aapt resource value: 0x7f0800e3
-			public const int cancel_action = 2131230947;
+			// aapt resource value: 0x7f0800ea
+			public const int cancel_action = 2131230954;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -2525,8 +2528,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080073
 			public const int checkbox = 2131230835;
 			
-			// aapt resource value: 0x7f0800eb
-			public const int chronometer = 2131230955;
+			// aapt resource value: 0x7f0800f2
+			public const int chronometer = 2131230962;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -2585,8 +2588,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800f1
-			public const int end_padder = 2131230961;
+			// aapt resource value: 0x7f0800f8
+			public const int end_padder = 2131230968;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -2624,8 +2627,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800d2
 			public const int gridGecmisRandevular = 2131230930;
 			
-			// aapt resource value: 0x7f0800f5
-			public const int gridTarihler = 2131230965;
+			// aapt resource value: 0x7f0800fc
+			public const int gridTarihler = 2131230972;
 			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
@@ -2636,8 +2639,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080062
 			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f0800f0
-			public const int icon_group = 2131230960;
+			// aapt resource value: 0x7f0800f7
+			public const int icon_group = 2131230967;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
@@ -2645,11 +2648,11 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800d5
-			public const int imgRandevuOnaylandi = 2131230933;
+			// aapt resource value: 0x7f0800dc
+			public const int imgRandevuOnaylandi = 2131230940;
 			
-			// aapt resource value: 0x7f0800ec
-			public const int info = 2131230956;
+			// aapt resource value: 0x7f0800f3
+			public const int info = 2131230963;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2696,14 +2699,14 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800a6
 			public const int lblHoşgeldiniz = 2131230886;
 			
-			// aapt resource value: 0x7f0800db
-			public const int lblMailDogrulama = 2131230939;
+			// aapt resource value: 0x7f0800e2
+			public const int lblMailDogrulama = 2131230946;
 			
 			// aapt resource value: 0x7f0800cb
 			public const int lblProfil = 2131230923;
 			
-			// aapt resource value: 0x7f0800f6
-			public const int lblRandevuVar = 2131230966;
+			// aapt resource value: 0x7f0800fd
+			public const int lblRandevuVar = 2131230973;
 			
 			// aapt resource value: 0x7f0800b8
 			public const int lblSeciliTarih = 2131230904;
@@ -2729,65 +2732,65 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f080104
-			public const int masked = 2131230980;
-			
-			// aapt resource value: 0x7f0800e5
-			public const int media_actions = 2131230949;
-			
-			// aapt resource value: 0x7f08010c
-			public const int menuBtnAdminCikisYap = 2131230988;
-			
-			// aapt resource value: 0x7f080105
-			public const int menuBtnAnasayfa = 2131230981;
-			
-			// aapt resource value: 0x7f080107
-			public const int menuBtnBolumEkle = 2131230983;
-			
-			// aapt resource value: 0x7f08010a
-			public const int menuBtnBolumListele = 2131230986;
-			
-			// aapt resource value: 0x7f080110
-			public const int menuBtnDoktorCikisYap = 2131230992;
-			
-			// aapt resource value: 0x7f080108
-			public const int menuBtnDoktorEkle = 2131230984;
-			
 			// aapt resource value: 0x7f08010b
-			public const int menuBtnDoktorListele = 2131230987;
+			public const int masked = 2131230987;
 			
-			// aapt resource value: 0x7f08010d
-			public const int menuBtnDoktorProfilim = 2131230989;
-			
-			// aapt resource value: 0x7f08010e
-			public const int menuBtnDoktorRandevularim = 2131230990;
-			
-			// aapt resource value: 0x7f08010f
-			public const int menuBtnDoktorSifreDegistir = 2131230991;
-			
-			// aapt resource value: 0x7f080115
-			public const int menuBtnHastaCikisYap = 2131230997;
-			
-			// aapt resource value: 0x7f080114
-			public const int menuBtnHastaFavorilerim = 2131230996;
-			
-			// aapt resource value: 0x7f080111
-			public const int menuBtnHastaProfilim = 2131230993;
-			
-			// aapt resource value: 0x7f080112
-			public const int menuBtnHastaRandevuAl = 2131230994;
+			// aapt resource value: 0x7f0800ec
+			public const int media_actions = 2131230956;
 			
 			// aapt resource value: 0x7f080113
-			public const int menuBtnHastaRandevuListele = 2131230995;
+			public const int menuBtnAdminCikisYap = 2131230995;
 			
-			// aapt resource value: 0x7f080106
-			public const int menuBtnHastaneEkle = 2131230982;
+			// aapt resource value: 0x7f08010c
+			public const int menuBtnAnasayfa = 2131230988;
 			
-			// aapt resource value: 0x7f080109
-			public const int menuBtnHastaneListele = 2131230985;
+			// aapt resource value: 0x7f08010e
+			public const int menuBtnBolumEkle = 2131230990;
 			
-			// aapt resource value: 0x7f080101
-			public const int message = 2131230977;
+			// aapt resource value: 0x7f080111
+			public const int menuBtnBolumListele = 2131230993;
+			
+			// aapt resource value: 0x7f080117
+			public const int menuBtnDoktorCikisYap = 2131230999;
+			
+			// aapt resource value: 0x7f08010f
+			public const int menuBtnDoktorEkle = 2131230991;
+			
+			// aapt resource value: 0x7f080112
+			public const int menuBtnDoktorListele = 2131230994;
+			
+			// aapt resource value: 0x7f080114
+			public const int menuBtnDoktorProfilim = 2131230996;
+			
+			// aapt resource value: 0x7f080115
+			public const int menuBtnDoktorRandevularim = 2131230997;
+			
+			// aapt resource value: 0x7f080116
+			public const int menuBtnDoktorSifreDegistir = 2131230998;
+			
+			// aapt resource value: 0x7f08011c
+			public const int menuBtnHastaCikisYap = 2131231004;
+			
+			// aapt resource value: 0x7f08011b
+			public const int menuBtnHastaFavorilerim = 2131231003;
+			
+			// aapt resource value: 0x7f080118
+			public const int menuBtnHastaProfilim = 2131231000;
+			
+			// aapt resource value: 0x7f080119
+			public const int menuBtnHastaRandevuAl = 2131231001;
+			
+			// aapt resource value: 0x7f08011a
+			public const int menuBtnHastaRandevuListele = 2131231002;
+			
+			// aapt resource value: 0x7f08010d
+			public const int menuBtnHastaneEkle = 2131230989;
+			
+			// aapt resource value: 0x7f080110
+			public const int menuBtnHastaneListele = 2131230992;
+			
+			// aapt resource value: 0x7f080108
+			public const int message = 2131230984;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2810,14 +2813,14 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
+			// aapt resource value: 0x7f0800f5
+			public const int notification_background = 2131230965;
+			
+			// aapt resource value: 0x7f0800ef
+			public const int notification_main_column = 2131230959;
+			
 			// aapt resource value: 0x7f0800ee
-			public const int notification_background = 2131230958;
-			
-			// aapt resource value: 0x7f0800e8
-			public const int notification_main_column = 2131230952;
-			
-			// aapt resource value: 0x7f0800e7
-			public const int notification_main_column_container = 2131230951;
+			public const int notification_main_column_container = 2131230958;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
@@ -2861,11 +2864,11 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800ed
-			public const int right_icon = 2131230957;
+			// aapt resource value: 0x7f0800f4
+			public const int right_icon = 2131230964;
 			
-			// aapt resource value: 0x7f0800e9
-			public const int right_side = 2131230953;
+			// aapt resource value: 0x7f0800f0
+			public const int right_side = 2131230960;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -2957,8 +2960,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800b5
 			public const int spinnerBolumler = 2131230901;
 			
-			// aapt resource value: 0x7f0800f2
-			public const int spinnerDoktorlar = 2131230962;
+			// aapt resource value: 0x7f0800f9
+			public const int spinnerDoktorlar = 2131230969;
 			
 			// aapt resource value: 0x7f080094
 			public const int spinnerHastaneler = 2131230868;
@@ -2984,8 +2987,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800e4
-			public const int status_bar_latest_event_content = 2131230948;
+			// aapt resource value: 0x7f0800eb
+			public const int status_bar_latest_event_content = 2131230955;
 			
 			// aapt resource value: 0x7f080076
 			public const int submenuarrow = 2131230838;
@@ -3023,8 +3026,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
 			
-			// aapt resource value: 0x7f0800d6
-			public const int textView1 = 2131230934;
+			// aapt resource value: 0x7f0800dd
+			public const int textView1 = 2131230941;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int text_input_password_toggle = 2131230884;
@@ -3035,8 +3038,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800ea
-			public const int time = 2131230954;
+			// aapt resource value: 0x7f0800f1
+			public const int time = 2131230961;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
@@ -3086,6 +3089,24 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800b1
 			public const int txtDate = 2131230897;
 			
+			// aapt resource value: 0x7f0800d8
+			public const int txtDetayOnayBolum = 2131230936;
+			
+			// aapt resource value: 0x7f0800d9
+			public const int txtDetayOnayDoktor = 2131230937;
+			
+			// aapt resource value: 0x7f0800d7
+			public const int txtDetayOnayHastane = 2131230935;
+			
+			// aapt resource value: 0x7f0800d5
+			public const int txtDetayOnayIl = 2131230933;
+			
+			// aapt resource value: 0x7f0800d6
+			public const int txtDetayOnayIlce = 2131230934;
+			
+			// aapt resource value: 0x7f0800da
+			public const int txtDetayOnayTarih = 2131230938;
+			
 			// aapt resource value: 0x7f0800c2
 			public const int txtDoktorEskiSifre = 2131230914;
 			
@@ -3095,44 +3116,44 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800c3
 			public const int txtDoktorYeniSifre = 2131230915;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int txtHastaRandevularimDoktorAdi = 2131230936;
+			// aapt resource value: 0x7f0800df
+			public const int txtHastaRandevularimDoktorAdi = 2131230943;
 			
-			// aapt resource value: 0x7f0800da
-			public const int txtHastaRandevularimIslem = 2131230938;
+			// aapt resource value: 0x7f0800e1
+			public const int txtHastaRandevularimIslem = 2131230945;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int txtHastaRandevularimRandevuTarihi = 2131230937;
+			// aapt resource value: 0x7f0800e0
+			public const int txtHastaRandevularimRandevuTarihi = 2131230944;
 			
 			// aapt resource value: 0x7f0800c7
 			public const int txtHastaneAd = 2131230919;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int txtKod = 2131230940;
+			// aapt resource value: 0x7f0800e3
+			public const int txtKod = 2131230947;
 			
-			// aapt resource value: 0x7f080102
-			public const int txtMail = 2131230978;
+			// aapt resource value: 0x7f080109
+			public const int txtMail = 2131230985;
 			
 			// aapt resource value: 0x7f08008d
 			public const int txtPass = 2131230861;
 			
-			// aapt resource value: 0x7f0800fb
-			public const int txtRandOnayBolum = 2131230971;
+			// aapt resource value: 0x7f080102
+			public const int txtRandOnayBolum = 2131230978;
 			
-			// aapt resource value: 0x7f0800fc
-			public const int txtRandOnayDoktor = 2131230972;
+			// aapt resource value: 0x7f080103
+			public const int txtRandOnayDoktor = 2131230979;
 			
-			// aapt resource value: 0x7f0800fa
-			public const int txtRandOnayHastane = 2131230970;
+			// aapt resource value: 0x7f080101
+			public const int txtRandOnayHastane = 2131230977;
 			
-			// aapt resource value: 0x7f0800f8
-			public const int txtRandOnayIl = 2131230968;
+			// aapt resource value: 0x7f0800ff
+			public const int txtRandOnayIl = 2131230975;
 			
-			// aapt resource value: 0x7f0800f9
-			public const int txtRandOnayIlce = 2131230969;
+			// aapt resource value: 0x7f080100
+			public const int txtRandOnayIlce = 2131230976;
 			
-			// aapt resource value: 0x7f0800fd
-			public const int txtRandOnayTarih = 2131230973;
+			// aapt resource value: 0x7f080104
+			public const int txtRandOnayTarih = 2131230980;
 			
 			// aapt resource value: 0x7f0800bf
 			public const int txtRndSaatSatir = 2131230911;
@@ -3167,8 +3188,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f080103
-			public const int visible = 2131230979;
+			// aapt resource value: 0x7f08010a
+			public const int visible = 2131230986;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

@@ -85,7 +85,11 @@ namespace AndroidApp.Resources.Adapter
         private void Satir_Click(object sender, EventArgs e, Randevu randevu)
         {
             Intent intent = new Intent(context, typeof(HastaRandevularimDetayActivity));
-            intent.PutExtra("randevuId", randevu.Id);
+            intent.PutExtra("randevuTarihi", randevu.Tarih.Value.ToString());
+            intent.PutExtra("hastaneId", randevu.HastaneId);
+            intent.PutExtra("bolumId", randevu.BolumId);
+            intent.PutExtra("doktorId", randevu.DoktorId);
+            intent.PutExtra("hastaTc", hasta.TC);
             context.StartActivity(intent);
         }
 
