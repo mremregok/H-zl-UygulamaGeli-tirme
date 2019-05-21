@@ -64,6 +64,8 @@
     <Compile Include="HastaFavoriDoktorlarimActivity.cs" />
     <Compile Include="HastaneEkleActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
+    <Compile Include="HastaRandevularimDetayActivity.cs" />
+    <Compile Include="HastaRandevularimIptalActivity.cs" />
     <Compile Include="MailOnayActivity.cs" />
     <Compile Include="DoktorProfilimActivity.cs" />
     <Compile Include="GirisYapActivity.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="RandevuOnaylaActivity.cs" />
     <Compile Include="randevuOnaylandiActivity.cs" />
+    <Compile Include="Resources\Adapter\HastaRandevularimAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevuAlGridViewAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevularimListViewAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -212,6 +215,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaRandevularimItem_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaRandevularimDetay_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaRandevularimIptal_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

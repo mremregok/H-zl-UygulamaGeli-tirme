@@ -70,7 +70,7 @@ namespace AndroidApp
             txtHastane.Text = "Hastane: " + hastane.Ad;
             txtBolum.Text   = "Bölüm: " + bolum.Ad;
             txtDoktor.Text  = "Doktor: " + doktor.Ad + " " + doktor.Soyad;
-            txtTarih.Text   = "Tarih: " + randevuTarihi.ToLongDateString() + " - " + randevuTarihi.ToShortTimeString();
+            txtTarih.Text   = "Tarih: " + randevuTarihi.ToLongDateString() + " " + randevuTarihi.ToShortTimeString();
         }
 
         private void BtnRandevuIptal_Click(object sender, EventArgs e)
@@ -92,6 +92,10 @@ namespace AndroidApp
 
             randevuService.Ekle(randevu);
 
+            var intent = new Intent(this, typeof(randevuOnaylandiActivity));
+            intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
+            StartActivity(intent);
+
             string mesaj = "Sayın " + hasta.Ad + " " + hasta.Soyad + ", " + System.Environment.NewLine +
                  "Randevu detaylarınız aşağıda yer almaktadır;" + System.Environment.NewLine + System.Environment.NewLine +
                  "İl: " + hastane.Il + System.Environment.NewLine +
@@ -99,13 +103,10 @@ namespace AndroidApp
                  "Hastane: " + hastane.Ad + System.Environment.NewLine +
                  "Bölüm: " + bolum.Ad + System.Environment.NewLine +
                  "Doktor: " + doktor.Ad + " " + doktor.Soyad + System.Environment.NewLine +
-                 "Tarih: " + randevuTarihi.ToLongDateString() + " - " + randevuTarihi.ToShortTimeString();
+                 "Tarih: " + randevuTarihi.ToLongDateString() + " " + randevuTarihi.ToShortTimeString() + System.Environment.NewLine + System.Environment.NewLine +
+                 "Sağlıklı günler dileriz.";
 
             randevuService.RandevuMailiGonder(hasta.Mail, mesaj);
-
-            var intent = new Intent(this, typeof(randevuOnaylandiActivity));
-            intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
-            StartActivity(intent);
         }
     }
 }

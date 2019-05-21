@@ -98,7 +98,7 @@ namespace Business.Concrete
             mailMessage.From = new MailAddress("hizlidoktor00@outlook.com");
             mailMessage.To.Add(hastaMail);
             mailMessage.Body = mesaj;
-            mailMessage.Subject = "Hızlı Doktor - Randevu bilgileriniz";
+            mailMessage.Subject = "Hızlı Doktor - Randevu bilgilendirme";
             client.Send(mailMessage);
         }
     }

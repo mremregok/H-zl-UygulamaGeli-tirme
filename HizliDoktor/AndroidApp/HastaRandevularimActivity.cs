@@ -10,18 +10,45 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
     [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
     public class HastaRandevularimActivity : AppCompatActivity
     {
+        ListView list;
+        IRandevuService randevuService;
+        IHastaService hastaService;
+        List<Randevu> randevular;
+        Hasta hasta;
+
+        public HastaRandevularimActivity()
+        {
+            randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
+            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.hastaRandevularim_layout);
 
-            // Create your application here
+            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
+            randevular = randevuService.HastaRandevulari(hasta.Id);
+
+            list = FindViewById<ListView>(Resource.Id.listHastaRandevularim);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            HastaRandevularimAdapter adapter = new HastaRandevularimAdapter(this, randevular, hasta);
+            list.Adapter = adapter;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
