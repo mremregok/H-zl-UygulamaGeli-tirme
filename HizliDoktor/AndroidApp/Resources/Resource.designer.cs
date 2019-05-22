@@ -2501,9 +2501,6 @@ namespace AndroidApp
 			// aapt resource value: 0x7f080111
 			public const int btnRandevuOnayGoruntule = 2131230993;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int btnSifreDegistir = 2131230897;
-			
 			// aapt resource value: 0x7f080105
 			public const int btnSonrakiGun = 2131230981;
 			
@@ -2680,6 +2677,9 @@ namespace AndroidApp
 			
 			// aapt resource value: 0x7f0800af
 			public const int lblDoktorAnasayfa = 2131230895;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int lblDoktorBilgileri = 2131230897;
 			
 			// aapt resource value: 0x7f0800b2
 			public const int lblDoktorEkle = 2131230898;

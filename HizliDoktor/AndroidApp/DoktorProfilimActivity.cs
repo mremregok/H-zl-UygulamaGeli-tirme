@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,18 +9,33 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
+
 
 namespace AndroidApp
 {
     [Activity(Label = "Profilim", Theme = "@style/AppTheme")]
     public class DoktorProfilimActivity : AppCompatActivity
     {
+        private TextView lblHosgeldiniz;
+        private IDoktorService doktorService;
+
+        public DoktorProfilimActivity()
+        {
+            doktorService = Business.IOCUtil.Container.Resolve<IDoktorService>();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.doktorAnaSayfa_layout);
 
-            // Create your application here
+            lblHosgeldiniz = FindViewById<TextView>(Resource.Id.lblHoşgeldiniz);
+            Doktor doktor = new Doktor();
+            doktor = doktorService.Getir(1);
+            lblHosgeldiniz.Text = "Hoşgeldiniz, "+doktor.Unvan+" Dr."+doktor.Ad+" "+doktor.Soyad;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
