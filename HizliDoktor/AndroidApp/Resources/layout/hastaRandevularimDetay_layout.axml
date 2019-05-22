@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<TextView
+		android:text="İl:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayIl"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="İlçe:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayIlce"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Hastane:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayHastane"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Bölüm:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayBolum"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Doktor:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayDoktor"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<TextView
+		android:text="Randevu Tarihi:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:id="@+id/txtDetayOnayTarih"
+		android:textAppearance="?android:attr/textAppearance"
+		android:textSize="@dimen/abc_text_size_body_2_material"
+	/>
+
+	<Button
+		android:text="Randevuları görüntüle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:layout_marginHorizontal="10dp"
+		android:id="@+id/btnRandevuDetayGoruntule" />
+</LinearLayout>

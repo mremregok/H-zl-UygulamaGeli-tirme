@@ -14,5 +14,6 @@ namespace Business.Abstract
         List<DateTime> MusaitTarihleriGetir(int doktorId, DateTime gun);
         bool Ekle(Randevu randevu);
         Randevu Sil(int randevuId);
+        void RandevuMailiGonder(string hastaMail, string mesaj);
     }
 }

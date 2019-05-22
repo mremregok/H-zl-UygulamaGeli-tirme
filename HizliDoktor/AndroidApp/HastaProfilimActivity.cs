@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,45 +9,62 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using AndroidApp.Resources.Adapter;
 using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
-    public class HastaRandevularimActivity : AppCompatActivity
+    [Activity(Label = "Profilim", Theme = "@style/AppTheme")]
+    public class HastaProfilimActivity : AppCompatActivity
     {
-        ListView list;
-        IRandevuService randevuService;
         IHastaService hastaService;
-        List<Randevu> randevular;
-        Hasta hasta;
 
-        public HastaRandevularimActivity()
+        Hasta hasta = new Hasta();
+
+        private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
+
+        private GridView hastaGecmisRandevular;
+
+        private Button hastaProfiliGuncelle;
+
+        public HastaProfilimActivity()
         {
-            randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
             hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaRandevularim_layout);
+            SetContentView(Resource.Layout.hastaProfilim_layout);
+
+            // Create your application here
+
+            hastaAd = FindViewById<TextView>(Resource.Id.lblHastaAdi);
+
+            hastaSoyad = FindViewById<TextView>(Resource.Id.lblHastaSoyadi);
+
+            hastaTCKN = FindViewById<TextView>(Resource.Id.lblHastaTCKN);
+
+            hastaCinsiyet = FindViewById<TextView>(Resource.Id.lblHastaCinsiyet);
+
+            hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
+
+            hastaGecmisRandevular = FindViewById<GridView>(Resource.Id.gridGecmisRandevular);
+
+            hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
 
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
-            randevular = randevuService.HastaRandevulari(hasta.Id);
 
-            list = FindViewById<ListView>(Resource.Id.listHastaRandevularim);
-        }
+            hastaTCKN.Text += hasta.TC;
 
-        protected override void OnResume()
-        {
-            base.OnResume();
+            hastaAd.Text += hasta.Ad;
 
-            HastaRandevularimAdapter adapter = new HastaRandevularimAdapter(this, randevular, hasta);
-            list.Adapter = adapter;
+            hastaSoyad.Text += hasta.Soyad;
+
+            hastaCinsiyet.Text += hasta.Cinsiyet;
+
+            hastaDogumTarihi.Text += hasta.DogumTarihi;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -63,9 +79,7 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnHastaProfilim:
                     {
-                        var intent = new Intent(this, typeof(HastaProfilimActivity));
-                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
-                        StartActivity(intent); return true;
+                        return true;
                     }
                 case Resource.Id.menuBtnHastaRandevuAl:
                     {
@@ -76,6 +90,9 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnHastaRandevuListele:
                     {
+                        var intent = new Intent(this, typeof(HastaRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaFavorilerim:
@@ -95,6 +112,5 @@ namespace AndroidApp
 
             return base.OnOptionsItemSelected(item);
         }
-
     }
 }

@@ -57,7 +57,7 @@ namespace AndroidApp
 
             if(!string.IsNullOrEmpty(dogrulananTc))
             {
-                var intent = new Intent(this, typeof(ProfileActivity));
+                var intent = new Intent(this, typeof(HastaProfilimActivity));
                 intent.PutExtra("tc", dogrulananTc);
                 StartActivity(intent);
             }

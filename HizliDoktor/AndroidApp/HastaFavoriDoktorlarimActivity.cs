@@ -10,45 +10,19 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using AndroidApp.Resources.Adapter;
-using Autofac;
-using Business.Abstract;
-using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
-    public class HastaRandevularimActivity : AppCompatActivity
+    [Activity(Label = "Favori Doktorlarım", Theme = "@style/AppTheme")]
+    public class HastaFavoriDoktorlarimActivity : AppCompatActivity
     {
-        ListView list;
-        IRandevuService randevuService;
-        IHastaService hastaService;
-        List<Randevu> randevular;
-        Hasta hasta;
-
-        public HastaRandevularimActivity()
-        {
-            randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
-            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaRandevularim_layout);
+            SetContentView(Resource.Layout.hastaFavoriDoktorlarim_layout);
 
-            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
-            randevular = randevuService.HastaRandevulari(hasta.Id);
 
-            list = FindViewById<ListView>(Resource.Id.listHastaRandevularim);
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
-
-            HastaRandevularimAdapter adapter = new HastaRandevularimAdapter(this, randevular, hasta);
-            list.Adapter = adapter;
+            // Create your application here
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -76,13 +50,13 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnHastaRandevuListele:
                     {
+                        var intent = new Intent(this, typeof(HastaRandevularimActivity));
+                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaFavorilerim:
                     {
-                        var intent = new Intent(this, typeof(HastaFavoriDoktorlarimActivity));
-                        intent.PutExtra("tc", Intent.GetStringExtra("tc"));
-                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaCikisYap:
@@ -95,6 +69,5 @@ namespace AndroidApp
 
             return base.OnOptionsItemSelected(item);
         }
-
     }
 }

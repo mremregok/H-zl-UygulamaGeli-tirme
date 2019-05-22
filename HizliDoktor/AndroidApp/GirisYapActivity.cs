@@ -38,6 +38,19 @@ namespace AndroidApp
 
             btnLogin.Click += BtnLogin_Click;
             btnUyeOl.Click += BtnUyeOl_Click;
+            rbYonetici.CheckedChange += RbYonetici_CheckedChange;
+        }
+
+        private void RbYonetici_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            if (rbYonetici.Checked)
+            {
+                txtTC.Hint = "Yönetici No";
+            }
+            else
+            {
+                txtTC.Hint = "TC Kimlik Numarası";
+            }
         }
 
         private void BtnUyeOl_Click(object sender, System.EventArgs e)

@@ -35,7 +35,7 @@
 		android:layout_height="wrap_content">
 	
 		<Spinner
-			android:id="@+id/spinnerIller"
+			android:id="@+id/spinnerIllerAdmin"
 			android:layout_width="150dp"
 			android:layout_height="40dp"
 			android:layout_marginHorizontal="10dp"
@@ -43,7 +43,7 @@
 		/>
 
 		<Spinner
-			android:id="@+id/spinnerIlceler"
+			android:id="@+id/spinnerIlcelerAdmin"
 			android:layout_width="150dp"
 			android:layout_height="40dp"
 			android:layout_marginHorizontal="10dp"
@@ -62,7 +62,7 @@
 	/>
 
 	<Spinner
-		android:id="@+id/spinnerHastaneler"
+		android:id="@+id/spinnerHastanelerAdmin"
 		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
@@ -77,7 +77,7 @@
 	/>
 
 	<Spinner
-		android:id="@+id/spinnerBolumler"
+		android:id="@+id/spinnerBolumlerAdmin"
 		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
@@ -92,7 +92,7 @@
 	/>
 
 	<Spinner
-		android:id="@+id/spinnerDoktorlar"
+		android:id="@+id/spinnerDoktorlarAdmin"
 		android:layout_width="fill_parent"
 		android:layout_height="40dp"
 		android:layout_marginHorizontal="10dp"
@@ -112,7 +112,7 @@
 		android:layout_height="wrap_content">
 
 		<Button
-			android:id="@+id/btnOncekiGun"
+			android:id="@+id/btnOncekiGunAdmin"
 			android:layout_width="50dp"
 			android:layout_height="40dp"
 			android:text="@string/onceki"
@@ -120,7 +120,7 @@
 			android:enabled="false"
 		/>
 		<TextView
-			android:id="@+id/lblSeciliTarih"
+			android:id="@+id/lblSeciliTarihAdmin"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
 			android:layout_gravity="center"
 		/>
 		<Button
-			android:id="@+id/btnSonrakiGun"
+			android:id="@+id/btnSonrakiGunAdmin"
 			android:layout_width="50dp"
 			android:layout_height="40dp"
 			android:text="@string/sonraki"
@@ -137,7 +137,7 @@
 	</FrameLayout>
 
 	<GridView
-		android:id="@+id/gridTarihler"
+		android:id="@+id/gridTarihlerAdmin"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:columnWidth="30dp"
@@ -147,22 +147,11 @@
 		android:stretchMode="columnWidth"
 		android:layout_marginTop="10dp"
 	/>
-
-	<TextView
-		android:id="@+id/lblRandevuVar"
-		android:textAppearance="?android:attr/textAppearance"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Seçili tarih için daha önce bu doktordan randevu aldınız."
-		android:layout_gravity="center"
-		android:visibility="invisible"
-	/>
-
 	<Button
-		android:id="@+id/btnRandevuKaydet"
+		android:id="@+id/btnRandevuKapatAdmin"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="RANDEVUYU KAYDET"
+		android:text="RANDEVUYU KAPAT"
 		android:layout_marginTop="10dp"
 	/>
 </LinearLayout>
