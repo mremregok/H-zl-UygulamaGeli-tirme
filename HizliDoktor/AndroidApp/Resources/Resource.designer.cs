@@ -2756,8 +2756,11 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800f7
 			public const int media_actions = 2131230967;
 			
+			// aapt resource value: 0x7f08011f
+			public const int menuBtnAdminCikisYap = 2131231007;
+			
 			// aapt resource value: 0x7f08011e
-			public const int menuBtnAdminCikisYap = 2131231006;
+			public const int menuBtnAdminRandevuKapat = 2131231006;
 			
 			// aapt resource value: 0x7f080117
 			public const int menuBtnAnasayfa = 2131230999;
@@ -2768,8 +2771,8 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08011c
 			public const int menuBtnBolumListele = 2131231004;
 			
-			// aapt resource value: 0x7f080122
-			public const int menuBtnDoktorCikisYap = 2131231010;
+			// aapt resource value: 0x7f080123
+			public const int menuBtnDoktorCikisYap = 2131231011;
 			
 			// aapt resource value: 0x7f08011a
 			public const int menuBtnDoktorEkle = 2131231002;
@@ -2777,29 +2780,29 @@ namespace AndroidApp
 			// aapt resource value: 0x7f08011d
 			public const int menuBtnDoktorListele = 2131231005;
 			
-			// aapt resource value: 0x7f08011f
-			public const int menuBtnDoktorProfilim = 2131231007;
-			
 			// aapt resource value: 0x7f080120
-			public const int menuBtnDoktorRandevularim = 2131231008;
+			public const int menuBtnDoktorProfilim = 2131231008;
 			
 			// aapt resource value: 0x7f080121
-			public const int menuBtnDoktorSifreDegistir = 2131231009;
+			public const int menuBtnDoktorRandevularim = 2131231009;
+			
+			// aapt resource value: 0x7f080122
+			public const int menuBtnDoktorSifreDegistir = 2131231010;
+			
+			// aapt resource value: 0x7f080128
+			public const int menuBtnHastaCikisYap = 2131231016;
 			
 			// aapt resource value: 0x7f080127
-			public const int menuBtnHastaCikisYap = 2131231015;
-			
-			// aapt resource value: 0x7f080126
-			public const int menuBtnHastaFavorilerim = 2131231014;
-			
-			// aapt resource value: 0x7f080123
-			public const int menuBtnHastaProfilim = 2131231011;
+			public const int menuBtnHastaFavorilerim = 2131231015;
 			
 			// aapt resource value: 0x7f080124
-			public const int menuBtnHastaRandevuAl = 2131231012;
+			public const int menuBtnHastaProfilim = 2131231012;
 			
 			// aapt resource value: 0x7f080125
-			public const int menuBtnHastaRandevuListele = 2131231013;
+			public const int menuBtnHastaRandevuAl = 2131231013;
+			
+			// aapt resource value: 0x7f080126
+			public const int menuBtnHastaRandevuListele = 2131231014;
 			
 			// aapt resource value: 0x7f080118
 			public const int menuBtnHastaneEkle = 2131231000;
