@@ -14,7 +14,7 @@ using Android.Widget;
 namespace AndroidApp
 {
     [Activity(Label = "Randevunuz onaylandı", Theme = "@style/AppTheme")]
-    public class randevuOnaylandiActivity : AppCompatActivity
+    public class RandevuOnaylandiActivity : AppCompatActivity
     {
         Button btnRandevuOnayGoruntule;
         protected override void OnCreate(Bundle savedInstanceState)

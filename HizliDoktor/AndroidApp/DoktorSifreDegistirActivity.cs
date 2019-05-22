@@ -30,7 +30,7 @@ namespace AndroidApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.DoktorSifreDegistir_layout);
+            SetContentView(Resource.Layout.doktorSifreDegistir_layout);
 
             txtDoktorEskiSifre = FindViewById<EditText>(Resource.Id.txtDoktorEskiSifre);
             txtDoktorYeniSifre = FindViewById<EditText>(Resource.Id.txtDoktorYeniSifre);

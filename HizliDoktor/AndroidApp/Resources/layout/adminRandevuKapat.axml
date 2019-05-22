@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:layout_marginHorizontal="10dp"
+			android:text="Bir il seçin"
+			android:layout_gravity="left"
+		/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dip"
+			android:layout_marginHorizontal="10dp"
+			android:text="Bir ilçe seçin"
+			android:layout_gravity="right"
+		/>
+	</FrameLayout>
+
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	
+		<Spinner
+			android:id="@+id/spinnerIllerAdmin"
+			android:layout_width="150dp"
+			android:layout_height="40dp"
+			android:layout_marginHorizontal="10dp"
+			android:layout_gravity="left"
+		/>
+
+		<Spinner
+			android:id="@+id/spinnerIlcelerAdmin"
+			android:layout_width="150dp"
+			android:layout_height="40dp"
+			android:layout_marginHorizontal="10dp"
+			android:layout_gravity="right"
+		/>
+
+	</FrameLayout>
+
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
+		android:text="Bir hastane seçin"
+	/>
+
+	<Spinner
+		android:id="@+id/spinnerHastanelerAdmin"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
+	/>
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
+		android:text="Bir bölüm seçin"
+	/>
+
+	<Spinner
+		android:id="@+id/spinnerBolumlerAdmin"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
+	/>
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
+		android:text="Bir doktor seçin"
+	/>
+
+	<Spinner
+		android:id="@+id/spinnerDoktorlarAdmin"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:layout_marginHorizontal="10dp"
+	/>
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
+		android:layout_marginHorizontal="10dp"
+		android:text="Bir tarih seçin"
+	/>
+
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/btnOncekiGunAdmin"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/onceki"
+			android:layout_gravity="left"
+			android:enabled="false"
+		/>
+		<TextView
+			android:id="@+id/lblSeciliTarihAdmin"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="secili tarih"
+			android:layout_gravity="center"
+		/>
+		<Button
+			android:id="@+id/btnSonrakiGunAdmin"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="@string/sonraki"
+			android:layout_gravity="right"
+		/>
+	</FrameLayout>
+
+	<GridView
+		android:id="@+id/gridTarihlerAdmin"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:columnWidth="30dp"
+		android:numColumns="5"
+		android:verticalSpacing="10dp"
+		android:horizontalSpacing="30dp"
+		android:stretchMode="columnWidth"
+		android:layout_marginTop="10dp"
+	/>
+	<Button
+		android:id="@+id/btnRandevuKapatAdmin"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="RANDEVUYU KAPAT"
+		android:layout_marginTop="10dp"
+	/>
+</LinearLayout>
