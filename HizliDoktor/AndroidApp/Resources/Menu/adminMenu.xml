@@ -41,7 +41,7 @@
   <item
     android:id="@+id/menuBtnAdminRandevuKapat"
     android:orderInCategory="8"
-    android:title="Randevu Kapat"
+    android:title="Randevuları Yönet"
     app:showAsAction="never" />
   <item
     android:id="@+id/menuBtnAdminCikisYap"
