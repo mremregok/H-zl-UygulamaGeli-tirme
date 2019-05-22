@@ -16,7 +16,7 @@ using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Doktor Randevularım", Theme = "@style/AppTheme")]
+    [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
     public class DoktorRandevularimActivity : AppCompatActivity
     {
         ListView _listView;

@@ -16,7 +16,7 @@ using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "lblDoktorSifreDegistir", Theme = "@style/AppTheme")]
+    [Activity(Label = "Şifre Değiştir", Theme = "@style/AppTheme")]
     public class DoktorSifreDegistirActivity : AppCompatActivity
     {
         private EditText txtDoktorEskiSifre,txtDoktorYeniSifre,txtDoktorSifreOnay;

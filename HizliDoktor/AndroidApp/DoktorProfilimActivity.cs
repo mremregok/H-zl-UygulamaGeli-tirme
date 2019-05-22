@@ -13,7 +13,6 @@ using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
 
-
 namespace AndroidApp
 {
     [Activity(Label = "Profilim", Theme = "@style/AppTheme")]
