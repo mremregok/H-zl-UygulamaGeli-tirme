@@ -20,33 +20,14 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="30dp"
-		android:text=""
+		android:text="Hoşgeldiniz, "
 		android:textAlignment="center"
 	/>
 
-	<Button
-		android:id="@+id/btnSifreDegistir"
-		android:layout_width="match_parent"
-		android:layout_marginLeft="10dp"
-		android:layout_height="wrap_content"
-		android:layout_centerHorizontal="true"
-		android:layout_marginTop="40dp"
-		android:text="Şifre Değiştir"
-		android:background="#3700b3"
-		android:textColor="@android:color/white"
-	/>
 
-	<Button
-		android:id="@+id/btnUyeOl"
-		android:layout_width="match_parent"
-		android:layout_marginLeft="10dp"
-		android:layout_height="wrap_content"
-		android:layout_centerHorizontal="true"
-		android:layout_marginTop="20dp"
-		android:text="RANDEVULARIMI GÖRÜNTÜLE"
-		android:background="#3700b3"
-		android:textColor="@android:color/white"
-	/>
+	
+
+	
 
 
 
