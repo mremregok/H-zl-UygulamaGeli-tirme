@@ -10,6 +10,6 @@ namespace Business.Abstract
         void Ekle(Favori favori);
         Favori Sil(int favoriId);
         Favori Getir(int favoriId);
-        List<Favori> Favoriler();
+        List<Favori> Favoriler(int hastaId);
     }
 }

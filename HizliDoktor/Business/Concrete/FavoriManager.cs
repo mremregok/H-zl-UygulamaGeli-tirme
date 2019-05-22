@@ -22,9 +22,9 @@ namespace Business.Concrete
             favoriDal.Add(favori);
         }
 
-        public List<Favori> Favoriler()
+        public List<Favori> Favoriler(int hastaId)
         {
-            List<Favori> favoriler = favoriDal.GetList();
+            List<Favori> favoriler = favoriDal.GetList(x => x.HastaId == hastaId);
 
             return favoriler;
         }
