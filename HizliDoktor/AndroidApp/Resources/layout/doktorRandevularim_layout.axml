@@ -34,34 +34,35 @@
 		/>
 	</FrameLayout>
 
-	<FrameLayout
+	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:touchscreenBlocksFocus="true"
-		android:background="@drawable/textLines">
+		android:background="@drawable/textLines"
+		android:paddingHorizontal="10dp">
 
 		<TextView
 			android:text="Hasta Adı"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtAdSutun"
-			android:paddingLeft="15dp"
-			android:layout_gravity="left"/>
+			android:layout_weight="2"/>
 		<TextView
 			android:text="Randevu Saati"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtRndSaatSutun"
-			android:layout_gravity="center"/>
+	        android:layout_weight="2"/>
 		<TextView
 			android:text="Randevu Tarihi"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtRndTarihSutun"
-			android:paddingRight="15dp"
-			android:layout_gravity="right"/>
-	</FrameLayout>
+			android:layout_weight="2"/>
+
+	</LinearLayout>
+
 
 	<ListView
         android:minWidth="25px"
