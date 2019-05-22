@@ -126,6 +126,8 @@ namespace AndroidApp.Resources.Adapter
                     favori.HastaId = hasta.Id;
                     favori.OlusturulmaTarihi = DateTime.Now;
 
+                    favoriService.Ekle(favori);
+
                     Toast.MakeText(Application.Context, doktor.Unvan + " " + doktor.Ad + " " + doktor.Soyad + " favorilere eklendi.", ToastLength.Short).Show();
                     thisButton.Text = "FAV-";
                 }
