@@ -15,5 +15,6 @@ namespace Business.Abstract
         bool Ekle(Randevu randevu);
         Randevu Sil(int randevuId);
         void RandevuMailiGonder(string hastaMail, string mesaj);
+        Randevu Getir(DateTime randevuTarihi);
     }
 }

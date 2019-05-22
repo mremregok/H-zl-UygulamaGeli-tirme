@@ -101,5 +101,11 @@ namespace Business.Concrete
             mailMessage.Subject = "Hızlı Doktor - Randevu bilgilendirme";
             client.Send(mailMessage);
         }
+
+        public Randevu Getir(DateTime randevuTarihi)
+        {
+            Randevu randevu = randevuDal.Get(x => x.Tarih.Value == randevuTarihi);
+            return randevu;
+        }
     }
 }

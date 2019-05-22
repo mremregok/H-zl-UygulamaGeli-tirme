@@ -97,18 +97,34 @@ namespace AndroidApp
 
                 DateTime randevuTarihi = new DateTime(seciliTarih.Year, seciliTarih.Month, seciliTarih.Day, time.Hour, time.Minute, time.Second);
 
-                Randevu randevu = new Randevu();
+                if (timeAdapter.IsClosedButton)
+                {
+                    randevuTarihi = randevuTarihi.AddSeconds(-13);
+                    Randevu randevu = randevuService.Getir(randevuTarihi);
 
-                randevu.BolumId = bolumler[spinnerBolumler.SelectedItemPosition].Id;
-                randevu.HastaneId = hastaneler[spinnerHastaneler.SelectedItemPosition].Id;
-                randevu.DoktorId = doktorlar[spinnerDoktorlar.SelectedItemPosition].Id;
-                randevu.Tarih = randevuTarihi;
-                randevu.HastaId = 0;
+                    var intent = new Intent(this, typeof(AdminRandevuKapandiActivity));
+                    intent.PutExtra("text", "Randevu açıldı.");
+                    StartActivity(intent);
 
-                randevuService.Ekle(randevu);
+                    randevuService.Sil(randevu.Id);
+                }
+                else
+                {
+                    Randevu randevu = new Randevu();
 
-                var intent = new Intent(this, typeof(AdminRandevuKapandiActivity));
-                StartActivity(intent);
+                    randevu.BolumId = bolumler[spinnerBolumler.SelectedItemPosition].Id;
+                    randevu.HastaneId = hastaneler[spinnerHastaneler.SelectedItemPosition].Id;
+                    randevu.DoktorId = doktorlar[spinnerDoktorlar.SelectedItemPosition].Id;
+                    randevu.Tarih = randevuTarihi;
+                    randevu.HastaId = 0;
+
+                    randevuService.Ekle(randevu);
+
+                    var intent = new Intent(this, typeof(AdminRandevuKapandiActivity));
+                    intent.PutExtra("text", "Randevu kapatıldı.");
+                    StartActivity(intent);
+                }
+
             }
         }
 
@@ -209,7 +225,7 @@ namespace AndroidApp
             Doktor doktor = doktorlar[doktorPosition];
 
             List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
-            timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this);
+            timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this, true);
             gridTarihler.Adapter = timeAdapter;
 
             lblSeciliTarih.Text = seciliTarih.ToShortDateString();

@@ -13,18 +13,21 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Randevu kapatıldı", Theme = "@style/AppTheme")]
+    [Activity(Label = "Randevu Durumu", Theme = "@style/AppTheme")]
     public class AdminRandevuKapandiActivity : AppCompatActivity
     {
         Button btnRandevuKapatDon;
+        TextView txtAdminRandevuKapandi;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.adminRandevuKapandi_layout);
 
             btnRandevuKapatDon = FindViewById<Button>(Resource.Id.btnRandevuKapatDon);
+            txtAdminRandevuKapandi = FindViewById<TextView>(Resource.Id.txtAdminRandevuKapandi);
 
             btnRandevuKapatDon.Click += BtnRandevuKapatDon_Click1;
+            txtAdminRandevuKapandi.Text = Intent.GetStringExtra("text");
             // Create your application here
         }
 

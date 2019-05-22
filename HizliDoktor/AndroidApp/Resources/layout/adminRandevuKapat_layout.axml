@@ -151,7 +151,7 @@
 		android:id="@+id/btnRandevuKapatAdmin"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="RANDEVUYU KAPAT"
+		android:text="randevu durumunu kaydet"
 		android:layout_marginTop="10dp"
 	/>
 </LinearLayout>

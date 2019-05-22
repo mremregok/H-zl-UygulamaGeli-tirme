@@ -17,10 +17,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center_horizontal"
-		android:id="@+id/textView1" />
+		android:id="@+id/txtAdminRandevuKapandi" />
 
 	<Button
-		android:text="Diğer Randevuları Kapat"
+		android:text="Diğer Randevuları gör"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="20dp"
