@@ -3116,9 +3116,6 @@ namespace AndroidApp
 			// aapt resource value: 0x7f0800b6
 			public const int txtAd = 2131230902;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int txtAdSatir = 2131230921;
-			
 			// aapt resource value: 0x7f0800c5
 			public const int txtAdSutun = 2131230917;
 			
@@ -3175,6 +3172,9 @@ namespace AndroidApp
 			
 			// aapt resource value: 0x7f0800d7
 			public const int txtHastaneAd = 2131230935;
+			
+			// aapt resource value: 0x7f0800c9
+			public const int txtItemAdSatir = 2131230921;
 			
 			// aapt resource value: 0x7f0800f1
 			public const int txtKod = 2131230961;

@@ -11,35 +11,35 @@
 		android:text="Favorilerim"
 		android:layout_gravity="center"/>
 
-	<FrameLayout
+	<LinearLayout 
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:touchscreenBlocksFocus="true"
-		android:background="@drawable/textLines">
+		android:background="@drawable/textLines"
+		android:paddingHorizontal="10dp">
 
 		<TextView
 			android:text="Doktor Adı"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:paddingLeft="15dp"
-			android:layout_gravity="left"/>
+			android:layout_weight="3"
+			android:textAppearance="?android:attr/textAppearanceMedium"/>
 		<TextView
-			android:text="Bölüm"
-			android:layout_width="wrap_content"
+			android:text="Randevu Tarihi"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"/>
+			android:layout_weight="4"
+			android:textAppearance="?android:attr/textAppearanceMedium"/>
 		<TextView
-			android:text="Favori Sil"
-			android:layout_width="wrap_content"
+			android:text="İşlem"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:paddingRight="15dp"
-			android:layout_gravity="right"/>
-	</FrameLayout>
+			android:layout_weight="2"
+			android:textAppearance="?android:attr/textAppearanceMedium"/>
+	</LinearLayout>
 
 	<ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/customFavorilerimListView" />

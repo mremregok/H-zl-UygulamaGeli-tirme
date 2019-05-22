@@ -40,34 +40,34 @@ namespace Business.Concrete
 
         public List<Randevu> BolumRandevulari(int bolumId)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.BolumId == bolumId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.BolumId == bolumId && x.HastaId != 0);
             randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 
         public List<Randevu> DoktorRandevulari(int doktorId)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.Tarih.Value < DateTime.Now.AddMonths(1));
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.Tarih.Value < DateTime.Now.AddMonths(1) && x.HastaId != 0);
             randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 
         public List<Randevu> HastaRandevulari(int hastaId)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.HastaId == hastaId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.HastaId == hastaId && x.HastaId != 0);
             return randevular;
         }
 
         public List<Randevu> TumRandevular(int hastaneId)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.HastaneId == hastaneId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.HastaneId == hastaneId && x.HastaId != 0);
             randevular = randevular.OrderBy(x => x.Tarih).ToList();
             return randevular;
         }
 
         public List<DateTime> MusaitTarihleriGetir(int doktorId, DateTime gun)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.HastaId != 0);
 
             List<DateTime> musaitTarihler = new List<DateTime>();
 

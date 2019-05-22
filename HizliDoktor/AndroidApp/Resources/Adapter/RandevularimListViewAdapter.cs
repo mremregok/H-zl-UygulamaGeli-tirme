@@ -49,7 +49,8 @@ namespace AndroidApp.Resources.Adapter
             if (satir == null)
                 satir = LayoutInflater.From(_context).Inflate(Resource.Layout.doktorRandevularimItem_layout, null, false);
 
-            TextView txtAdSatir = satir.FindViewById<TextView>(Resource.Id.txtAdSatir);
+            TextView txtAdSatir = satir.FindViewById<TextView>(Resource.Id.txtItemAdSatir);
+
             Hasta hasta = hastaService.Getir(_doktorRandevulari[position].HastaId);
             txtAdSatir.Text = hasta.Ad + " " + hasta.Soyad;
 
