@@ -241,7 +241,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\adminRandevuKapandi_layout.axml">
+    <AndroidResource Include="Resources\layout\adminRandevuKapandi_layout.axml" />
     <AndroidResource Include="Resources\layout\hastaFavoriDoktorlariItem_layout.axml" />
   </ItemGroup>
   <ItemGroup>
