@@ -92,7 +92,7 @@ namespace AndroidApp
 
             randevuService.Ekle(randevu);
 
-            var intent = new Intent(this, typeof(randevuOnaylandiActivity));
+            var intent = new Intent(this, typeof(RandevuOnaylandiActivity));
             intent.PutExtra("tc", Intent.GetStringExtra("hastaTc"));
             StartActivity(intent);
 
