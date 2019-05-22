@@ -67,6 +67,12 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
+                case Resource.Id.menuBtnDoktorCikisYap:
+                    {
+                        var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
             }
 
             return base.OnOptionsItemSelected(item);
