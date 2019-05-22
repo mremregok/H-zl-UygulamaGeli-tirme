@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business.Abstract
 {
-    interface IFavoriService
+    public interface IFavoriService
     {
         void Ekle(Favori favori);
         Favori Sil(int favoriId);

@@ -25,6 +25,7 @@ namespace AndroidApp
         IHastaService hastaService;
         List<Randevu> randevular;
         Hasta hasta;
+        List<Favori> tempList = new List<Favori>();
 
         public HastaRandevularimActivity()
         {

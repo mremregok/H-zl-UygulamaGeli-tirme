@@ -21,8 +21,10 @@ namespace AndroidApp.Resources.Adapter
         private List<Favori> favoriler;
         private IHastaService hastaService;
         private IDoktorService doktorService;
-        private IFavoriService randevuService;
-        private Hasta hasta;
+        private IFavoriService favoriService;
+        private IBolumService bolumService;
+        Hasta hasta;
+
 
         public HastaFavorilerimAdapter(Context context, List<Favori> favoriler, Hasta hasta)
         {
@@ -30,6 +32,8 @@ namespace AndroidApp.Resources.Adapter
             this.context = context;
             hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
             doktorService = Business.IOCUtil.Container.Resolve<IDoktorService>();
+            favoriService = Business.IOCUtil.Container.Resolve<IFavoriService>();
+            bolumService = Business.IOCUtil.Container.Resolve<IBolumService>();
             this.hasta = hasta;
         }
 
@@ -51,45 +55,36 @@ namespace AndroidApp.Resources.Adapter
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View satir = convertView;
-            if (satir == null) satir = LayoutInflater.From(context).Inflate(Resource.Layout.hastaRandevularimItem_layout, null, false);
+            if (satir == null) satir = LayoutInflater.From(context).Inflate(Resource.Layout.hastaFavoriDoktorlariItem_layout, null, false);
 
-            TextView txtFavorilerimDoktorAdi = satir.FindViewById<TextView>(Resource.Id.txtHastaRandevularimDoktorAdi);
-            TextView txtFavorilerimBolumAdı = satir.FindViewById<TextView>(Resource.Id.txtHastaRandevularimRandevuTarihi);
-            TextView txtFavorilerimDoktorSil = satir.FindViewById<TextView>(Resource.Id.txtHastaRandevularimIslem);
+            TextView txtFavorilerimDoktorAdi = satir.FindViewById<TextView>(Resource.Id.txtFavorilerimDoktorAdi);
+            TextView txtFavorilerimBolumAdı = satir.FindViewById<TextView>(Resource.Id.txtFavorilerimBolumAdi);
+            TextView txtFavorilerimDoktorSil = satir.FindViewById<TextView>(Resource.Id.txtFavorilerimDoktorSil);
 
             txtFavorilerimDoktorSil.PaintFlags = Android.Graphics.PaintFlags.UnderlineText;
 
-            Favori favori = hastaService.Getir(favoriler[position].HastaId);
+            Doktor doktor =  doktorService.Getir(favoriler[position].DoktorId);
+            Bolum bolum = bolumService.Getir(doktor.BolumId);
 
-            txtFavorilerimDoktorAdi.Text = hasta.
-            txtHastaRandevularimRandevuTarihi.Text = randevular[position].Tarih.Value.ToLongDateString() + " " + randevular[position].Tarih.Value.ToShortTimeString();
+            txtFavorilerimDoktorAdi.Text = doktor.Ad + " " + doktor.Soyad;
+            txtFavorilerimBolumAdı.Text = bolum.Ad;
+            txtFavorilerimDoktorSil.Text = "Çıkar";
 
-            if (randevular[position].Tarih > DateTime.Now)
-            {
-                txtHastaRandevularimIslem.Text = "IPTAL";
-            }
-            else
-            {
-                //fav sorgula. Yoksa fav+ yaz varsa fav- yaz
-                if (true) txtHastaRandevularimIslem.Text = "FAV+";
-                else txtHastaRandevularimIslem.Text = "FAV-";
-            }
-
-            txtHastaRandevularimIslem.Click += (sender, e) => TxtHastaRandevularimIslem_Click(sender, e, randevular[position], doktor);
-            satir.Click += (sender, e) => Satir_Click(sender, e, randevular[position]);
+            txtFavorilerimDoktorSil.Click += (sender, e) => txtFavorilerimDoktorSil_Click(sender, e, favoriler[position]);
+            
 
             return satir;
         }
 
-        private void Satir_Click(object sender, EventArgs e, Randevu randevu)
+
+        private void txtFavorilerimDoktorSil_Click(object sender, EventArgs e, Favori favori)
         {
-            Intent intent = new Intent(context, typeof(HastaRandevularimDetayActivity));
-            intent.PutExtra("randevuTarihi", randevu.Tarih.Value.ToString());
-            intent.PutExtra("hastaneId", randevu.HastaneId);
-            intent.PutExtra("bolumId", randevu.BolumId);
-            intent.PutExtra("doktorId", randevu.DoktorId);
-            intent.PutExtra("hastaTc", hasta.TC);
+            favoriService.Sil(favori.Id);
+
+            Intent intent = new Intent(context, typeof(HastaFavoriSilActivity));
+            intent.PutExtra("tc", hasta.TC);
             context.StartActivity(intent);
+           
         }
 
     }
