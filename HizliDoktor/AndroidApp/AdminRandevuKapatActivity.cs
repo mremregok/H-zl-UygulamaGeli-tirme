@@ -17,7 +17,7 @@ using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Randevu Durumu", Theme = "@style/AppTheme")]
+    [Activity(Label = "Randevuları Yönet", Theme = "@style/AppTheme")]
     public class AdminRandevuKapatActivity : AppCompatActivity
     {
         IRandevuService randevuService;
