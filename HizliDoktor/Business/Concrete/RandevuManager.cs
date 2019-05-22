@@ -67,7 +67,7 @@ namespace Business.Concrete
 
         public List<DateTime> MusaitTarihleriGetir(int doktorId, DateTime gun)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.HastaId != 0);
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
 
             List<DateTime> musaitTarihler = new List<DateTime>();
 
