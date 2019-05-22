@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-	<FrameLayout
-		android:orientation="horizontal"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-
-		<Button
-			android:id="@+id/btnOncekiSayfaRandevularim"
-			android:layout_width="50dp"
-			android:layout_height="40dp"
-			android:text="@string/onceki"
-			android:layout_gravity="left"
-			android:enabled="false"
-		/>
-		<TextView
+	<TextView
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Randevularım"
+			android:text="Favorilerim"
 			android:layout_gravity="center"
 		/>
-		<Button
-			android:id="@+id/btnSonrakiSayfaRandevularim"
-			android:layout_width="50dp"
-			android:layout_height="40dp"
-			android:text="@string/sonraki"
-			android:layout_gravity="right"
-		/>
-	</FrameLayout>
 
 	<FrameLayout
 		android:orientation="horizontal"
@@ -42,23 +20,20 @@
 		android:background="@drawable/textLines">
 
 		<TextView
-			android:text="Hasta Adı"
+			android:text="Doktor"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/txtAdSutun"
 			android:paddingLeft="15dp"
 			android:layout_gravity="left"/>
 		<TextView
-			android:text="Randevu Saati"
+			android:text="Bölüm"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/txtRndSaatSutun"
 			android:layout_gravity="center"/>
 		<TextView
-			android:text="Randevu Tarihi"
+			android:text="Favori Sil"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/txtRndTarihSutun"
 			android:paddingRight="15dp"
 			android:layout_gravity="right"/>
 	</FrameLayout>
@@ -68,7 +43,6 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/customListView" />
+        android:id="@+id/favorilerimCustomListView" />
 
-	
 </LinearLayout>

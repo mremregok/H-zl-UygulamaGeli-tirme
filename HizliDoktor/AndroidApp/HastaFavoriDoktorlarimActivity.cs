@@ -10,19 +10,41 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
     [Activity(Label = "Favori Doktorlarım", Theme = "@style/AppTheme")]
     public class HastaFavoriDoktorlarimActivity : AppCompatActivity
     {
+        ListView listView;
+        List<Favori> favoriler;
+        IFavoriService favoriService;
+        IHastaService hastaService;
+        Hasta hasta;
+
+        public HastaFavoriDoktorlarimActivity()
+        {
+            favoriService = Business.IOCUtil.Container.Resolve<IFavoriService>();
+            hastaService = Business.IOCUtil.Container.Resolve<IHastaService>();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.hastaFavoriDoktorlarim_layout);
 
+            listView = FindViewById<ListView>(Resource.Id.customFavorilerimListView);
 
-            // Create your application here
+            hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
+            favoriler = favoriService.Favoriler(hasta.Id);
+
+            HastaFavorilerimAdapter adapter = new HastaFavorilerimAdapter(this, favoriler, hasta);
+            listView.Adapter = adapter;
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

@@ -4,4 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Favorilerim"
+		android:layout_gravity="center"/>
+
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:touchscreenBlocksFocus="true"
+		android:background="@drawable/textLines">
+
+		<TextView
+			android:text="Doktor Adı"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="15dp"
+			android:layout_gravity="left"/>
+		<TextView
+			android:text="Bölüm"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"/>
+		<TextView
+			android:text="Favori Sil"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingRight="15dp"
+			android:layout_gravity="right"/>
+	</FrameLayout>
+
+	<ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/customFavorilerimListView" />
+
 </LinearLayout>
