@@ -138,21 +138,39 @@ namespace AndroidApp
             switch (item.ItemId)
             {
                 case Resource.Id.menuBtnAnasayfa:
-                    var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
-                    StartActivity(intent);
-                    return true;
+                    {
+                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
                 case Resource.Id.menuBtnHastaneEkle:
-                    var intent1 = new Intent(this, typeof(HastaneEkleActivity));
-                    StartActivity(intent1);
-                    return true;
+                    {
+                        var intent = new Intent(this, typeof(HastaneEkleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
                 case Resource.Id.menuBtnBolumEkle:
-                    var intent2 = new Intent(this, typeof(BolumEkleActivity));
-                    StartActivity(intent2);
-                    return true;
+                    {
+                        var intent = new Intent(this, typeof(BolumEkleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
                 case Resource.Id.menuBtnDoktorEkle:
-                    var intent3 = new Intent(this, typeof(DoktorEkleActivity));
-                    StartActivity(intent3);
-                    return true;
+                    {
+                        return true;
+                    }
+                case Resource.Id.menuBtnAdminRandevuKapat:
+                    {
+                        var intent = new Intent(this, typeof(AdminRandevuKapatActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnAdminCikisYap:
+                    {
+                        var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
 
             }
             return base.OnOptionsItemSelected(item);

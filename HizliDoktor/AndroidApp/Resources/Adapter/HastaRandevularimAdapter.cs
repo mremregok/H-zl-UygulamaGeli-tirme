@@ -23,6 +23,7 @@ namespace AndroidApp.Resources.Adapter
         private List<Randevu> randevular;
         private IDoktorService doktorService;
         private IRandevuService randevuService;
+        private IFavoriService favoriService;
         private Hasta hasta;
 
         public HastaRandevularimAdapter(Context context, List<Randevu> randevular, Hasta hasta)
@@ -31,6 +32,7 @@ namespace AndroidApp.Resources.Adapter
             this.context = context;
             doktorService = Business.IOCUtil.Container.Resolve<IDoktorService>();
             randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
+            favoriService = Business.IOCUtil.Container.Resolve<IFavoriService>();
             this.hasta = hasta;
         }
 
@@ -72,7 +74,8 @@ namespace AndroidApp.Resources.Adapter
             else
             {
                 //fav sorgula. Yoksa fav+ yaz varsa fav- yaz
-                if (true) txtHastaRandevularimIslem.Text = "FAV+";
+                Favori favori = favoriService.Getir(hasta.Id, doktor.Id);
+                if (favori == null) txtHastaRandevularimIslem.Text = "FAV+";
                 else txtHastaRandevularimIslem.Text = "FAV-";
             }
 
@@ -95,6 +98,8 @@ namespace AndroidApp.Resources.Adapter
 
         private void TxtHastaRandevularimIslem_Click(object sender, EventArgs e, Randevu randevu, Doktor doktor)
         {
+            TextView thisButton = (TextView)sender;
+
             if (randevu.Tarih > DateTime.Now)
             {
                 randevuService.Sil(randevu.Id);
@@ -113,13 +118,24 @@ namespace AndroidApp.Resources.Adapter
             else
             {
                 //favori sorgula. Yoksa ekle, varsa çıkart.
-                if(true)
+                Favori favori = favoriService.Getir(hasta.Id, doktor.Id);
+                if (favori == null)
                 {
+                    favori = new Favori();
+                    favori.DoktorId = doktor.Id;
+                    favori.HastaId = hasta.Id;
+                    favori.OlusturulmaTarihi = DateTime.Now;
+
+                    favoriService.Ekle(favori);
+
                     Toast.MakeText(Application.Context, doktor.Unvan + " " + doktor.Ad + " " + doktor.Soyad + " favorilere eklendi.", ToastLength.Short).Show();
+                    thisButton.Text = "FAV-";
                 }
                 else
                 {
+                    favoriService.Sil(favori.Id);
                     Toast.MakeText(Application.Context, doktor.Unvan + " " + doktor.Ad + " " + doktor.Soyad + " favorilerden çıkarıldı.", ToastLength.Short).Show();
+                    thisButton.Text = "FAV+";
                 }
             }
         }
