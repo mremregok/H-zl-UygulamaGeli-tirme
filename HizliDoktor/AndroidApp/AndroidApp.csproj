@@ -57,7 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAnaSayfaActivity.cs" />
-    <Compile Include="AdminRandevuKapat.cs" />
+    <Compile Include="AdminRandevuKapandiActivity.cs" />
+    <Compile Include="AdminRandevuKapatActivity.cs" />
     <Compile Include="BolumEkleActivity.cs" />
     <Compile Include="DoktorEkleActivity.cs" />
     <Compile Include="DoktorRandevularimActivity.cs" />
@@ -233,7 +234,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\adminRandevuKapat.axml">
+    <AndroidResource Include="Resources\layout\adminRandevuKapat_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\adminRandevuKapandi_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -35,6 +35,12 @@ namespace Business.Concrete
             return favori;
         }
 
+        public Favori Getir(int hastaId, int doktorId)
+        {
+            Favori favori = favoriDal.Get(x => x.HastaId == hastaId && x.DoktorId == doktorId);
+            return favori;
+        }
+
         public Favori Sil(int favoriId)
         {
             Favori favori = Getir(favoriId);

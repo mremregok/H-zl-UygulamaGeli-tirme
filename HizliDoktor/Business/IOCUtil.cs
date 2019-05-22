@@ -22,6 +22,7 @@ namespace Business
             builder.RegisterType<HastaDal>().As<IHastaDal>();
             builder.RegisterType<HastaneDal>().As<IHastaneDal>();
             builder.RegisterType<RandevuDal>().As<IRandevuDal>();
+            builder.RegisterType<FavoriDal>().As<IFavoriDal>();
 
             builder.RegisterType<BolumManager>().As<IBolumService>();
             builder.RegisterType<LoginManager>().As<ILoginService>();
@@ -29,6 +30,7 @@ namespace Business
             builder.RegisterType<HastaneManager>().As<IHastaneService>();
             builder.RegisterType<DoktorManager>().As<IDoktorService>();
             builder.RegisterType<HastaManager>().As<IHastaService>();
+            builder.RegisterType<FavoriManager>().As<IFavoriService>();
 
 
             Container = builder.Build();
