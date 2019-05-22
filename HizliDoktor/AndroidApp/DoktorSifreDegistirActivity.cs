@@ -16,7 +16,7 @@ using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "lblDoktorSifreDegistir", Theme = "@style/AppTheme")]
+    [Activity(Label = "Şifre Değiştir", Theme = "@style/AppTheme")]
     public class DoktorSifreDegistirActivity : AppCompatActivity
     {
         private EditText txtDoktorEskiSifre,txtDoktorYeniSifre,txtDoktorSifreOnay;
@@ -94,6 +94,12 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnDoktorSifreDegistir:
                     {
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorCikisYap:
+                    {
+                        var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
                         return true;
                     }
             }

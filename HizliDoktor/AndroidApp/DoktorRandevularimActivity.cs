@@ -16,7 +16,7 @@ using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Doktor Randevularım", Theme = "@style/AppTheme")]
+    [Activity(Label = "Randevularım", Theme = "@style/AppTheme")]
     public class DoktorRandevularimActivity : AppCompatActivity
     {
         ListView _listView;
@@ -107,6 +107,12 @@ namespace AndroidApp
                     {
                         var intent = new Intent(this, typeof(DoktorSifreDegistirActivity));
                         intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorCikisYap:
+                    {
+                        var intent = new Intent(this, typeof(GirisYapActivity));
                         StartActivity(intent);
                         return true;
                     }
