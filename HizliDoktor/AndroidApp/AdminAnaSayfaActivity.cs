@@ -16,10 +16,14 @@ namespace AndroidApp
     [Activity(Label = "Anasayfa", Theme = "@style/AppTheme")]
     public class AdminAnaSayfaActivity : AppCompatActivity
     {
+        ImageView adminProfilImg;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.adminAnaSayfa_layout);
+
+            adminProfilImg = FindViewById<ImageView>(Resource.Id.adminProfilImg);
+            adminProfilImg.SetImageResource(Resource.Drawable.man);
 
             // Create your application here
         }
@@ -71,6 +75,12 @@ namespace AndroidApp
                 case Resource.Id.menuBtnHastaneListele:
                     {
                         var intent = new Intent(this, typeof(HastaneListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorListele:
+                    {
+                        var intent = new Intent(this, typeof(DoktorListeleActivity));
                         StartActivity(intent);
                         return true;
                     }

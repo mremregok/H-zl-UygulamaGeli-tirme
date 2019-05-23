@@ -46,13 +46,18 @@ namespace AndroidApp
 
             btnHastaBilgiGuncelle = FindViewById<Button>(Resource.Id.btnHastaGuncelle);
 
+            btnHastaBilgiGuncelle.Click += BtnHastaBilgiGuncelle_Click;
+
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
+
+            txtHastaYeniAd.Text = hasta.Ad;
+            txtHastaYeniSoyad.Text = hasta.Soyad;
         }
 
         private void BtnHastaBilgiGuncelle_Click(object sender, EventArgs e)
         {
 
-            if(txtHastaYeniAd.Text == null || txtHastaYeniSoyad.Text == null || txtHastaEskiSifre.Text == null || txtHastaYeniSifre.Text == null)
+            if (txtHastaYeniAd.Text == null || txtHastaYeniSoyad.Text == null || txtHastaEskiSifre.Text == null || txtHastaYeniSifre.Text == null)
             {
                 Toast.MakeText(Application.Context, "Lütfen bilgilerin tamamını doldurduğunuzdan emin olun.", ToastLength.Long).Show();
                 return;
@@ -63,7 +68,7 @@ namespace AndroidApp
                 {
                     hasta.Ad = txtHastaYeniAd.Text;
                     hasta.Soyad = txtHastaYeniSoyad.Text;
-                    hasta.Sifre = txtHastaEskiSifre.Text;
+                    hasta.Sifre = txtHastaYeniSifre.Text;
 
                     hastaService.Guncelle(hasta);
 

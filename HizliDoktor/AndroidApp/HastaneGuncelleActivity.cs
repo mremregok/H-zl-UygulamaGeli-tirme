@@ -225,6 +225,12 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
+                case Resource.Id.menuBtnDoktorListele:
+                    {
+                        var intent = new Intent(this, typeof(DoktorListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
 
             }
             return base.OnOptionsItemSelected(item);

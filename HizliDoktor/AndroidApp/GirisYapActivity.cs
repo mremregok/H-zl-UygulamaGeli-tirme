@@ -88,7 +88,7 @@ namespace AndroidApp
                     if (hasta.IsMailVerified)
                     {
                         //randevu alma activity çağır
-                        var intent = new Intent(this, typeof(RandevuAlActivity));
+                        var intent = new Intent(this, typeof(HastaProfilimActivity));
                         intent.PutExtra("tc", txtTC.Text);
                         StartActivity(intent);
                     }

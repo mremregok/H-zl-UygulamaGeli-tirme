@@ -25,6 +25,7 @@ namespace AndroidApp
         private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
 
         private Button hastaProfiliGuncelle;
+        private ImageView hastaProfilImg;
 
         public HastaProfilimActivity()
         {
@@ -49,18 +50,30 @@ namespace AndroidApp
             hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
 
             hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
+            hastaProfilImg = FindViewById<ImageView>(Resource.Id.hastaProfilImg);
 
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
 
-            hastaTCKN.Text += hasta.TC;
+            hastaTCKN.Text ="TC No : " + hasta.TC;
 
-            hastaAd.Text += hasta.Ad;
+            hastaAd.Text ="Hasta Adý : " + hasta.Ad;
 
-            hastaSoyad.Text += hasta.Soyad;
+            hastaSoyad.Text ="Hasta Soyadý : " + hasta.Soyad;
 
-            hastaCinsiyet.Text += hasta.Cinsiyet;
+            if (hasta.Cinsiyet == 0)
+            {
+                hastaCinsiyet.Text = "Cinsiyet : Kadýn";
+                hastaProfilImg.SetImageResource(Resource.Drawable.woman);
+            }
+                
+            else
+            {
+                hastaCinsiyet.Text = "Cinsiyet : Erkek";
+                hastaProfilImg.SetImageResource(Resource.Drawable.man);
+            }
+                
 
-            hastaDogumTarihi.Text += hasta.DogumTarihi;
+            hastaDogumTarihi.Text ="Doðum Tarihiniz : " +hasta.DogumTarihi.Value.ToShortDateString().ToString();
 
             hastaProfiliGuncelle.Click += HastaProfiliGuncelle_Click;
         }

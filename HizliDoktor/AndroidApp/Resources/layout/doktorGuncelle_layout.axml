@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/lblDoktorGuncelle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Doktor Güncelle  "
+		android:textAlignment="center"
+	/>
+
+	<EditText
+		android:id="@+id/txtGuncelleUnvan"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Ünvan Giriniz"
+		android:layout_below="@id/lblDoktorGuncelle"
+		
+	/>
+	<EditText
+		android:id="@+id/txtGuncelleAd"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Ad Giriniz"
+		android:layout_below="@id/txtGuncelleUnvan"
+		
+	/>
+	<EditText
+		android:id="@+id/txtGuncelleSoyad"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Soyadı Giriniz"
+		android:layout_below="@id/txtGuncelleAd"
+		
+	/>
+
+	<TextView
+		android:id="@+id/textLblHastane"
+		android:text="Hastane Seçiniz : "
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="10dp"
+		android:paddingTop="20dp"
+		android:textAppearance="?android:attr/textAppearance"
+		android:layout_below="@id/txtGuncelleSoyad"
+	/>
+	<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/spinnerGuncelleHastaneler" 
+		android:layout_below="@id/textLblHastane"
+	/>
+	<TextView
+		android:id="@+id/textLblBolum"
+		android:text="Bölüm Seçiniz : "
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="10dp"
+		android:paddingTop="20dp"
+		android:textAppearance="?android:attr/textAppearance"
+		android:layout_below="@id/spinnerGuncelleHastaneler"
+	/>
+	<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/spinnerGuncelleBolumler" 
+		android:layout_below="@id/textLblBolum"
+	/>
+	<Button
+		android:id="@+id/btnDoktorGuncelle"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="10dp"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@id/spinnerGuncelleBolumler"
+		android:layout_marginTop="20dp"
+		android:text="KAYDET"
+		android:background="#3700b3"
+		android:textColor="@android:color/white"
+	/>
+
+</RelativeLayout>

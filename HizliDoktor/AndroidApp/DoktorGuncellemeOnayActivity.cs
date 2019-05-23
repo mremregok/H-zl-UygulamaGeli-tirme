@@ -10,37 +10,25 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using AndroidApp.Resources.Adapter;
-using Autofac;
-using Business.Abstract;
-using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Hastane Listele", Theme = "@style/AppTheme")]
-    public class HastaneListeleActivity : AppCompatActivity
+    [Activity(Label = "Doktor Güncelleme Onay", Theme = "@style/AppTheme")]
+    public class DoktorGuncellemeOnayActivity : AppCompatActivity
     {
-        ListView listView;
-        List<Hastane> hastaneler;
-        IHastaneService hastaneService;
-
-        public HastaneListeleActivity()
-        {
-            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
-        }
+        Button btnDoktorGuncellemeOnayGoruntule;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaneListele_layout);
+            SetContentView(Resource.Layout.doktorGuncelleOnay_layout);
+            btnDoktorGuncellemeOnayGoruntule = FindViewById<Button>(Resource.Id.btnDoktorGuncellemeOnayGoruntule);
+            btnDoktorGuncellemeOnayGoruntule.Click += BtnDoktorGuncellemeOnayGoruntule_Click;
+        }
 
-            hastaneler = hastaneService.TumHastaneler();
-            listView = FindViewById<ListView>(Resource.Id.listHastane);
-
-            HastaneListeleAdapter adapter = new HastaneListeleAdapter(this, hastaneler);
-            listView.Adapter = adapter;
-
-
-            // Create your application here
+        private void BtnDoktorGuncellemeOnayGoruntule_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(DoktorListeleActivity));
+            StartActivity(intent);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -55,8 +43,6 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnAnasayfa:
                     {
-                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
-                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaneEkle:

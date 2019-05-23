@@ -267,11 +267,25 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnAdminRandevuKapat:
                     {
+                        var intent = new Intent(this, typeof(AdminRandevuKapatActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnAdminCikisYap:
                     {
                         var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnHastaneListele:
+                    {
+                        var intent = new Intent(this, typeof(HastaneListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorListele:
+                    {
+                        var intent = new Intent(this, typeof(DoktorListeleActivity));
                         StartActivity(intent);
                         return true;
                     }

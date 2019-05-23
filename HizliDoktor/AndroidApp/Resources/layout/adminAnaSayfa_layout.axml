@@ -9,6 +9,23 @@
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:text="test"
+		android:text="Admin Sayfasına Hoşgeldiniz"
+		android:textAlignment="center"
+		android:layout_marginTop="@dimen/abc_action_bar_content_inset_material"
 	/>
+	<ImageView
+		android:src="@android:drawable/ic_menu_gallery"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="60dp"
+		android:id="@+id/adminProfilImg" />
+
+		<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:text="Not : Gerekli işlemleri sağ üst köşeden yapabilirsiniz."
+		android:textAlignment="center"
+		android:layout_marginTop="250dp"
+	/>
+
 </RelativeLayout>

@@ -12,6 +12,7 @@ namespace Business.Abstract
         void Guncelle(Doktor doktor);
         Doktor Getir(int doktorId);
         Doktor Getir(string TC);
+        List<Doktor> TumDoktorlar();
         List<Doktor> Doktorlar(int bolumId);
     }
 }

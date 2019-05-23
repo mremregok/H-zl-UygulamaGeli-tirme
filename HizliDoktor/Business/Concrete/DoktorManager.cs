@@ -18,6 +18,11 @@ namespace Business.Concrete
             randevuDal = _randevuDal;
         }
 
+        public List<Doktor> TumDoktorlar()
+        {
+            return doktorDal.GetList();
+        }
+
         public List<Doktor> Doktorlar(int bolumId)
         {
             return doktorDal.GetList(x => x.BolumId == bolumId);

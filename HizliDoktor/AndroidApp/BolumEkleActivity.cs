@@ -89,6 +89,8 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnBolumEkle:
                     {
+                        var intent = new Intent(this, typeof(BolumEkleActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnDoktorEkle:
@@ -106,6 +108,18 @@ namespace AndroidApp
                 case Resource.Id.menuBtnAdminCikisYap:
                     {
                         var intent = new Intent(this, typeof(GirisYapActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnHastaneListele:
+                    {
+                        var intent = new Intent(this, typeof(HastaneListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorListele:
+                    {
+                        var intent = new Intent(this, typeof(DoktorListeleActivity));
                         StartActivity(intent);
                         return true;
                     }

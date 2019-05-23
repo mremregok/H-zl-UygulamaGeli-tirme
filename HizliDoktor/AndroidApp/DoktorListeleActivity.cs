@@ -14,35 +14,29 @@ using AndroidApp.Resources.Adapter;
 using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
-
 namespace AndroidApp
 {
-    [Activity(Label = "Hastane Listele", Theme = "@style/AppTheme")]
-    public class HastaneListeleActivity : AppCompatActivity
+    [Activity(Label = "DoktorListele", Theme = "@style/AppTheme")]
+    public class DoktorListeleActivity : AppCompatActivity
     {
         ListView listView;
-        List<Hastane> hastaneler;
-        IHastaneService hastaneService;
+        List<Doktor> doktorlar;
+        IDoktorService doktorService;
 
-        public HastaneListeleActivity()
+        public DoktorListeleActivity()
         {
-            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
+            doktorService = Business.IOCUtil.Container.Resolve<IDoktorService>();
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.hastaneListele_layout);
+            SetContentView(Resource.Layout.doktorListele_layout);
 
-            hastaneler = hastaneService.TumHastaneler();
-            listView = FindViewById<ListView>(Resource.Id.listHastane);
-
-            HastaneListeleAdapter adapter = new HastaneListeleAdapter(this, hastaneler);
+            doktorlar = doktorService.TumDoktorlar();
+            listView = FindViewById<ListView>(Resource.Id.listDoktor);
+            DoktorListeleAdapter adapter = new DoktorListeleAdapter(this, doktorlar);
             listView.Adapter = adapter;
-
-
-            // Create your application here
         }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.adminMenu, menu);

@@ -103,6 +103,7 @@ namespace AndroidApp
             MenuInflater.Inflate(Resource.Menu.adminMenu, menu);
             return true;
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -115,6 +116,8 @@ namespace AndroidApp
                     }
                 case Resource.Id.menuBtnHastaneEkle:
                     {
+                        var intent = new Intent(this, typeof(HastaneEkleActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnBolumEkle:
@@ -141,6 +144,19 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
+                case Resource.Id.menuBtnHastaneListele:
+                    {
+                        var intent = new Intent(this, typeof(HastaneListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+                case Resource.Id.menuBtnDoktorListele:
+                    {
+                        var intent = new Intent(this, typeof(DoktorListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
+
             }
             return base.OnOptionsItemSelected(item);
         }
