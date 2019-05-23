@@ -51,6 +51,11 @@ namespace AndroidApp
             rbErkek = FindViewById<RadioButton>(Resource.Id.rbErkek);
             rbKadin = FindViewById<RadioButton>(Resource.Id.rbKadin);
 
+            txtTC.Enabled = false;
+            Random random = new Random();
+            txtTC.Text = random.Next(10001, 99999).ToString();
+            
+
             Hastaneler = hastaneService.TumHastaneler();
             List<string> hastaneAdlari = new List<string>();
 
@@ -74,12 +79,7 @@ namespace AndroidApp
                 return;
             }
 
-            if (txtTC.Text.Length < 11)
-            {
-                Toast.MakeText(Application.Context, "TC kimlik no 11 hane az olamaz.", ToastLength.Long).Show();
-                return;
-            }
-
+            
             if (txtPass.Text.Length < 6)
             {
                 Toast.MakeText(Application.Context, "Oluşturulan şifre 6 karakterden az olamaz.", ToastLength.Long).Show();
@@ -98,6 +98,10 @@ namespace AndroidApp
             int bolumid = (int)bolumler.SelectedItemId;
             doktor.BolumId = bolumid + 1;
             doktorService.Ekle(doktor);
+
+            var intent = new Intent(this, typeof(DoktorEkleOnayActivity));
+            StartActivity(intent);
+            
 
         }
 

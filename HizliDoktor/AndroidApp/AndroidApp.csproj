@@ -64,6 +64,7 @@
     <Compile Include="BolumGuncelleOnayActivity.cs" />
     <Compile Include="BolumListeleActivity.cs" />
     <Compile Include="DoktorEkleActivity.cs" />
+    <Compile Include="DoktorEkleOnayActivity.cs" />
     <Compile Include="DoktorGuncelleActivity.cs" />
     <Compile Include="DoktorGuncellemeOnayActivity.cs" />
     <Compile Include="DoktorListeleActivity.cs" />
@@ -316,6 +317,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\bolumListeleItem_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\doktorEkleOnay_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

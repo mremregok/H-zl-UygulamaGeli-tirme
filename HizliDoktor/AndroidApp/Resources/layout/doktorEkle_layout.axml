@@ -20,7 +20,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/lblDoktorEkle"
-		android:hint="TC Kimlik Numarası Giriniz"
 		android:ems="10"
 		android:maxLength="11"
 		
@@ -146,7 +145,7 @@
 	/>
 	<TextView
 		android:id="@+id/textLblBolum"
-		android:text="Hastane Seçiniz : "
+		android:text="Bölüm Seçiniz : "
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:paddingLeft="10dp"

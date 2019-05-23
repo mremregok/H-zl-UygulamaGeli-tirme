@@ -33,7 +33,7 @@ namespace AndroidApp
 
             lblHosgeldiniz = FindViewById<TextView>(Resource.Id.lblHoşgeldiniz);
             Doktor doktor = new Doktor();
-            doktor = doktorService.Getir(1);
+            doktor = doktorService.Getir(Intent.GetStringExtra("tc"));
             lblHosgeldiniz.Text = "Hoşgeldiniz, "+doktor.Unvan+" Dr."+doktor.Ad+" "+doktor.Soyad;
         }
 
