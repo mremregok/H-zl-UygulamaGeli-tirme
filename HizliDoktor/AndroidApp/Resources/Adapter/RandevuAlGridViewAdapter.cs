@@ -10,6 +10,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
 using Java.Lang;
 
 namespace AndroidApp.Resources.Adapter
@@ -22,11 +25,20 @@ namespace AndroidApp.Resources.Adapter
         public string selectedTime;
         List<DateTime> listDates;
         Context context;
+        private bool isAdmin;
+        private IRandevuService randevuService;
+        public bool IsClosedButton;
 
-        public RandevuAlGridViewAdapter(List<DateTime> _list, Context _context)
+        public RandevuAlGridViewAdapter()
+        {
+            randevuService = Business.IOCUtil.Container.Resolve<IRandevuService>();
+        }
+
+        public RandevuAlGridViewAdapter(List<DateTime> _list, Context _context, bool isAdmin)
         {
             listDates = _list;
             context = _context;
+            this.isAdmin = isAdmin;
         }
 
         public override Java.Lang.Object GetItem(int position)
@@ -54,7 +66,9 @@ namespace AndroidApp.Resources.Adapter
                     button.SetBackgroundColor(Color.ParseColor("#8e0000"));
                     button.SetTextColor(Color.ParseColor("#ffffff"));
                     button.Text = listDates[position].ToShortTimeString();
-                    button.Enabled = false;
+
+                    if (isAdmin) button.Click += Button_ClickKapat;
+                    else button.Enabled = false;
                 }
                 else if(listDates[position].Second == 0)
                 {
@@ -71,6 +85,32 @@ namespace AndroidApp.Resources.Adapter
             else button = (Button)convertView;
 
             return button;
+        }
+
+        private void Button_ClickKapat(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (tempBtn != null)
+            {
+                tempBtn.SetBackgroundColor(Color.ParseColor("#8e0000"));
+                selectedTime = string.Empty;
+            }
+
+            if (tempBtn == button)
+            {
+                tempBtn.SetBackgroundColor(Color.ParseColor("#8e0000"));
+                tempBtn = null;
+                selectedTime = string.Empty;
+            }
+            else
+            {
+                button.SetBackgroundColor(Color.ParseColor("#b2dfdb"));
+                tempBtn = button;
+                selectedTime = button.Text;
+            }
+
+            IsClosedButton = true;
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -95,6 +135,8 @@ namespace AndroidApp.Resources.Adapter
                 tempBtn = button;
                 selectedTime = button.Text;
             }
+
+            IsClosedButton = false;
         }
 
         public DateTime GetSelectedTime()

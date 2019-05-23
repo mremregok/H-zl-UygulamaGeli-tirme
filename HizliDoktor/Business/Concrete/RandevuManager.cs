@@ -67,7 +67,7 @@ namespace Business.Concrete
 
         public List<DateTime> MusaitTarihleriGetir(int doktorId, DateTime gun)
         {
-            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId && x.HastaId != 0);
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
 
             List<DateTime> musaitTarihler = new List<DateTime>();
 
@@ -100,6 +100,12 @@ namespace Business.Concrete
             mailMessage.Body = mesaj;
             mailMessage.Subject = "Hızlı Doktor - Randevu bilgilendirme";
             client.Send(mailMessage);
+        }
+
+        public Randevu Getir(DateTime randevuTarihi)
+        {
+            Randevu randevu = randevuDal.Get(x => x.Tarih.Value == randevuTarihi);
+            return randevu;
         }
     }
 }

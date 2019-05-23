@@ -264,7 +264,7 @@ namespace AndroidApp
             else
             {
                 List<DateTime> dateTimes = randevuService.MusaitTarihleriGetir(doktor.Id, seciliTarih);
-                timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this);
+                timeAdapter = new RandevuAlGridViewAdapter(dateTimes, this, false);
                 gridTarihler.Adapter = timeAdapter;
                 lblRandevuVar.Visibility = ViewStates.Invisible;
             }
