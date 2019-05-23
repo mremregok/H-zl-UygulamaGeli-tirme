@@ -64,14 +64,17 @@ namespace AndroidApp.Resources.Adapter
             txtFavorilerimDoktorSil.PaintFlags = Android.Graphics.PaintFlags.UnderlineText;
 
             Doktor doktor =  doktorService.Getir(favoriler[position].DoktorId);
-            Bolum bolum = bolumService.Getir(doktor.BolumId);
 
-            txtFavorilerimDoktorAdi.Text = doktor.Ad + " " + doktor.Soyad;
-            txtFavorilerimBolumAdı.Text = bolum.Ad;
-            txtFavorilerimDoktorSil.Text = "Çıkar";
+            if(doktor != null)
+            {
+                Bolum bolum = bolumService.Getir(doktor.BolumId);
 
-            txtFavorilerimDoktorSil.Click += (sender, e) => txtFavorilerimDoktorSil_Click(sender, e, favoriler[position]);
-            
+                txtFavorilerimDoktorAdi.Text = doktor.Ad + " " + doktor.Soyad;
+                txtFavorilerimBolumAdı.Text = bolum.Ad;
+                txtFavorilerimDoktorSil.Text = "Çıkar";
+
+                txtFavorilerimDoktorSil.Click += (sender, e) => txtFavorilerimDoktorSil_Click(sender, e, favoriler[position]);
+            }
 
             return satir;
         }
