@@ -11,10 +11,16 @@ namespace Business.Concrete
     public class HastaneManager : IHastaneService
     {
         IHastaneDal hastaneDal;
+        IBolumDal bolumDal;
+        IDoktorDal doktorDal;
+        IRandevuDal randevuDal;
 
-        public HastaneManager(IHastaneDal _hastaneDal)
+        public HastaneManager(IHastaneDal _hastaneDal, IBolumDal _bolumDal, IDoktorDal _doktorDal, IRandevuDal _randevuDal)
         {
             hastaneDal = _hastaneDal;
+            bolumDal = _bolumDal;
+            doktorDal = _doktorDal;
+            randevuDal = _randevuDal;
         }
 
         public void Ekle(Hastane hastane)
@@ -66,6 +72,24 @@ namespace Business.Concrete
         public Hastane Sil(int hastaneId)
         {
             Hastane hastane = hastaneDal.Get(x => x.Id == hastaneId);
+            List<Bolum> bolumler = bolumDal.GetList(x => x.HastaneId == hastaneId);
+            List<Doktor> doktorlar = doktorDal.GetList(x => x.HastaneId == hastaneId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.HastaneId == hastaneId);
+
+            foreach (var item in bolumler)
+            {
+                bolumDal.Delete(item);
+            }
+
+            foreach (var item in doktorlar)
+            {
+                doktorDal.Delete(item);
+            }
+
+            foreach (var item in randevular)
+            {
+                randevuDal.Delete(item);
+            }
 
             hastaneDal.Delete(hastane);
 

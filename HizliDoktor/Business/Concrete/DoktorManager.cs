@@ -10,10 +10,12 @@ namespace Business.Concrete
     public class DoktorManager : IDoktorService
     {
         IDoktorDal doktorDal;
+        IRandevuDal randevuDal;
 
-        public DoktorManager(IDoktorDal _doktorDal)
+        public DoktorManager(IDoktorDal _doktorDal, IRandevuDal _randevuDal)
         {
             doktorDal = _doktorDal;
+            randevuDal = _randevuDal;
         }
 
         public List<Doktor> Doktorlar(int bolumId)
@@ -46,6 +48,13 @@ namespace Business.Concrete
         public Doktor Sil(int doktorId)
         {
             Doktor doktor = doktorDal.Get(x => x.Id == doktorId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.DoktorId == doktorId);
+
+            foreach (var item in randevular)
+            {
+                randevuDal.Delete(item);
+            }
+
             doktorDal.Delete(doktor);
 
             return doktor;

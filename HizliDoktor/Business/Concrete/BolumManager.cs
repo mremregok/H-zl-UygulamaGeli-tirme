@@ -10,10 +10,14 @@ namespace Business.Concrete
     public class BolumManager : IBolumService
     {
         IBolumDal bolumDal;
+        IDoktorDal doktorDal;
+        IRandevuDal randevuDal;
 
-        public BolumManager(IBolumDal _bolumDal)
+        public BolumManager(IBolumDal _bolumDal, IDoktorDal _doktorDal, IRandevuDal _randevuDal)
         {
             bolumDal = _bolumDal;
+            doktorDal = _doktorDal;
+            randevuDal = _randevuDal;
         }
 
         public List<Bolum> Bolumler(int hastaneId)
@@ -40,6 +44,18 @@ namespace Business.Concrete
         public Bolum Sil(int bolumId)
         {
             Bolum bolum = bolumDal.Get(x => x.Id == bolumId);
+            List<Doktor> doktorlar = doktorDal.GetList(x => x.BolumId == bolumId);
+            List<Randevu> randevular = randevuDal.GetList(x => x.BolumId == bolumId);
+
+            foreach (var item in doktorlar)
+            {
+                doktorDal.Delete(item);
+            }
+
+            foreach (var item in randevular)
+            {
+                randevuDal.Delete(item);
+            }
 
             bolumDal.Delete(bolum);
 
