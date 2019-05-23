@@ -61,6 +61,8 @@ namespace AndroidApp
             {
                 if (txtHastaEskiSifre.Text == hasta.Sifre)
                 {
+                    hasta.Ad = txtHastaYeniAd.Text;
+                    hasta.Soyad = txtHastaYeniSoyad.Text;
                     hasta.Sifre = txtHastaEskiSifre.Text;
 
                     hastaService.Guncelle(hasta);
