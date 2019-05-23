@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/lblHastaProfilGuncelle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Güncelle"
+		android:textAlignment="center" />
+	<TextView
+		android:id="@+id/lblGuncelleHastaAdi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3dp"
+		android:text=""
+		android:gravity="left"
+		android:layout_marginLeft="0.0dp" />
+	<TextView
+		android:id="@+id/lblGuncelleHastaSoyadi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3dp"
+		android:text=""
+		android:gravity="left" />
+	<TextView
+		android:id="@+id/lblGuncelleHastaCinsiyet"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3dp"
+		android:text=""
+		android:gravity="left" />
+	<TextView
+		android:id="@+id/lblGuncelleHastaAciklama"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3dp"
+		android:text=""
+		android:gravity="left" />
+
+</LinearLayout>

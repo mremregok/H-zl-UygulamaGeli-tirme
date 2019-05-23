@@ -61,26 +61,32 @@
 		android:layout_marginTop="3dp"
 		android:text=""
 		android:gravity="left" />
-	<GridView
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="3dp"
-		android:id="@+id/gridGecmisRandevular" />
 	<Button
-		android:layout_below="@id/gridGecmisRandevular"
+		android:layout_below="@id/lblHastaDogumTarihi"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnHastaBilgiDuzenle"
+		android:id="@+id/btnHastaProfiliGecmisRandevular"
 		android:background="@android:color/holo_green_light"
-		android:text="Profili Güncelle"
+		android:text="Geçmiş Randevular"
 		android:textColor = "@color/material_blue_grey_800"
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="15dp"
 		android:layout_marginLeft="90dp"
 		android:layout_marginRight="90dp"
 	/>
+	<Button
+		android:layout_below="@id/btnHastaProfiliGecmisRandevular"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnHastaProfiliDuzenle"
+		android:background="@android:color/holo_green_light"
+		android:text="Profili Düzenle"
+		android:textColor = "@color/material_blue_grey_800"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="15dp"
+		android:layout_marginLeft="90dp"
+		android:layout_marginRight="90dp"
+		/>
 	
 	
 	

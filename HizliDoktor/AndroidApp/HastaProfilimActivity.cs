@@ -20,13 +20,13 @@ namespace AndroidApp
     {
         IHastaService hastaService;
 
+
+
         Hasta hasta = new Hasta();
 
         private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
 
-        private GridView hastaGecmisRandevular;
-
-        private Button hastaProfiliGuncelle;
+        private Button btnProfiliGuncelle, btnGecmisRandevulariIncele;
 
         public HastaProfilimActivity()
         {
@@ -40,6 +40,12 @@ namespace AndroidApp
 
             // Create your application here
 
+            btnProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaProfiliDuzenle);
+
+            btnGecmisRandevulariIncele.Click += BtnGecmisRandevulariIncele_Click;
+
+            btnGecmisRandevulariIncele = FindViewById<Button>(Resource.Id.btnHastaProfiliGecmisRandevular);
+
             hastaAd = FindViewById<TextView>(Resource.Id.lblHastaAdi);
 
             hastaSoyad = FindViewById<TextView>(Resource.Id.lblHastaSoyadi);
@@ -49,10 +55,6 @@ namespace AndroidApp
             hastaCinsiyet = FindViewById<TextView>(Resource.Id.lblHastaCinsiyet);
 
             hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
-
-            hastaGecmisRandevular = FindViewById<GridView>(Resource.Id.gridGecmisRandevular);
-
-            hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
 
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
 
@@ -112,5 +114,13 @@ namespace AndroidApp
 
             return base.OnOptionsItemSelected(item);
         }
+
+        private void BtnGecmisRandevulariIncele_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(HastaGecmisRandevularimActivity));
+            StartActivity(intent);
+        }
     }
+
+
 }
