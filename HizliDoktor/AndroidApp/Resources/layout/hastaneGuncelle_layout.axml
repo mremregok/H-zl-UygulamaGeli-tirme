@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/lblHastaneEkle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Hastane Güncelle"
+		android:textAlignment="center"
+	/>
+	<EditText
+		android:id="@+id/txtGuncelleHastaneAd"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Hastane Adı Giriniz"
+		android:ems="10"
+		android:maxLength="50"
+	/>
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dp"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:layout_marginHorizontal="10dp"
+			android:text="Bir il seçin"
+			android:layout_gravity="left"
+		/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dip"
+			android:layout_marginHorizontal="10dp"
+			android:text="Bir ilçe seçin"
+			android:layout_gravity="right"
+		/>
+		
+	</FrameLayout>
+
+	<FrameLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<Spinner
+			android:id="@+id/spinnerHastaneGuncelleIller"
+			android:layout_width="120dp"
+			android:layout_height="40dp"
+			android:layout_marginHorizontal="10dp"
+			android:layout_gravity="left"
+		/>
+		<Spinner
+			android:id="@+id/spinnerHastaneGuncelleIlceler"
+			android:layout_width="120dp"
+			android:layout_height="40dp"
+			android:layout_marginHorizontal="10dp"
+			android:layout_gravity="right"
+		/>
+	</FrameLayout>
+	<Button
+		android:id="@+id/btnHastaneGuncelle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="70dp"
+		android:text="KAYDET"
+		android:background="#3700b3"
+		android:textColor="@android:color/white"
+	/>
+</LinearLayout>

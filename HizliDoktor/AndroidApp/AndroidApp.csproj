@@ -66,6 +66,9 @@
     <Compile Include="HastaFavoriDoktorlarimActivity.cs" />
     <Compile Include="HastaFavoriSilActivity.cs" />
     <Compile Include="HastaneEkleActivity.cs" />
+    <Compile Include="HastaneGuncelleActivity.cs" />
+    <Compile Include="HastaneGuncellemeOnayActivity.cs" />
+    <Compile Include="HastaneListeleActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
     <Compile Include="HastaRandevularimDetayActivity.cs" />
     <Compile Include="HastaRandevularimIptalActivity.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="RandevuOnaylaActivity.cs" />
     <Compile Include="RandevuOnaylandiActivity.cs" />
     <Compile Include="Resources\Adapter\HastaFavorilerimAdapter.cs" />
+    <Compile Include="Resources\Adapter\HastaneListeleAdapter.cs" />
     <Compile Include="Resources\Adapter\HastaRandevularimAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevuAlGridViewAdapter.cs" />
     <Compile Include="Resources\Adapter\RandevularimListViewAdapter.cs" />
@@ -246,6 +250,26 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\hastaFavoriSil_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaneListeleItem_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaneListele_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaneGuncelle_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaneGuncellemeOnay_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

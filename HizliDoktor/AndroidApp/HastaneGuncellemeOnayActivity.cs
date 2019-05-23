@@ -13,15 +13,26 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Anasayfa", Theme = "@style/AppTheme")]
-    public class AdminAnaSayfaActivity : AppCompatActivity
+    [Activity(Label = "Hastane Güncelleme Onay", Theme = "@style/AppTheme")]
+    public class HastaneGuncellemeOnayActivity : AppCompatActivity
     {
+        Button btnHastaneGuncellemeOnayGoruntule;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.adminAnaSayfa_layout);
+            SetContentView(Resource.Layout.hastaneGuncellemeOnay_layout);
+
+            btnHastaneGuncellemeOnayGoruntule = FindViewById<Button>(Resource.Id.btnHastaneGuncellemeOnayGoruntule);
+
+            btnHastaneGuncellemeOnayGoruntule.Click += BtnHastaneGuncellemeOnayGoruntule_Click;
 
             // Create your application here
+        }
+
+        private void BtnHastaneGuncellemeOnayGoruntule_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(HastaneListeleActivity));
+            StartActivity(intent);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -78,5 +89,6 @@ namespace AndroidApp
             }
             return base.OnOptionsItemSelected(item);
         }
+        
     }
 }

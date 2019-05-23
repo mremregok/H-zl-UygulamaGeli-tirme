@@ -10,16 +10,35 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
+using Autofac;
+using Business.Abstract;
+using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Anasayfa", Theme = "@style/AppTheme")]
-    public class AdminAnaSayfaActivity : AppCompatActivity
+    [Activity(Label = "Hastane Listele", Theme = "@style/AppTheme")]
+    public class HastaneListeleActivity : AppCompatActivity
     {
+        ListView listView;
+        List<Hastane> hastaneler;
+        IHastaneService hastaneService;
+
+        public HastaneListeleActivity()
+        {
+            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.adminAnaSayfa_layout);
+            SetContentView(Resource.Layout.hastaneListele_layout);
+
+            hastaneler = hastaneService.TumHastaneler();
+            listView = FindViewById<ListView>(Resource.Id.listHastane);
+
+            HastaneListeleAdapter adapter = new HastaneListeleAdapter(this, hastaneler);
+            listView.Adapter = adapter;
+
 
             // Create your application here
         }
