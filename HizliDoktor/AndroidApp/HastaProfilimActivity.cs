@@ -24,8 +24,6 @@ namespace AndroidApp
 
         private TextView hastaAd, hastaSoyad, hastaTCKN, hastaCinsiyet,  hastaDogumTarihi;
 
-        private GridView hastaGecmisRandevular;
-
         private Button hastaProfiliGuncelle;
 
         public HastaProfilimActivity()
@@ -50,8 +48,6 @@ namespace AndroidApp
 
             hastaDogumTarihi = FindViewById<TextView>(Resource.Id.lblHastaDogumTarihi);
 
-            hastaGecmisRandevular = FindViewById<GridView>(Resource.Id.gridGecmisRandevular);
-
             hastaProfiliGuncelle = FindViewById<Button>(Resource.Id.btnHastaBilgiDuzenle);
 
             hasta = hastaService.Getir(Intent.GetStringExtra("tc"));
@@ -65,6 +61,8 @@ namespace AndroidApp
             hastaCinsiyet.Text += hasta.Cinsiyet;
 
             hastaDogumTarihi.Text += hasta.DogumTarihi;
+
+            hastaProfiliGuncelle.Click += HastaProfiliGuncelle_Click;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -111,6 +109,13 @@ namespace AndroidApp
             }
 
             return base.OnOptionsItemSelected(item);
+        }
+
+        private void HastaProfiliGuncelle_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(HastaProfilGuncelleActivity));
+            intent.PutExtra("tc", Intent.GetStringExtra("tc"));
+            StartActivity(intent);
         }
     }
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/lblHastaProfilGuncelle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Güncelle"
+		android:textAlignment="center" />
+	<EditText
+		android:id="@+id/txtYeniHastaAdi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Ad Giriniz"
+		android:ems="10"
+		android:maxLength="20" />
+	<EditText
+		android:id="@+id/txtYeniHastaSoyadi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Soyad Giriniz"
+		android:ems="10"
+		android:maxLength="20" />
+	<EditText
+		android:id="@+id/txtEskiHastaŞifresi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Eski Şifre"
+		android:ems="10"
+		android:maxLength="20" />
+	<EditText
+		android:id="@+id/txtYeniHastaŞifresi"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:hint="Yeni Şifre"
+		android:ems="10"
+		android:maxLength="20" />
+	<Button
+		android:layout_below="@id/txtYeniHastaŞifresi"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnHastaGuncelle"
+		android:background="@android:color/holo_green_light"
+		android:text="Profili Güncelle"
+		android:textColor = "@color/material_blue_grey_800"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="15dp"
+		android:layout_marginLeft="90dp"
+		android:layout_marginRight="90dp"
+	/>
+
+</LinearLayout>

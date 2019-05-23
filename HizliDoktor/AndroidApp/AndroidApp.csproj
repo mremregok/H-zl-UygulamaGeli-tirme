@@ -69,6 +69,7 @@
     <Compile Include="HastaneGuncelleActivity.cs" />
     <Compile Include="HastaneGuncellemeOnayActivity.cs" />
     <Compile Include="HastaneListeleActivity.cs" />
+    <Compile Include="HastaProfilGuncelleActivity.cs" />
     <Compile Include="HastaRandevularimActivity.cs" />
     <Compile Include="HastaRandevularimDetayActivity.cs" />
     <Compile Include="HastaRandevularimIptalActivity.cs" />
@@ -270,6 +271,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\hastaneGuncellemeOnay_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\hastaProfilGuncelle_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
