@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+		<TextView
+		android:id="@+id/lblBolumGüncelle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="Bölüm Güncelle"
+		android:textAlignment="center"
+	/>
+
+
+	<EditText
+		android:id="@+id/txtGuncelleBolumAd"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Bölüm Adı Giriniz"
+		android:ems="10"
+		android:maxLength="50"
+		android:layout_marginTop="10dp"
+	/>
+	
+		<Button
+		android:id="@+id/btnGuncelleBolumKaydet"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:text="KAYDET"
+		android:background="#3700b3"
+		android:textColor="@android:color/white"
+		android:layout_marginTop="20dp"
+	/>
+</LinearLayout>

@@ -10,59 +10,61 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidApp.Resources.Adapter;
 using Autofac;
 using Business.Abstract;
 using Entities.Concrete;
 
 namespace AndroidApp
 {
-    [Activity(Label = "BolumEkle", Theme = "@style/AppTheme")]
-    public class BolumEkleActivity : AppCompatActivity
+    [Activity(Label = "Bolum Listele", Theme = "@style/AppTheme")]
+    public class BolumListeleActivity : AppCompatActivity
     {
-        private Spinner Hastaneler;
-        private Button BolumKaydet;
-        private EditText BolumAd;
-        IBolumService bolumService;
+        private readonly Context context;
+        ListView listView;
+        List<Bolum> bolumler;
         IHastaneService hastaneService;
-        private List<Hastane> hastaneler;
+        IBolumService bolumService;
+        Spinner spinnerhastaneler;
+        Bolum bölüm;
+        private List<Hastane> Hastaneler;
+        public BolumListeleActivity()
+        {
+            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
+            bolumService = Business.IOCUtil.Container.Resolve<IBolumService>();
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.bolumEkle_layout);
-            bolumService = Business.IOCUtil.Container.Resolve<IBolumService>();
-            hastaneService = Business.IOCUtil.Container.Resolve<IHastaneService>();
-            Hastaneler = FindViewById<Spinner>(Resource.Id.spinnerHastaneler);
-            BolumAd = FindViewById<EditText>(Resource.Id.txtBolumAd);
-            BolumKaydet = FindViewById<Button>(Resource.Id.btnBolumKaydet);
 
-            hastaneler = hastaneService.TumHastaneler();
+            SetContentView(Resource.Layout.bolumListele_layout);
+
+            spinnerhastaneler = FindViewById<Spinner>(Resource.Id.spinnerHastaneler);
+
+            listView = FindViewById<ListView>(Resource.Id.listBolum);
+
+            Hastaneler = hastaneService.TumHastaneler();
+
             List<string> hastaneAdlari = new List<string>();
 
-            foreach (var item in hastaneler)
+            foreach (var item in Hastaneler)
             {
                 hastaneAdlari.Add(item.Ad);
             }
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneAdlari);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            Hastaneler.Adapter = adapter;
-            BolumKaydet.Click += BolumKaydet_Click;
+            spinnerhastaneler.Adapter = adapter;
 
+            spinnerhastaneler.ItemSelected += Spinnerhastaneler_ItemSelected;
         }
 
-        private void BolumKaydet_Click(object sender, EventArgs e)
+        private void Spinnerhastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Bolum bolum = new Bolum();
-            if (BolumAd.Text == "")
-            {
-                Toast.MakeText(Application.Context, "Lütfen hastane adını boş bırakmayınız.", ToastLength.Long).Show();
-                return;
-            }
-            bolum.Ad = BolumAd.Text;
-            int hastaneid = (int) Hastaneler.SelectedItemId;
-            bolum.HastaneId = hastaneid + 1;
-            bolumService.Ekle(bolum);
-            var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
-            StartActivity(intent);
+            int id = (int)spinnerhastaneler.SelectedItemId + 1;
+            bolumler =  bolumService.Bolumler(id);
+            BolumListeleAdapter adapter = new BolumListeleAdapter(this, bolumler);
+            listView.Adapter = adapter;
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -70,15 +72,12 @@ namespace AndroidApp
             MenuInflater.Inflate(Resource.Menu.adminMenu, menu);
             return true;
         }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
                 case Resource.Id.menuBtnAnasayfa:
                     {
-                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
-                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaneEkle:
@@ -129,7 +128,6 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
-
             }
             return base.OnOptionsItemSelected(item);
         }

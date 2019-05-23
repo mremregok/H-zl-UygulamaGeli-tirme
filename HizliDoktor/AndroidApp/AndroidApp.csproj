@@ -60,6 +60,9 @@
     <Compile Include="AdminRandevuKapandiActivity.cs" />
     <Compile Include="AdminRandevuKapatActivity.cs" />
     <Compile Include="BolumEkleActivity.cs" />
+    <Compile Include="BolumGuncelleActivity.cs" />
+    <Compile Include="BolumGuncelleOnayActivity.cs" />
+    <Compile Include="BolumListeleActivity.cs" />
     <Compile Include="DoktorEkleActivity.cs" />
     <Compile Include="DoktorGuncelleActivity.cs" />
     <Compile Include="DoktorGuncellemeOnayActivity.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="RandevuAlActivity.cs" />
     <Compile Include="RandevuOnaylaActivity.cs" />
     <Compile Include="RandevuOnaylandiActivity.cs" />
+    <Compile Include="Resources\Adapter\BolumListeleAdapter.cs" />
     <Compile Include="Resources\Adapter\DoktorListeleAdapter.cs" />
     <Compile Include="Resources\Adapter\HastaFavorilerimAdapter.cs" />
     <Compile Include="Resources\Adapter\HastaneListeleAdapter.cs" />
@@ -300,6 +304,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\bolumGuncelle_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\bolumGuncellemeOnay_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\bolumListele_layout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\bolumListeleItem_layout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

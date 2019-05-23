@@ -13,19 +13,24 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-    [Activity(Label = "Anasayfa", Theme = "@style/AppTheme")]
-    public class AdminAnaSayfaActivity : AppCompatActivity
+    [Activity(Label = "Bölüm Güncelleme Onay", Theme = "@style/AppTheme")]
+    public class BolumGuncelleOnayActivity : AppCompatActivity
     {
-        ImageView adminProfilImg;
+        Button btnBolumGuncellemeOnayGoruntule;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.adminAnaSayfa_layout);
 
-            adminProfilImg = FindViewById<ImageView>(Resource.Id.adminProfilImg);
-            adminProfilImg.SetImageResource(Resource.Drawable.man);
+            SetContentView(Resource.Layout.bolumGuncellemeOnay_layout);
 
-            // Create your application here
+            btnBolumGuncellemeOnayGoruntule = FindViewById<Button>(Resource.Id.btnBolumGuncellemeOnayGoruntule);
+            btnBolumGuncellemeOnayGoruntule.Click += BtnBolumGuncellemeOnayGoruntule_Click;
+        }
+
+        private void BtnBolumGuncellemeOnayGoruntule_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(BolumListeleActivity));
+            StartActivity(intent);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -33,7 +38,6 @@ namespace AndroidApp
             MenuInflater.Inflate(Resource.Menu.adminMenu, menu);
             return true;
         }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -75,18 +79,6 @@ namespace AndroidApp
                 case Resource.Id.menuBtnHastaneListele:
                     {
                         var intent = new Intent(this, typeof(HastaneListeleActivity));
-                        StartActivity(intent);
-                        return true;
-                    }
-                case Resource.Id.menuBtnDoktorListele:
-                    {
-                        var intent = new Intent(this, typeof(DoktorListeleActivity));
-                        StartActivity(intent);
-                        return true;
-                    }
-                case Resource.Id.menuBtnBolumListele:
-                    {
-                        var intent = new Intent(this, typeof(BolumListeleActivity));
                         StartActivity(intent);
                         return true;
                     }

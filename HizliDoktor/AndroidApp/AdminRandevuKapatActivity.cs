@@ -290,6 +290,12 @@ namespace AndroidApp
                         return true;
                     }
 
+                case Resource.Id.menuBtnBolumListele:
+                    {
+                        var intent = new Intent(this, typeof(BolumListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
             }
             return base.OnOptionsItemSelected(item);
         }
