@@ -110,9 +110,9 @@ namespace AndroidApp
             doktorveri.Cinsiyet = Cinsiyet;
             doktorveri.Id = ID;
             int hastaneid = Hastaneler.SingleOrDefault(x => x.Ad == hastaneler.SelectedItem.ToString()).Id;
-            doktorveri.HastaneId = hastaneid + 1;
+            doktorveri.HastaneId = hastaneid;
             int bolumid = Bolumler.SingleOrDefault(x => x.Ad == bolumler.SelectedItem.ToString()).Id;
-            doktorveri.BolumId = bolumid + 1;
+            doktorveri.BolumId = bolumid;
             doktorService.Guncelle(doktorveri);
             var intent = new Intent(this, typeof(DoktorGuncellemeOnayActivity));
             StartActivity(intent);
@@ -129,6 +129,8 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnAnasayfa:
                     {
+                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaneEkle:
@@ -173,7 +175,12 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
-
+                case Resource.Id.menuBtnBolumListele:
+                    {
+                        var intent = new Intent(this, typeof(BolumListeleActivity));
+                        StartActivity(intent);
+                        return true;
+                    }
             }
             return base.OnOptionsItemSelected(item);
         }

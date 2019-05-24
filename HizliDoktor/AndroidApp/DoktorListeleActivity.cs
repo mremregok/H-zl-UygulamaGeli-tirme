@@ -101,7 +101,6 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
-
             }
             return base.OnOptionsItemSelected(item);
         }

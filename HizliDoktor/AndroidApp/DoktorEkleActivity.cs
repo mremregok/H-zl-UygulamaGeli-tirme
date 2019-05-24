@@ -95,10 +95,10 @@ namespace AndroidApp
             doktor.DogumTarihi = Convert.ToDateTime(txtDate.Text);
             int hastaneid = Hastaneler.SingleOrDefault(x => x.Ad == hastaneler.SelectedItem.ToString()).Id;
 
-            doktor.HastaneId = hastaneid + 1;
+            doktor.HastaneId = hastaneid;
             int bolumid = Bolumler.SingleOrDefault(x => x.Ad == bolumler.SelectedItem.ToString()).Id;
 
-            doktor.BolumId = bolumid + 1;
+            doktor.BolumId = bolumid;
             doktorService.Ekle(doktor);
 
             var intent = new Intent(this, typeof(DoktorEkleOnayActivity));

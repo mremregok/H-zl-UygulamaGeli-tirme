@@ -289,7 +289,6 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
-
                 case Resource.Id.menuBtnBolumListele:
                     {
                         var intent = new Intent(this, typeof(BolumListeleActivity));

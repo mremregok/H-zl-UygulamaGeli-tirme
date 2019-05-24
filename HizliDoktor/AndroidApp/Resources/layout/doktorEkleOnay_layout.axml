@@ -12,14 +12,14 @@
 		android:layout_margin="50dp"/>
 
 	<TextView
-		android:text="Doktor Başarılı Bir Şekilde Eklendi"
+		android:text="Başarılı Bir Şekilde Eklendi"
 		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center_horizontal"/>
 
 	<Button
-		android:text="Doktorları Listele"
+		android:text="Anasayfaya dön"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="20dp"

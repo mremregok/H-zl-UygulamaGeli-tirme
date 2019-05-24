@@ -60,11 +60,10 @@ namespace AndroidApp
 
         private void Spinnerhastaneler_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            int id = (int)spinnerhastaneler.SelectedItemId + 1;
+            int id = Hastaneler.SingleOrDefault(x => x.Ad == spinnerhastaneler.SelectedItem.ToString()).Id;
             bolumler =  bolumService.Bolumler(id);
             BolumListeleAdapter adapter = new BolumListeleAdapter(this, bolumler);
             listView.Adapter = adapter;
-
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -78,6 +77,8 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnAnasayfa:
                     {
+                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaneEkle:

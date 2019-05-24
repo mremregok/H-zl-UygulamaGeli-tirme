@@ -40,6 +40,8 @@ namespace AndroidApp
             {
                 case Resource.Id.menuBtnAnasayfa:
                     {
+                        var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+                        StartActivity(intent);
                         return true;
                     }
                 case Resource.Id.menuBtnHastaneEkle:
@@ -90,7 +92,6 @@ namespace AndroidApp
                         StartActivity(intent);
                         return true;
                     }
-
             }
             return base.OnOptionsItemSelected(item);
         }

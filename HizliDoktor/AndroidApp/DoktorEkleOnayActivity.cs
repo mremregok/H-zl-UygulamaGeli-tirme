@@ -30,7 +30,7 @@ namespace AndroidApp
 
         private void BtnDoktorEkleOnay_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(DoktorListeleActivity));
+            var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
             StartActivity(intent);
         }
     }
