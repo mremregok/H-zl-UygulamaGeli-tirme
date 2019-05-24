@@ -72,13 +72,13 @@ namespace AndroidApp
                 return;
             }
 
-            if (!txtAd.Text.Contains('1') || !txtAd.Text.Contains('2') || !txtAd.Text.Contains('3') || !txtAd.Text.Contains('4') || !txtAd.Text.Contains('5') || !txtAd.Text.Contains('6') || !txtAd.Text.Contains('7') || !txtAd.Text.Contains('8') || !txtAd.Text.Contains('9') || !txtAd.Text.Contains('0') || !txtAd.Text.Contains('*') || !txtAd.Text.Contains('/') || !txtAd.Text.Contains('.') || !txtAd.Text.Contains('!') || !txtAd.Text.Contains(','))
+            if (txtAd.Text.Contains('1') || txtAd.Text.Contains('2') || txtAd.Text.Contains('3') || txtAd.Text.Contains('4') || txtAd.Text.Contains('5') || txtAd.Text.Contains('6') || txtAd.Text.Contains('7') || txtAd.Text.Contains('8') || txtAd.Text.Contains('9') || txtAd.Text.Contains('0') || txtAd.Text.Contains('*') || txtAd.Text.Contains('/') || txtAd.Text.Contains('.') || txtAd.Text.Contains('!') || txtAd.Text.Contains(','))
             {
                 Toast.MakeText(Application.Context, "İsimde özel karakter yada rakam kullanılamaz.", ToastLength.Long).Show();
                 return;
             }
 
-            if (!txtSoyad.Text.Contains('1') || !txtSoyad.Text.Contains('2') || !txtSoyad.Text.Contains('3') || !txtSoyad.Text.Contains('4') || !txtSoyad.Text.Contains('5') || !txtSoyad.Text.Contains('6') || !txtSoyad.Text.Contains('7') || !txtSoyad.Text.Contains('8') || !txtSoyad.Text.Contains('9') || !txtSoyad.Text.Contains('0') || !txtSoyad.Text.Contains('*') || !txtSoyad.Text.Contains('/') || !txtSoyad.Text.Contains('.') || !txtSoyad.Text.Contains('!') || !txtSoyad.Text.Contains(','))
+            if (txtSoyad.Text.Contains('1') || txtSoyad.Text.Contains('2') || txtSoyad.Text.Contains('3') || txtSoyad.Text.Contains('4') || txtSoyad.Text.Contains('5') || txtSoyad.Text.Contains('6') || txtSoyad.Text.Contains('7') || txtSoyad.Text.Contains('8') || txtSoyad.Text.Contains('9') || txtSoyad.Text.Contains('0') || txtSoyad.Text.Contains('*') || txtSoyad.Text.Contains('/') || txtSoyad.Text.Contains('.') || txtSoyad.Text.Contains('!') || txtSoyad.Text.Contains(','))
             {
                 Toast.MakeText(Application.Context, "Soyad da özel karakter yada rakam kullanılamaz.", ToastLength.Long).Show();
                 return;
