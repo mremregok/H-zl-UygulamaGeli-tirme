@@ -66,7 +66,7 @@ namespace AndroidApp.Resources.Adapter
             AlertDialog.Builder dialog = new AlertDialog.Builder(context);
             AlertDialog alert = dialog.Create();
             alert.SetTitle("Dikkat !");
-            alert.SetMessage("Hastane silinirken hastaneye ait doktorlar, bölümler ve bütün randevular silinecek.");
+            alert.SetMessage("Bölüm silinirken bölüme ait doktorlar ve bütün randevular silinecek.");
             alert.SetButton("ONAYLIYORUM", (c, ev) =>
             {
 

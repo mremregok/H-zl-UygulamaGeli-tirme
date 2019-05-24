@@ -67,7 +67,7 @@ namespace AndroidApp
             bolum.HastaneId = hastaneid;
 
             bolumService.Ekle(bolum);
-            var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+            var intent = new Intent(this, typeof(DoktorEkleOnayActivity));
             StartActivity(intent);
         }
 

@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace AndroidApp
 {
-   [Activity(Label = "Doktor Ekle Onay", Theme = "@style/AppTheme")]
+   [Activity(Label = "Eklendi", Theme = "@style/AppTheme")]
     public class DoktorEkleOnayActivity : AppCompatActivity
     {
         Button btnDoktorEkleOnay;

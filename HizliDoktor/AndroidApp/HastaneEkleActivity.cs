@@ -60,7 +60,8 @@ namespace AndroidApp
             hastane.Il = spinnerIller.SelectedItem.ToString();
             hastane.Ilce = spinnerIlceler.SelectedItem.ToString();
             hastaneService.Ekle(hastane);
-            var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
+
+            var intent = new Intent(this, typeof(DoktorEkleOnayActivity));
             StartActivity(intent);
         }
 
