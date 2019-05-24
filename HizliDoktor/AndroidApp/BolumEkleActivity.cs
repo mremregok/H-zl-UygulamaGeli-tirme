@@ -25,6 +25,7 @@ namespace AndroidApp
         IBolumService bolumService;
         IHastaneService hastaneService;
         private List<Hastane> hastaneler;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -42,6 +43,7 @@ namespace AndroidApp
             {
                 hastaneAdlari.Add(item.Ad);
             }
+
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, hastaneAdlari);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             Hastaneler.Adapter = adapter;
@@ -57,9 +59,13 @@ namespace AndroidApp
                 Toast.MakeText(Application.Context, "Lütfen hastane adını boş bırakmayınız.", ToastLength.Long).Show();
                 return;
             }
+
             bolum.Ad = BolumAd.Text;
-            int hastaneid = (int) Hastaneler.SelectedItemId;
-            bolum.HastaneId = hastaneid + 1;
+
+            int hastaneid = hastaneler.SingleOrDefault(x => x.Ad == Hastaneler.SelectedItem.ToString()).Id;
+
+            bolum.HastaneId = hastaneid;
+
             bolumService.Ekle(bolum);
             var intent = new Intent(this, typeof(AdminAnaSayfaActivity));
             StartActivity(intent);

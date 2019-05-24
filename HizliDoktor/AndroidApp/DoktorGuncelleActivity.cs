@@ -109,9 +109,9 @@ namespace AndroidApp
             doktorveri.DogumTarihi = Convert.ToDateTime(dogumTarihi);
             doktorveri.Cinsiyet = Cinsiyet;
             doktorveri.Id = ID;
-            int hastaneid = (int)hastaneler.SelectedItemId;
+            int hastaneid = Hastaneler.SingleOrDefault(x => x.Ad == hastaneler.SelectedItem.ToString()).Id;
             doktorveri.HastaneId = hastaneid + 1;
-            int bolumid = (int)bolumler.SelectedItemId;
+            int bolumid = Bolumler.SingleOrDefault(x => x.Ad == bolumler.SelectedItem.ToString()).Id;
             doktorveri.BolumId = bolumid + 1;
             doktorService.Guncelle(doktorveri);
             var intent = new Intent(this, typeof(DoktorGuncellemeOnayActivity));

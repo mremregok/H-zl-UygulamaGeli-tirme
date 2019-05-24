@@ -93,9 +93,11 @@ namespace AndroidApp
             doktor.TC = txtTC.Text;
             doktor.Sifre = txtPass.Text;
             doktor.DogumTarihi = Convert.ToDateTime(txtDate.Text);
-            int hastaneid = (int)hastaneler.SelectedItemId;
+            int hastaneid = Hastaneler.SingleOrDefault(x => x.Ad == hastaneler.SelectedItem.ToString()).Id;
+
             doktor.HastaneId = hastaneid + 1;
-            int bolumid = (int)bolumler.SelectedItemId;
+            int bolumid = Bolumler.SingleOrDefault(x => x.Ad == bolumler.SelectedItem.ToString()).Id;
+
             doktor.BolumId = bolumid + 1;
             doktorService.Ekle(doktor);
 
